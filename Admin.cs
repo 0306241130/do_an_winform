@@ -13,20 +13,19 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : MaterialForm
+    public partial class Admin : MaterialForm
     {
-        public Form1()
+        public Admin()
         {
             InitializeComponent();
 
             //var materialSkinManager = MaterialSkinManager.Instance;
             //materialSkinManager.AddFormToManage(this);
             //materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            //materialSkinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.BlueGrey900, Primary.Green800, Accent.Green700, TextShade.BLACK);
+            //materialSkinManager.ColorScheme = new ColorScheme(Primary.Green500, Primary.Green400, Primary.Green800, Accent.Green700, TextShade.BLACK);
             dateTimePicker5.Format = DateTimePickerFormat.Custom;
             dateTimePicker5.CustomFormat = "yyyy";
             tabPage1.ImageIndex = 0;
-          
         }
 
         

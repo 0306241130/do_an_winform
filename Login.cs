@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form2 : MaterialForm
+    public partial class Login : MaterialForm
     {
-        public Form2()
+        public Login()
         {
             InitializeComponent();
         }
