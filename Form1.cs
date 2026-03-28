@@ -23,7 +23,9 @@ namespace WindowsFormsApp1
             //materialSkinManager.AddFormToManage(this);
             //materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             //materialSkinManager.ColorScheme = new ColorScheme(Primary.Green800, Primary.BlueGrey900, Primary.Green800, Accent.Green700, TextShade.BLACK);
-
+            dateTimePicker5.Format = DateTimePickerFormat.Custom;
+            dateTimePicker5.CustomFormat = "yyyy";
+            tabPage1.ImageIndex = 0;
 
 
         }
