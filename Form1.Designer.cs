@@ -28,17 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
             this.materialCheckbox6 = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialTextBox8 = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel26 = new MaterialSkin.Controls.MaterialLabel();
@@ -175,6 +174,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.materialLabel27 = new MaterialSkin.Controls.MaterialLabel();
             this.label7 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -227,7 +227,7 @@
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1632, 1035);
+            this.materialTabControl1.Size = new System.Drawing.Size(1668, 1035);
             this.materialTabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -239,7 +239,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(50);
-            this.tabPage1.Size = new System.Drawing.Size(1624, 1006);
+            this.tabPage1.Size = new System.Drawing.Size(1660, 1006);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Sản phẩm";
             // 
@@ -260,19 +260,11 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Tìm Sản Phẩm";
             // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(622, 40);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(52, 39);
-            this.button7.TabIndex = 8;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
             // materialCheckbox6
             // 
             this.materialCheckbox6.AutoSize = true;
             this.materialCheckbox6.Depth = 0;
-            this.materialCheckbox6.Location = new System.Drawing.Point(438, 40);
+            this.materialCheckbox6.Location = new System.Drawing.Point(327, 40);
             this.materialCheckbox6.Margin = new System.Windows.Forms.Padding(0);
             this.materialCheckbox6.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialCheckbox6.MouseState = MaterialSkin.MouseState.HOVER;
@@ -295,7 +287,7 @@
             this.materialTextBox8.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox8.Multiline = false;
             this.materialTextBox8.Name = "materialTextBox8";
-            this.materialTextBox8.Size = new System.Drawing.Size(308, 50);
+            this.materialTextBox8.Size = new System.Drawing.Size(169, 50);
             this.materialTextBox8.TabIndex = 0;
             this.materialTextBox8.Text = "";
             this.materialTextBox8.TrailingIcon = null;
@@ -326,7 +318,7 @@
             this.materialComboBox4.FormattingEnabled = true;
             this.materialComboBox4.IntegralHeight = false;
             this.materialComboBox4.ItemHeight = 43;
-            this.materialComboBox4.Location = new System.Drawing.Point(476, 30);
+            this.materialComboBox4.Location = new System.Drawing.Point(386, 30);
             this.materialComboBox4.MaxDropDownItems = 4;
             this.materialComboBox4.MouseState = MaterialSkin.MouseState.OUT;
             this.materialComboBox4.Name = "materialComboBox4";
@@ -739,7 +731,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1606, 1006);
+            this.tabPage2.Size = new System.Drawing.Size(1660, 1006);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Loại Sản Phẩm";
             // 
@@ -749,29 +741,28 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.chart1, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 543);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 457);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1600, 460);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1490, 311);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Top;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea6.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea6);
+            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend6.Name = "Legend1";
+            this.chart1.Legends.Add(legend6);
             this.chart1.Location = new System.Drawing.Point(3, 3);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(1594, 420);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chart1.Series.Add(series6);
+            this.chart1.Size = new System.Drawing.Size(1484, 305);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
@@ -975,7 +966,7 @@
             this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1606, 1006);
+            this.tabPage3.Size = new System.Drawing.Size(1642, 1006);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Hóa đơn";
             // 
@@ -1567,7 +1558,7 @@
             this.tabPage4.Controls.Add(this.materialCard4);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1606, 1006);
+            this.tabPage4.Size = new System.Drawing.Size(1660, 1006);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Nhân Viên";
             // 
@@ -1596,13 +1587,14 @@
             this.materialButton3.Depth = 0;
             this.materialButton3.HighEmphasis = true;
             this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(622, 40);
+            this.materialButton3.Location = new System.Drawing.Point(580, 40);
             this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton3.Name = "materialButton3";
             this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton3.Size = new System.Drawing.Size(40, 36);
+            this.materialButton3.Size = new System.Drawing.Size(82, 36);
             this.materialButton3.TabIndex = 12;
+            this.materialButton3.Text = "Tìm kiếm";
             this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton3.UseAccentColor = false;
             this.materialButton3.UseVisualStyleBackColor = true;
@@ -1611,7 +1603,7 @@
             // 
             this.dateTimePicker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker4.Location = new System.Drawing.Point(476, 46);
+            this.dateTimePicker4.Location = new System.Drawing.Point(444, 48);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(129, 22);
             this.dateTimePicker4.TabIndex = 11;
@@ -1620,7 +1612,7 @@
             // 
             this.materialCheckbox5.AutoSize = true;
             this.materialCheckbox5.Depth = 0;
-            this.materialCheckbox5.Location = new System.Drawing.Point(438, 40);
+            this.materialCheckbox5.Location = new System.Drawing.Point(406, 41);
             this.materialCheckbox5.Margin = new System.Windows.Forms.Padding(0);
             this.materialCheckbox5.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialCheckbox5.MouseState = MaterialSkin.MouseState.HOVER;
@@ -2109,6 +2101,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.BackColor = System.Drawing.Color.RoyalBlue;
             this.tabPage5.Controls.Add(this.groupBox7);
             this.tabPage5.Controls.Add(this.dataGridView7);
             this.tabPage5.Controls.Add(this.materialButton5);
@@ -2120,10 +2113,9 @@
             this.tabPage5.Controls.Add(this.materialCard7);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1606, 1006);
+            this.tabPage5.Size = new System.Drawing.Size(1660, 1006);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Doanh Thu";
-            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // groupBox7
             // 
@@ -2246,23 +2238,23 @@
             // 
             // chart2
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
+            chartArea5.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chart2.Legends.Add(legend5);
             this.chart2.Location = new System.Drawing.Point(653, 328);
             this.chart2.Name = "chart2";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series14";
-            this.chart2.Series.Add(series2);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series14";
+            this.chart2.Series.Add(series5);
             this.chart2.Size = new System.Drawing.Size(860, 411);
             this.chart2.TabIndex = 2;
             this.chart2.Text = "chart2";
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.Name = "Title1";
-            title1.Text = "Doanh Thu Theo Tháng";
-            this.chart2.Titles.Add(title1);
+            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title3.Name = "Title1";
+            title3.Text = "Doanh Thu Theo Tháng";
+            this.chart2.Titles.Add(title3);
             // 
             // dateTimePicker5
             // 
@@ -2409,9 +2401,19 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Doanh Thu Hôm Nay";
             // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button7.Location = new System.Drawing.Point(559, 29);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(115, 48);
+            this.button7.TabIndex = 8;
+            this.button7.Text = "Tìm kiếm";
+            this.button7.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(1635, 1102);
+            this.ClientSize = new System.Drawing.Size(1671, 1102);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerTabControl = this.materialTabControl1;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

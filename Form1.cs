@@ -26,8 +26,7 @@ namespace WindowsFormsApp1
             dateTimePicker5.Format = DateTimePickerFormat.Custom;
             dateTimePicker5.CustomFormat = "yyyy";
             tabPage1.ImageIndex = 0;
-
-
+          
         }
 
         
