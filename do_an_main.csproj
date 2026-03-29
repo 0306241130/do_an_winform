@@ -113,5 +113,15 @@
   <ItemGroup>
     <None Include="Resources\search-icon-illustration-for-uiux-web-app-infographic-etc-vector.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{337f1599-c83c-4925-8905-0dcedb72b752}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{c59a770d-4697-4a8c-839c-430be42893ce}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

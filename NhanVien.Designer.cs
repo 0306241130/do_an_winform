@@ -28,9 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lv_san_pham = new System.Windows.Forms.ListView();
+            this.image_list_sp = new System.Windows.Forms.ImageList(this.components);
+            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
@@ -38,47 +44,42 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.materialButton11 = new MaterialSkin.Controls.MaterialButton();
-            this.materialListView2 = new MaterialSkin.Controls.MaterialListView();
+            this.lv_cho_thanh_toan = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_hop_mau = new MaterialSkin.Controls.MaterialButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton5 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton7 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton8 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton9 = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton10 = new MaterialSkin.Controls.MaterialButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.btn_but_muc = new MaterialSkin.Controls.MaterialButton();
+            this.btn_but_chi = new MaterialSkin.Controls.MaterialButton();
+            this.btn_tap_viet = new MaterialSkin.Controls.MaterialButton();
+            this.btn_giay = new MaterialSkin.Controls.MaterialButton();
+            this.btn_may_tinh = new MaterialSkin.Controls.MaterialButton();
+            this.btn_keo = new MaterialSkin.Controls.MaterialButton();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.materialCard1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -88,58 +89,102 @@
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.Location = new System.Drawing.Point(3, 64);
+            this.materialTabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1616, 787);
+            this.materialTabControl1.Size = new System.Drawing.Size(1541, 788);
             this.materialTabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.lv_san_pham);
             this.tabPage1.Controls.Add(this.materialLabel5);
             this.tabPage1.Controls.Add(this.materialLabel4);
             this.tabPage1.Controls.Add(this.materialLabel3);
             this.tabPage1.Controls.Add(this.materialCard1);
-            this.tabPage1.Controls.Add(this.materialListView1);
             this.tabPage1.Controls.Add(this.tableLayoutPanel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1608, 758);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Size = new System.Drawing.Size(1533, 759);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Trang Chủ";
             // 
-            // tabPage2
+            // lv_san_pham
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.White;
-            this.tabPage2.Controls.Add(this.materialLabel2);
-            this.tabPage2.Controls.Add(this.materialLabel1);
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1608, 758);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Doanh Thu";
+            this.lv_san_pham.HideSelection = false;
+            this.lv_san_pham.LargeImageList = this.image_list_sp;
+            this.lv_san_pham.Location = new System.Drawing.Point(255, 20);
+            this.lv_san_pham.Margin = new System.Windows.Forms.Padding(4);
+            this.lv_san_pham.MultiSelect = false;
+            this.lv_san_pham.Name = "lv_san_pham";
+            this.lv_san_pham.Size = new System.Drawing.Size(613, 681);
+            this.lv_san_pham.TabIndex = 9;
+            this.lv_san_pham.UseCompatibleStateImageBehavior = false;
+            this.lv_san_pham.SelectedIndexChanged += new System.EventHandler(this.lv_san_pham_SelectedIndexChanged);
+            this.lv_san_pham.Click += new System.EventHandler(this.lv_san_pham_Click);
+            // 
+            // image_list_sp
+            // 
+            this.image_list_sp.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("image_list_sp.ImageStream")));
+            this.image_list_sp.TransparentColor = System.Drawing.Color.Transparent;
+            this.image_list_sp.Images.SetKeyName(0, "Zoo-Logos-11.png");
+            // 
+            // materialLabel5
+            // 
+            this.materialLabel5.AutoSize = true;
+            this.materialLabel5.Depth = 0;
+            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel5.Location = new System.Drawing.Point(1391, 719);
+            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel5.Name = "materialLabel5";
+            this.materialLabel5.Size = new System.Drawing.Size(78, 19);
+            this.materialLabel5.TabIndex = 8;
+            this.materialLabel5.Text = "Nhân Viên:";
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel4.Location = new System.Drawing.Point(129, 719);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(78, 19);
+            this.materialLabel4.TabIndex = 8;
+            this.materialLabel4.Text = "Nhân Viên:";
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel3.Location = new System.Drawing.Point(12, 719);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(78, 19);
+            this.materialLabel3.TabIndex = 8;
+            this.materialLabel3.Text = "Nhân Viên:";
             // 
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard1.Controls.Add(this.tableLayoutPanel3);
             this.materialCard1.Controls.Add(this.tableLayoutPanel2);
-            this.materialCard1.Controls.Add(this.materialListView2);
+            this.materialCard1.Controls.Add(this.lv_cho_thanh_toan);
             this.materialCard1.Controls.Add(this.label2);
             this.materialCard1.Controls.Add(this.label1);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(990, 24);
-            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard1.Location = new System.Drawing.Point(885, 25);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(13, 14, 13, 14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(13, 14, 13, 14);
             this.materialCard1.Size = new System.Drawing.Size(610, 681);
             this.materialCard1.TabIndex = 7;
             // 
@@ -153,19 +198,21 @@
             this.tableLayoutPanel3.Controls.Add(this.button2, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.textBox1, 1, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 592);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(606, 44);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(605, 44);
             this.tableLayoutPanel3.TabIndex = 8;
             // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Location = new System.Drawing.Point(3, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(266, 38);
+            this.button1.Size = new System.Drawing.Size(266, 40);
             this.button1.TabIndex = 0;
             this.button1.Text = "+";
             this.button1.UseVisualStyleBackColor = true;
@@ -174,9 +221,10 @@
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(333, 3);
+            this.button2.Location = new System.Drawing.Point(333, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(270, 38);
+            this.button2.Size = new System.Drawing.Size(269, 40);
             this.button2.TabIndex = 1;
             this.button2.Text = "-";
             this.button2.UseVisualStyleBackColor = true;
@@ -186,10 +234,11 @@
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(275, 3);
+            this.textBox1.Location = new System.Drawing.Point(275, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(52, 38);
+            this.textBox1.Size = new System.Drawing.Size(52, 40);
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = "1";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -200,12 +249,13 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.materialButton11, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(1, 627);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(1, 626);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(606, 50);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(605, 50);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
             // materialButton11
@@ -213,44 +263,46 @@
             this.materialButton11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton11.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton11.Depth = 0;
-            this.materialButton11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialButton11.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.materialButton11.HighEmphasis = true;
             this.materialButton11.Icon = null;
-            this.materialButton11.Location = new System.Drawing.Point(4, 6);
+            this.materialButton11.Location = new System.Drawing.Point(4, 8);
             this.materialButton11.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton11.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton11.Name = "materialButton11";
             this.materialButton11.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton11.Size = new System.Drawing.Size(598, 38);
+            this.materialButton11.Size = new System.Drawing.Size(597, 36);
             this.materialButton11.TabIndex = 0;
             this.materialButton11.Text = "Thanh Toán";
             this.materialButton11.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton11.UseAccentColor = false;
             this.materialButton11.UseVisualStyleBackColor = true;
             // 
-            // materialListView2
+            // lv_cho_thanh_toan
             // 
-            this.materialListView2.AutoSizeTable = false;
-            this.materialListView2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialListView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialListView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lv_cho_thanh_toan.AutoSizeTable = false;
+            this.lv_cho_thanh_toan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lv_cho_thanh_toan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lv_cho_thanh_toan.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4});
-            this.materialListView2.Depth = 0;
-            this.materialListView2.FullRowSelect = true;
-            this.materialListView2.HideSelection = false;
-            this.materialListView2.Location = new System.Drawing.Point(0, 0);
-            this.materialListView2.MinimumSize = new System.Drawing.Size(200, 100);
-            this.materialListView2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListView2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListView2.Name = "materialListView2";
-            this.materialListView2.OwnerDraw = true;
-            this.materialListView2.Size = new System.Drawing.Size(606, 547);
-            this.materialListView2.TabIndex = 4;
-            this.materialListView2.UseCompatibleStateImageBehavior = false;
-            this.materialListView2.View = System.Windows.Forms.View.Details;
+            this.columnHeader4,
+            this.columnHeader5});
+            this.lv_cho_thanh_toan.Depth = 0;
+            this.lv_cho_thanh_toan.FullRowSelect = true;
+            this.lv_cho_thanh_toan.HideSelection = false;
+            this.lv_cho_thanh_toan.Location = new System.Drawing.Point(0, 0);
+            this.lv_cho_thanh_toan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lv_cho_thanh_toan.MinimumSize = new System.Drawing.Size(200, 100);
+            this.lv_cho_thanh_toan.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.lv_cho_thanh_toan.MouseState = MaterialSkin.MouseState.OUT;
+            this.lv_cho_thanh_toan.Name = "lv_cho_thanh_toan";
+            this.lv_cho_thanh_toan.OwnerDraw = true;
+            this.lv_cho_thanh_toan.Size = new System.Drawing.Size(609, 546);
+            this.lv_cho_thanh_toan.TabIndex = 4;
+            this.lv_cho_thanh_toan.UseCompatibleStateImageBehavior = false;
+            this.lv_cho_thanh_toan.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -272,6 +324,10 @@
             this.columnHeader4.Text = "Thành Tiền";
             this.columnHeader4.Width = 168;
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Mã";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -286,332 +342,216 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(2, 550);
+            this.label1.Location = new System.Drawing.Point(3, 550);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 29);
             this.label1.TabIndex = 3;
             this.label1.Text = "Tổng Tiền:";
-            // 
-            // materialListView1
-            // 
-            this.materialListView1.AutoSizeTable = false;
-            this.materialListView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialListView1.Depth = 0;
-            this.materialListView1.FullRowSelect = true;
-            this.materialListView1.HideSelection = false;
-            this.materialListView1.Location = new System.Drawing.Point(240, 24);
-            this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
-            this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListView1.Name = "materialListView1";
-            this.materialListView1.OwnerDraw = true;
-            this.materialListView1.Size = new System.Drawing.Size(715, 681);
-            this.materialListView1.TabIndex = 6;
-            this.materialListView1.UseCompatibleStateImageBehavior = false;
-            this.materialListView1.View = System.Windows.Forms.View.Details;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.btn_hop_mau, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.materialButton1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.materialButton2, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.materialButton3, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.materialButton4, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.materialButton5, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.materialButton6, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.materialButton7, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.materialButton8, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.materialButton9, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.materialButton10, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.btn_but_muc, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btn_but_chi, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btn_tap_viet, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btn_giay, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btn_may_tinh, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.btn_keo, 0, 6);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 20);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 11;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 73.33334F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 78.98833F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.01167F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(204, 666);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(240, 681);
             this.tableLayoutPanel1.TabIndex = 5;
+            // 
+            // btn_hop_mau
+            // 
+            this.btn_hop_mau.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_hop_mau.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_hop_mau.Depth = 0;
+            this.btn_hop_mau.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_hop_mau.HighEmphasis = true;
+            this.btn_hop_mau.Icon = null;
+            this.btn_hop_mau.Location = new System.Drawing.Point(5, 628);
+            this.btn_hop_mau.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_hop_mau.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_hop_mau.Name = "btn_hop_mau";
+            this.btn_hop_mau.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_hop_mau.Size = new System.Drawing.Size(230, 46);
+            this.btn_hop_mau.TabIndex = 5;
+            this.btn_hop_mau.Text = "USB";
+            this.btn_hop_mau.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_hop_mau.UseAccentColor = false;
+            this.btn_hop_mau.UseVisualStyleBackColor = true;
+            this.btn_hop_mau.Click += new System.EventHandler(this.btn_hop_mau_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.Zoo_Logos_111;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 3);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(196, 107);
+            this.pictureBox1.Size = new System.Drawing.Size(232, 253);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // materialButton1
+            // btn_but_muc
             // 
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(5, 121);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(194, 29);
-            this.materialButton1.TabIndex = 1;
-            this.materialButton1.Text = "materialButton1";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.btn_but_muc.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_but_muc.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_but_muc.Depth = 0;
+            this.btn_but_muc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_but_muc.HighEmphasis = true;
+            this.btn_but_muc.Icon = null;
+            this.btn_but_muc.Location = new System.Drawing.Point(5, 265);
+            this.btn_but_muc.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_but_muc.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_but_muc.Name = "btn_but_muc";
+            this.btn_but_muc.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_but_muc.Size = new System.Drawing.Size(230, 56);
+            this.btn_but_muc.TabIndex = 1;
+            this.btn_but_muc.Text = "Bút Mực";
+            this.btn_but_muc.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_but_muc.UseAccentColor = false;
+            this.btn_but_muc.UseVisualStyleBackColor = true;
+            this.btn_but_muc.Click += new System.EventHandler(this.btn_but_muc_Click);
             // 
-            // materialButton2
+            // btn_but_chi
             // 
-            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(5, 163);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(194, 44);
-            this.materialButton2.TabIndex = 2;
-            this.materialButton2.Text = "materialButton2";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = true;
+            this.btn_but_chi.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_but_chi.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_but_chi.Depth = 0;
+            this.btn_but_chi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_but_chi.HighEmphasis = true;
+            this.btn_but_chi.Icon = null;
+            this.btn_but_chi.Location = new System.Drawing.Point(5, 334);
+            this.btn_but_chi.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_but_chi.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_but_chi.Name = "btn_but_chi";
+            this.btn_but_chi.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_but_chi.Size = new System.Drawing.Size(230, 45);
+            this.btn_but_chi.TabIndex = 2;
+            this.btn_but_chi.Text = "bút chì";
+            this.btn_but_chi.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_but_chi.UseAccentColor = false;
+            this.btn_but_chi.UseVisualStyleBackColor = true;
+            this.btn_but_chi.Click += new System.EventHandler(this.btn_but_chi_Click);
             // 
-            // materialButton3
+            // btn_tap_viet
             // 
-            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton3.Depth = 0;
-            this.materialButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialButton3.HighEmphasis = true;
-            this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(5, 220);
-            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton3.Name = "materialButton3";
-            this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton3.Size = new System.Drawing.Size(194, 47);
-            this.materialButton3.TabIndex = 3;
-            this.materialButton3.Text = "materialButton3";
-            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton3.UseAccentColor = false;
-            this.materialButton3.UseVisualStyleBackColor = true;
+            this.btn_tap_viet.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_tap_viet.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_tap_viet.Depth = 0;
+            this.btn_tap_viet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_tap_viet.HighEmphasis = true;
+            this.btn_tap_viet.Icon = null;
+            this.btn_tap_viet.Location = new System.Drawing.Point(5, 392);
+            this.btn_tap_viet.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_tap_viet.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_tap_viet.Name = "btn_tap_viet";
+            this.btn_tap_viet.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_tap_viet.Size = new System.Drawing.Size(230, 47);
+            this.btn_tap_viet.TabIndex = 3;
+            this.btn_tap_viet.Text = "Tập Viết";
+            this.btn_tap_viet.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_tap_viet.UseAccentColor = false;
+            this.btn_tap_viet.UseVisualStyleBackColor = true;
+            this.btn_tap_viet.Click += new System.EventHandler(this.btn_tap_viet_Click);
             // 
-            // materialButton4
+            // btn_giay
             // 
-            this.materialButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton4.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton4.Depth = 0;
-            this.materialButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialButton4.HighEmphasis = true;
-            this.materialButton4.Icon = null;
-            this.materialButton4.Location = new System.Drawing.Point(5, 280);
-            this.materialButton4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton4.Name = "materialButton4";
-            this.materialButton4.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton4.Size = new System.Drawing.Size(194, 43);
-            this.materialButton4.TabIndex = 3;
-            this.materialButton4.Text = "materialButton3";
-            this.materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton4.UseAccentColor = false;
-            this.materialButton4.UseVisualStyleBackColor = true;
+            this.btn_giay.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_giay.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_giay.Depth = 0;
+            this.btn_giay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_giay.HighEmphasis = true;
+            this.btn_giay.Icon = null;
+            this.btn_giay.Location = new System.Drawing.Point(5, 452);
+            this.btn_giay.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_giay.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_giay.Name = "btn_giay";
+            this.btn_giay.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_giay.Size = new System.Drawing.Size(230, 46);
+            this.btn_giay.TabIndex = 3;
+            this.btn_giay.Text = "Giấy";
+            this.btn_giay.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_giay.UseAccentColor = false;
+            this.btn_giay.UseVisualStyleBackColor = true;
+            this.btn_giay.Click += new System.EventHandler(this.btn_giay_Click);
             // 
-            // materialButton5
+            // btn_may_tinh
             // 
-            this.materialButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton5.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton5.Depth = 0;
-            this.materialButton5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialButton5.HighEmphasis = true;
-            this.materialButton5.Icon = null;
-            this.materialButton5.Location = new System.Drawing.Point(5, 336);
-            this.materialButton5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton5.Name = "materialButton5";
-            this.materialButton5.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton5.Size = new System.Drawing.Size(194, 46);
-            this.materialButton5.TabIndex = 3;
-            this.materialButton5.Text = "materialButton3";
-            this.materialButton5.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton5.UseAccentColor = false;
-            this.materialButton5.UseVisualStyleBackColor = true;
+            this.btn_may_tinh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_may_tinh.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_may_tinh.Depth = 0;
+            this.btn_may_tinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_may_tinh.HighEmphasis = true;
+            this.btn_may_tinh.Icon = null;
+            this.btn_may_tinh.Location = new System.Drawing.Point(5, 511);
+            this.btn_may_tinh.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_may_tinh.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_may_tinh.Name = "btn_may_tinh";
+            this.btn_may_tinh.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_may_tinh.Size = new System.Drawing.Size(230, 48);
+            this.btn_may_tinh.TabIndex = 3;
+            this.btn_may_tinh.Text = "Máy tính";
+            this.btn_may_tinh.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_may_tinh.UseAccentColor = false;
+            this.btn_may_tinh.UseVisualStyleBackColor = true;
+            this.btn_may_tinh.Click += new System.EventHandler(this.btn_may_tinh_Click);
             // 
-            // materialButton6
+            // btn_keo
             // 
-            this.materialButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton6.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton6.Depth = 0;
-            this.materialButton6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialButton6.HighEmphasis = true;
-            this.materialButton6.Icon = null;
-            this.materialButton6.Location = new System.Drawing.Point(5, 395);
-            this.materialButton6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton6.Name = "materialButton6";
-            this.materialButton6.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton6.Size = new System.Drawing.Size(194, 45);
-            this.materialButton6.TabIndex = 3;
-            this.materialButton6.Text = "materialButton3";
-            this.materialButton6.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton6.UseAccentColor = false;
-            this.materialButton6.UseVisualStyleBackColor = true;
+            this.btn_keo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_keo.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_keo.Depth = 0;
+            this.btn_keo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_keo.HighEmphasis = true;
+            this.btn_keo.Icon = null;
+            this.btn_keo.Location = new System.Drawing.Point(5, 572);
+            this.btn_keo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_keo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_keo.Name = "btn_keo";
+            this.btn_keo.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_keo.Size = new System.Drawing.Size(230, 43);
+            this.btn_keo.TabIndex = 3;
+            this.btn_keo.Text = "Kéo";
+            this.btn_keo.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_keo.UseAccentColor = false;
+            this.btn_keo.UseVisualStyleBackColor = true;
+            this.btn_keo.Click += new System.EventHandler(this.btn_keo_Click);
             // 
-            // materialButton7
+            // tabPage2
             // 
-            this.materialButton7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton7.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton7.Depth = 0;
-            this.materialButton7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialButton7.HighEmphasis = true;
-            this.materialButton7.Icon = null;
-            this.materialButton7.Location = new System.Drawing.Point(5, 453);
-            this.materialButton7.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton7.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton7.Name = "materialButton7";
-            this.materialButton7.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton7.Size = new System.Drawing.Size(194, 43);
-            this.materialButton7.TabIndex = 4;
-            this.materialButton7.Text = "materialButton7";
-            this.materialButton7.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton7.UseAccentColor = false;
-            this.materialButton7.UseVisualStyleBackColor = true;
-            // 
-            // materialButton8
-            // 
-            this.materialButton8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton8.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton8.Depth = 0;
-            this.materialButton8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialButton8.HighEmphasis = true;
-            this.materialButton8.Icon = null;
-            this.materialButton8.Location = new System.Drawing.Point(5, 509);
-            this.materialButton8.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton8.Name = "materialButton8";
-            this.materialButton8.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton8.Size = new System.Drawing.Size(194, 42);
-            this.materialButton8.TabIndex = 4;
-            this.materialButton8.Text = "materialButton7";
-            this.materialButton8.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton8.UseAccentColor = false;
-            this.materialButton8.UseVisualStyleBackColor = true;
-            // 
-            // materialButton9
-            // 
-            this.materialButton9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton9.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton9.Depth = 0;
-            this.materialButton9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialButton9.HighEmphasis = true;
-            this.materialButton9.Icon = null;
-            this.materialButton9.Location = new System.Drawing.Point(5, 564);
-            this.materialButton9.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton9.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton9.Name = "materialButton9";
-            this.materialButton9.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton9.Size = new System.Drawing.Size(194, 39);
-            this.materialButton9.TabIndex = 4;
-            this.materialButton9.Text = "materialButton7";
-            this.materialButton9.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton9.UseAccentColor = false;
-            this.materialButton9.UseVisualStyleBackColor = true;
-            // 
-            // materialButton10
-            // 
-            this.materialButton10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton10.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton10.Depth = 0;
-            this.materialButton10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialButton10.HighEmphasis = true;
-            this.materialButton10.Icon = null;
-            this.materialButton10.Location = new System.Drawing.Point(5, 616);
-            this.materialButton10.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton10.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton10.Name = "materialButton10";
-            this.materialButton10.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton10.Size = new System.Drawing.Size(194, 43);
-            this.materialButton10.TabIndex = 4;
-            this.materialButton10.Text = "materialButton7";
-            this.materialButton10.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton10.UseAccentColor = false;
-            this.materialButton10.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(26, 93);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(543, 623);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Hóa Đơn";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.dataGridView2);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(730, 104);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(788, 623);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Chi Tiết";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 30);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(537, 590);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 30);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(782, 590);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(187, 33);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(107, 19);
-            this.materialLabel1.TabIndex = 2;
-            this.materialLabel1.Text = "materialLabel1";
+            this.tabPage2.BackColor = System.Drawing.Color.White;
+            this.tabPage2.Controls.Add(this.materialLabel2);
+            this.tabPage2.Controls.Add(this.materialLabel1);
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Size = new System.Drawing.Size(1619, 759);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Doanh Thu";
             // 
             // materialLabel2
             // 
@@ -625,56 +565,85 @@
             this.materialLabel2.TabIndex = 2;
             this.materialLabel2.Text = "Doanh Thu:";
             // 
-            // materialLabel3
+            // materialLabel1
             // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(12, 719);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(78, 19);
-            this.materialLabel3.TabIndex = 8;
-            this.materialLabel3.Text = "Nhân Viên:";
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(187, 33);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(107, 19);
+            this.materialLabel1.TabIndex = 2;
+            this.materialLabel1.Text = "materialLabel1";
             // 
-            // materialLabel4
+            // groupBox2
             // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel4.Location = new System.Drawing.Point(129, 719);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(78, 19);
-            this.materialLabel4.TabIndex = 8;
-            this.materialLabel4.Text = "Nhân Viên:";
+            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(731, 103);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(788, 623);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Chi Tiết";
             // 
-            // materialLabel5
+            // dataGridView2
             // 
-            this.materialLabel5.AutoSize = true;
-            this.materialLabel5.Depth = 0;
-            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel5.Location = new System.Drawing.Point(1391, 719);
-            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(78, 19);
-            this.materialLabel5.TabIndex = 8;
-            this.materialLabel5.Text = "Nhân Viên:";
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 29);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(782, 592);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(27, 94);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(543, 623);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Hóa Đơn";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 29);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(537, 592);
+            this.dataGridView1.TabIndex = 0;
             // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1622, 854);
+            this.ClientSize = new System.Drawing.Size(1547, 854);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerTabControl = this.materialTabControl1;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "NhanVien";
+            this.Padding = new System.Windows.Forms.Padding(3, 64, 3, 2);
             this.Text = "Nhân Viên";
+            this.Load += new System.EventHandler(this.NhanVien_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -684,10 +653,12 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -704,26 +675,21 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private MaterialSkin.Controls.MaterialButton materialButton11;
-        private MaterialSkin.Controls.MaterialListView materialListView2;
+        private MaterialSkin.Controls.MaterialListView lv_cho_thanh_toan;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private MaterialSkin.Controls.MaterialListView materialListView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
-        private MaterialSkin.Controls.MaterialButton materialButton3;
-        private MaterialSkin.Controls.MaterialButton materialButton4;
-        private MaterialSkin.Controls.MaterialButton materialButton5;
-        private MaterialSkin.Controls.MaterialButton materialButton6;
-        private MaterialSkin.Controls.MaterialButton materialButton7;
-        private MaterialSkin.Controls.MaterialButton materialButton8;
-        private MaterialSkin.Controls.MaterialButton materialButton9;
-        private MaterialSkin.Controls.MaterialButton materialButton10;
+        private MaterialSkin.Controls.MaterialButton btn_but_muc;
+        private MaterialSkin.Controls.MaterialButton btn_but_chi;
+        private MaterialSkin.Controls.MaterialButton btn_tap_viet;
+        private MaterialSkin.Controls.MaterialButton btn_giay;
+        private MaterialSkin.Controls.MaterialButton btn_may_tinh;
+        private MaterialSkin.Controls.MaterialButton btn_keo;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -733,5 +699,9 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private System.Windows.Forms.ImageList image_list_sp;
+        private System.Windows.Forms.ListView lv_san_pham;
+        private MaterialSkin.Controls.MaterialButton btn_hop_mau;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }

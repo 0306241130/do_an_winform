@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="../BUS/BUS.csproj" Id="337f1599-c83c-4925-8905-0dcedb72b752" />
+  <Project Path="../DAO/DAO.csproj" Id="ba090db9-4a42-4483-a69f-5a13c84f93a4" />
+  <Project Path="../DTO/DTO.csproj" Id="c59a770d-4697-4a8c-839c-430be42893ce" />
   <Project Path="do_an_main.csproj" Id="5bd0d4dc-837b-4177-922f-9b0d570ab494" />
 </Solution>
