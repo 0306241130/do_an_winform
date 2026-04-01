@@ -17,13 +17,20 @@ namespace WindowsFormsApp1
 {
     public partial class NhanVien : MaterialForm
     {
-        public NhanVien()
+        public NhanVien(string taiKhoan,string matKhau)
         {
+
+
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Green500, Primary.Green400, Primary.Green800, Accent.Green700, TextShade.BLACK);
+
+            NhanVienBUS nhanVienBUS = new NhanVienBUS();
+            NhanVienDTO nv = nhanVienBUS.thong_tin_nhan_vien(taiKhoan,matKhau);
+            lbl_ten_nhan_vien.Text = nv.TenNV;
+
         }
         string path=Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath)), "Images");
 
@@ -56,6 +63,8 @@ namespace WindowsFormsApp1
                 }
 
             }
+           
+
 
         }
 
@@ -131,7 +140,7 @@ namespace WindowsFormsApp1
                     {
                         item.SubItems[1].Text = (int.Parse(item.SubItems[1].Text) + 1).ToString();
                         item.SubItems[3].Text = (int.Parse(item.SubItems[1].Text) * int.Parse(itm.SubItems[1].Text)).ToString("N0") + "đ";
-                      
+                        tinh_tong_tien();
                         return;
                     }
                 }
@@ -147,7 +156,76 @@ namespace WindowsFormsApp1
                     item1.SubItems.Add(item.SubItems[2].Text);
                     lv_cho_thanh_toan.Items.Add(item1);
                 }
+                tinh_tong_tien();
             }
+        }
+
+        private void lv_cho_thanh_toan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach(ListViewItem item in lv_cho_thanh_toan.SelectedItems)
+            {
+               txt_thanh_toan_so_luong.Text =item.SubItems[1].Text ;
+            }
+        }
+
+       
+        private void btn_them_Click(object sender, EventArgs e)
+        {
+            if (lv_cho_thanh_toan.SelectedItems.Count > 0)
+            {
+                int so_luong = Int32.Parse(txt_thanh_toan_so_luong.Text) + 1;
+                txt_thanh_toan_so_luong.Text = so_luong.ToString();
+                foreach (ListViewItem item in lv_cho_thanh_toan.SelectedItems)
+                {
+                    item.SubItems[1].Text = txt_thanh_toan_so_luong.Text;
+                }
+                tinh_lai_thanh_tien();
+                tinh_tong_tien();
+            }
+        }
+
+        public void tinh_lai_thanh_tien()
+        {
+            foreach (ListViewItem item in lv_cho_thanh_toan.Items)
+            {
+                string gia_str = item.SubItems[2].Text;
+                gia_str = gia_str.Replace("đ", "").Trim();
+                gia_str = gia_str.Replace(",", "").Trim();
+                item.SubItems[3].Text = (int.Parse(item.SubItems[1].Text) * int.Parse(gia_str)).ToString("N0") + "đ";
+            }
+        }
+
+        private void btn_giam_Click(object sender, EventArgs e)
+        {
+
+            if (lv_cho_thanh_toan.SelectedItems.Count > 0)
+            {
+                int so_luong = Int32.Parse(txt_thanh_toan_so_luong.Text);
+                if (so_luong > 1)
+                {
+                    so_luong -= 1;
+                }
+                txt_thanh_toan_so_luong.Text = so_luong.ToString();
+                foreach (ListViewItem item in lv_cho_thanh_toan.SelectedItems)
+                {
+                    item.SubItems[1].Text = txt_thanh_toan_so_luong.Text;
+                }
+                tinh_lai_thanh_tien();
+                tinh_tong_tien();
+            }
+        }
+
+        public void tinh_tong_tien()
+        {
+            int tong_tien = 0;
+            foreach (ListViewItem item in lv_cho_thanh_toan.Items)
+            {
+                string gia_str = item.SubItems[3].Text;
+                gia_str = gia_str.Replace("đ", "").Trim();
+                gia_str = gia_str.Replace(",", "").Trim();
+                tong_tien += int.Parse(gia_str);
+            }
+            lbl_tong_tien.Text = "Tổng tiền: " + tong_tien.ToString("N0") + "đ";
         }
     }
 }

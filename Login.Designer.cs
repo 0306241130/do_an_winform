@@ -33,9 +33,9 @@
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.btn_dang_nhap = new MaterialSkin.Controls.MaterialButton();
+            this.txt_mat_khau = new MaterialSkin.Controls.MaterialTextBox();
+            this.txt_ten_dang_nhap = new MaterialSkin.Controls.MaterialTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.materialCard1.SuspendLayout();
             this.SuspendLayout();
@@ -56,9 +56,9 @@
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard1.Controls.Add(this.materialLabel2);
             this.materialCard1.Controls.Add(this.materialLabel1);
-            this.materialCard1.Controls.Add(this.materialButton1);
-            this.materialCard1.Controls.Add(this.materialTextBox2);
-            this.materialCard1.Controls.Add(this.materialTextBox1);
+            this.materialCard1.Controls.Add(this.btn_dang_nhap);
+            this.materialCard1.Controls.Add(this.txt_mat_khau);
+            this.materialCard1.Controls.Add(this.txt_ten_dang_nhap);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard1.Location = new System.Drawing.Point(104, 226);
@@ -93,70 +93,71 @@
             this.materialLabel1.TabIndex = 2;
             this.materialLabel1.Text = "Tài khoản";
             // 
-            // materialButton1
+            // btn_dang_nhap
             // 
-            this.materialButton1.AutoSize = false;
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(18, 176);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(327, 43);
-            this.materialButton1.TabIndex = 1;
-            this.materialButton1.Text = "Đăng nhập";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.btn_dang_nhap.AutoSize = false;
+            this.btn_dang_nhap.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_dang_nhap.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_dang_nhap.Depth = 0;
+            this.btn_dang_nhap.HighEmphasis = true;
+            this.btn_dang_nhap.Icon = null;
+            this.btn_dang_nhap.Location = new System.Drawing.Point(18, 176);
+            this.btn_dang_nhap.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_dang_nhap.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_dang_nhap.Name = "btn_dang_nhap";
+            this.btn_dang_nhap.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_dang_nhap.Size = new System.Drawing.Size(327, 43);
+            this.btn_dang_nhap.TabIndex = 1;
+            this.btn_dang_nhap.Text = "Đăng nhập";
+            this.btn_dang_nhap.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_dang_nhap.UseAccentColor = false;
+            this.btn_dang_nhap.UseVisualStyleBackColor = true;
+            this.btn_dang_nhap.Click += new System.EventHandler(this.btn_dang_nhap_Click);
             // 
-            // materialTextBox2
+            // txt_mat_khau
             // 
-            this.materialTextBox2.AnimateReadOnly = false;
-            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox2.Depth = 0;
-            this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox2.LeadingIcon = null;
-            this.materialTextBox2.Location = new System.Drawing.Point(111, 98);
-            this.materialTextBox2.MaxLength = 50;
-            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox2.Multiline = false;
-            this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Password = true;
-            this.materialTextBox2.Size = new System.Drawing.Size(234, 50);
-            this.materialTextBox2.TabIndex = 0;
-            this.materialTextBox2.Text = "";
-            this.materialTextBox2.TrailingIcon = null;
+            this.txt_mat_khau.AnimateReadOnly = false;
+            this.txt_mat_khau.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_mat_khau.Depth = 0;
+            this.txt_mat_khau.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_mat_khau.LeadingIcon = null;
+            this.txt_mat_khau.Location = new System.Drawing.Point(111, 98);
+            this.txt_mat_khau.MaxLength = 50;
+            this.txt_mat_khau.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_mat_khau.Multiline = false;
+            this.txt_mat_khau.Name = "txt_mat_khau";
+            this.txt_mat_khau.Password = true;
+            this.txt_mat_khau.Size = new System.Drawing.Size(234, 50);
+            this.txt_mat_khau.TabIndex = 0;
+            this.txt_mat_khau.Text = "";
+            this.txt_mat_khau.TrailingIcon = null;
             // 
-            // materialTextBox1
+            // txt_ten_dang_nhap
             // 
-            this.materialTextBox1.AnimateReadOnly = false;
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.Location = new System.Drawing.Point(111, 17);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(234, 50);
-            this.materialTextBox1.TabIndex = 0;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.TrailingIcon = null;
+            this.txt_ten_dang_nhap.AnimateReadOnly = false;
+            this.txt_ten_dang_nhap.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_ten_dang_nhap.Depth = 0;
+            this.txt_ten_dang_nhap.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_ten_dang_nhap.LeadingIcon = null;
+            this.txt_ten_dang_nhap.Location = new System.Drawing.Point(111, 17);
+            this.txt_ten_dang_nhap.MaxLength = 50;
+            this.txt_ten_dang_nhap.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_ten_dang_nhap.Multiline = false;
+            this.txt_ten_dang_nhap.Name = "txt_ten_dang_nhap";
+            this.txt_ten_dang_nhap.Size = new System.Drawing.Size(234, 50);
+            this.txt_ten_dang_nhap.TabIndex = 0;
+            this.txt_ten_dang_nhap.Text = "";
+            this.txt_ten_dang_nhap.TrailingIcon = null;
             // 
-            // Form2
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 542);
+            this.ClientSize = new System.Drawing.Size(572, 589);
             this.Controls.Add(this.materialCard1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form2";
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.materialCard1.ResumeLayout(false);
@@ -169,9 +170,9 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialCard materialCard1;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialButton btn_dang_nhap;
+        private MaterialSkin.Controls.MaterialTextBox txt_mat_khau;
+        private MaterialSkin.Controls.MaterialTextBox txt_ten_dang_nhap;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }

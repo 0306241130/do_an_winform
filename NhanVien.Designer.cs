@@ -35,13 +35,13 @@
             this.lv_san_pham = new System.Windows.Forms.ListView();
             this.image_list_sp = new System.Windows.Forms.ImageList(this.components);
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.lbl_ten_nhan_vien = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_them = new System.Windows.Forms.Button();
+            this.btn_giam = new System.Windows.Forms.Button();
+            this.txt_thanh_toan_so_luong = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.materialButton11 = new MaterialSkin.Controls.MaterialButton();
             this.lv_cho_thanh_toan = new MaterialSkin.Controls.MaterialListView();
@@ -50,7 +50,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_tong_tien = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_hop_mau = new MaterialSkin.Controls.MaterialButton();
@@ -102,7 +102,7 @@
             this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Controls.Add(this.lv_san_pham);
             this.tabPage1.Controls.Add(this.materialLabel5);
-            this.tabPage1.Controls.Add(this.materialLabel4);
+            this.tabPage1.Controls.Add(this.lbl_ten_nhan_vien);
             this.tabPage1.Controls.Add(this.materialLabel3);
             this.tabPage1.Controls.Add(this.materialCard1);
             this.tabPage1.Controls.Add(this.tableLayoutPanel1);
@@ -146,17 +146,17 @@
             this.materialLabel5.TabIndex = 8;
             this.materialLabel5.Text = "Nhân Viên:";
             // 
-            // materialLabel4
+            // lbl_ten_nhan_vien
             // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel4.Location = new System.Drawing.Point(129, 719);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(78, 19);
-            this.materialLabel4.TabIndex = 8;
-            this.materialLabel4.Text = "Nhân Viên:";
+            this.lbl_ten_nhan_vien.AutoSize = true;
+            this.lbl_ten_nhan_vien.Depth = 0;
+            this.lbl_ten_nhan_vien.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_ten_nhan_vien.Location = new System.Drawing.Point(129, 719);
+            this.lbl_ten_nhan_vien.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_ten_nhan_vien.Name = "lbl_ten_nhan_vien";
+            this.lbl_ten_nhan_vien.Size = new System.Drawing.Size(78, 19);
+            this.lbl_ten_nhan_vien.TabIndex = 8;
+            this.lbl_ten_nhan_vien.Text = "Nhân Viên:";
             // 
             // materialLabel3
             // 
@@ -176,7 +176,7 @@
             this.materialCard1.Controls.Add(this.tableLayoutPanel3);
             this.materialCard1.Controls.Add(this.tableLayoutPanel2);
             this.materialCard1.Controls.Add(this.lv_cho_thanh_toan);
-            this.materialCard1.Controls.Add(this.label2);
+            this.materialCard1.Controls.Add(this.lbl_tong_tien);
             this.materialCard1.Controls.Add(this.label1);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -194,9 +194,9 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.0237F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.71564F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.26066F));
-            this.tableLayoutPanel3.Controls.Add(this.button1, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button2, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btn_them, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btn_giam, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.txt_thanh_toan_so_luong, 1, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 592);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -205,43 +205,44 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(605, 44);
             this.tableLayoutPanel3.TabIndex = 8;
             // 
-            // button1
+            // btn_them
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(266, 40);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_them.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_them.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_them.Location = new System.Drawing.Point(3, 2);
+            this.btn_them.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_them.Name = "btn_them";
+            this.btn_them.Size = new System.Drawing.Size(266, 40);
+            this.btn_them.TabIndex = 0;
+            this.btn_them.Text = "+";
+            this.btn_them.UseVisualStyleBackColor = true;
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
-            // button2
+            // btn_giam
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(333, 2);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(269, 40);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "-";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_giam.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_giam.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_giam.Location = new System.Drawing.Point(333, 2);
+            this.btn_giam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_giam.Name = "btn_giam";
+            this.btn_giam.Size = new System.Drawing.Size(269, 40);
+            this.btn_giam.TabIndex = 1;
+            this.btn_giam.Text = "-";
+            this.btn_giam.UseVisualStyleBackColor = true;
+            this.btn_giam.Click += new System.EventHandler(this.btn_giam_Click);
             // 
-            // textBox1
+            // txt_thanh_toan_so_luong
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(275, 2);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(52, 40);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "1";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_thanh_toan_so_luong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_thanh_toan_so_luong.Enabled = false;
+            this.txt_thanh_toan_so_luong.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_thanh_toan_so_luong.Location = new System.Drawing.Point(275, 2);
+            this.txt_thanh_toan_so_luong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_thanh_toan_so_luong.Multiline = true;
+            this.txt_thanh_toan_so_luong.Name = "txt_thanh_toan_so_luong";
+            this.txt_thanh_toan_so_luong.Size = new System.Drawing.Size(52, 40);
+            this.txt_thanh_toan_so_luong.TabIndex = 2;
+            this.txt_thanh_toan_so_luong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel2
             // 
@@ -303,6 +304,7 @@
             this.lv_cho_thanh_toan.TabIndex = 4;
             this.lv_cho_thanh_toan.UseCompatibleStateImageBehavior = false;
             this.lv_cho_thanh_toan.View = System.Windows.Forms.View.Details;
+            this.lv_cho_thanh_toan.SelectedIndexChanged += new System.EventHandler(this.lv_cho_thanh_toan_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -328,15 +330,15 @@
             // 
             this.columnHeader5.Text = "Mã";
             // 
-            // label2
+            // lbl_tong_tien
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(465, 550);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 29);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Tổng Tiền:";
+            this.lbl_tong_tien.AutoSize = true;
+            this.lbl_tong_tien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tong_tien.Location = new System.Drawing.Point(434, 550);
+            this.lbl_tong_tien.Name = "lbl_tong_tien";
+            this.lbl_tong_tien.Size = new System.Drawing.Size(141, 29);
+            this.lbl_tong_tien.TabIndex = 3;
+            this.lbl_tong_tien.Text = "Tổng Tiền:";
             // 
             // label1
             // 
@@ -549,7 +551,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1619, 759);
+            this.tabPage2.Size = new System.Drawing.Size(1533, 759);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Doanh Thu";
             // 
@@ -670,9 +672,9 @@
         private System.Windows.Forms.TabPage tabPage2;
         private MaterialSkin.Controls.MaterialCard materialCard1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btn_them;
+        private System.Windows.Forms.Button btn_giam;
+        private System.Windows.Forms.TextBox txt_thanh_toan_so_luong;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private MaterialSkin.Controls.MaterialButton materialButton11;
         private MaterialSkin.Controls.MaterialListView lv_cho_thanh_toan;
@@ -680,7 +682,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_tong_tien;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -697,7 +699,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialLabel lbl_ten_nhan_vien;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private System.Windows.Forms.ImageList image_list_sp;
         private System.Windows.Forms.ListView lv_san_pham;
