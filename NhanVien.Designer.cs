@@ -43,7 +43,7 @@
             this.btn_giam = new System.Windows.Forms.Button();
             this.txt_thanh_toan_so_luong = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.materialButton11 = new MaterialSkin.Controls.MaterialButton();
+            this.btn_than_toan = new MaterialSkin.Controls.MaterialButton();
             this.lv_cho_thanh_toan = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -68,6 +68,7 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lbl_ma_nv = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialCard1.SuspendLayout();
@@ -101,6 +102,7 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Controls.Add(this.lv_san_pham);
+            this.tabPage1.Controls.Add(this.lbl_ma_nv);
             this.tabPage1.Controls.Add(this.materialLabel5);
             this.tabPage1.Controls.Add(this.lbl_ten_nhan_vien);
             this.tabPage1.Controls.Add(this.materialLabel3);
@@ -142,9 +144,9 @@
             this.materialLabel5.Location = new System.Drawing.Point(1391, 719);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(78, 19);
+            this.materialLabel5.Size = new System.Drawing.Size(28, 19);
             this.materialLabel5.TabIndex = 8;
-            this.materialLabel5.Text = "Nhân Viên:";
+            this.materialLabel5.Text = "Mã:";
             // 
             // lbl_ten_nhan_vien
             // 
@@ -249,7 +251,7 @@
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.materialButton11, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btn_than_toan, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(1, 626);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -259,25 +261,26 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(605, 50);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
-            // materialButton11
+            // btn_than_toan
             // 
-            this.materialButton11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton11.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton11.Depth = 0;
-            this.materialButton11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.materialButton11.HighEmphasis = true;
-            this.materialButton11.Icon = null;
-            this.materialButton11.Location = new System.Drawing.Point(4, 8);
-            this.materialButton11.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton11.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton11.Name = "materialButton11";
-            this.materialButton11.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton11.Size = new System.Drawing.Size(597, 36);
-            this.materialButton11.TabIndex = 0;
-            this.materialButton11.Text = "Thanh Toán";
-            this.materialButton11.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton11.UseAccentColor = false;
-            this.materialButton11.UseVisualStyleBackColor = true;
+            this.btn_than_toan.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_than_toan.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_than_toan.Depth = 0;
+            this.btn_than_toan.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_than_toan.HighEmphasis = true;
+            this.btn_than_toan.Icon = null;
+            this.btn_than_toan.Location = new System.Drawing.Point(4, 8);
+            this.btn_than_toan.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_than_toan.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_than_toan.Name = "btn_than_toan";
+            this.btn_than_toan.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_than_toan.Size = new System.Drawing.Size(597, 36);
+            this.btn_than_toan.TabIndex = 0;
+            this.btn_than_toan.Text = "Thanh Toán";
+            this.btn_than_toan.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_than_toan.UseAccentColor = false;
+            this.btn_than_toan.UseVisualStyleBackColor = true;
+            this.btn_than_toan.Click += new System.EventHandler(this.btn_than_toan_Click);
             // 
             // lv_cho_thanh_toan
             // 
@@ -334,11 +337,11 @@
             // 
             this.lbl_tong_tien.AutoSize = true;
             this.lbl_tong_tien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tong_tien.Location = new System.Drawing.Point(434, 550);
+            this.lbl_tong_tien.Location = new System.Drawing.Point(469, 548);
             this.lbl_tong_tien.Name = "lbl_tong_tien";
-            this.lbl_tong_tien.Size = new System.Drawing.Size(141, 29);
+            this.lbl_tong_tien.Size = new System.Drawing.Size(49, 29);
             this.lbl_tong_tien.TabIndex = 3;
-            this.lbl_tong_tien.Text = "Tổng Tiền:";
+            this.lbl_tong_tien.Text = "0đ:";
             // 
             // label1
             // 
@@ -631,6 +634,18 @@
             this.dataGridView1.Size = new System.Drawing.Size(537, 592);
             this.dataGridView1.TabIndex = 0;
             // 
+            // lbl_ma_nv
+            // 
+            this.lbl_ma_nv.AutoSize = true;
+            this.lbl_ma_nv.Depth = 0;
+            this.lbl_ma_nv.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_ma_nv.Location = new System.Drawing.Point(1432, 719);
+            this.lbl_ma_nv.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_ma_nv.Name = "lbl_ma_nv";
+            this.lbl_ma_nv.Size = new System.Drawing.Size(28, 19);
+            this.lbl_ma_nv.TabIndex = 8;
+            this.lbl_ma_nv.Text = "Mã:";
+            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -676,7 +691,7 @@
         private System.Windows.Forms.Button btn_giam;
         private System.Windows.Forms.TextBox txt_thanh_toan_so_luong;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private MaterialSkin.Controls.MaterialButton materialButton11;
+        private MaterialSkin.Controls.MaterialButton btn_than_toan;
         private MaterialSkin.Controls.MaterialListView lv_cho_thanh_toan;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -705,5 +720,6 @@
         private System.Windows.Forms.ListView lv_san_pham;
         private MaterialSkin.Controls.MaterialButton btn_hop_mau;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private MaterialSkin.Controls.MaterialLabel lbl_ma_nv;
     }
 }

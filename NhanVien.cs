@@ -30,6 +30,7 @@ namespace WindowsFormsApp1
             NhanVienBUS nhanVienBUS = new NhanVienBUS();
             NhanVienDTO nv = nhanVienBUS.thong_tin_nhan_vien(taiKhoan,matKhau);
             lbl_ten_nhan_vien.Text = nv.TenNV;
+            lbl_ma_nv.Text=nv.MaNV.ToString();
 
         }
         string path=Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath)), "Images");
@@ -188,9 +189,7 @@ namespace WindowsFormsApp1
         {
             foreach (ListViewItem item in lv_cho_thanh_toan.Items)
             {
-                string gia_str = item.SubItems[2].Text;
-                gia_str = gia_str.Replace("đ", "").Trim();
-                gia_str = gia_str.Replace(",", "").Trim();
+                string gia_str = format_tong_tien(item.SubItems[2].Text);
                 item.SubItems[3].Text = (int.Parse(item.SubItems[1].Text) * int.Parse(gia_str)).ToString("N0") + "đ";
             }
         }
@@ -217,15 +216,58 @@ namespace WindowsFormsApp1
 
         public void tinh_tong_tien()
         {
-            int tong_tien = 0;
+            float tong_tien = 0;
             foreach (ListViewItem item in lv_cho_thanh_toan.Items)
             {
-                string gia_str = item.SubItems[3].Text;
-                gia_str = gia_str.Replace("đ", "").Trim();
-                gia_str = gia_str.Replace(",", "").Trim();
-                tong_tien += int.Parse(gia_str);
+                string gia_str =format_tong_tien(item.SubItems[3].Text);
+                tong_tien += float.Parse(gia_str);
             }
-            lbl_tong_tien.Text = "Tổng tiền: " + tong_tien.ToString("N0") + "đ";
+            lbl_tong_tien.Text =tong_tien.ToString("N0") + "đ";
+        }
+
+        public string format_tong_tien(string tien)
+        {   
+            tien = tien.Replace("đ", "").Trim();
+            tien = tien.Replace(",", "").Trim();
+            return tien;
+        }
+        private void btn_than_toan_Click(object sender, EventArgs e)
+        {
+            HoaDonDTO hoaDonDTO = new HoaDonDTO();
+            CT_HoaDonDTO ct_HoaDonDTO = new CT_HoaDonDTO();
+
+            hoaDonDTO.MaNV = Int32.Parse(lbl_ma_nv.Text);
+            hoaDonDTO.MaLoaiThanhToan = 2;//chưa có loại thanh toán nên tạm thời để 2
+            hoaDonDTO.TrangThai = 2;//chưa có trạng thái nên tạm thời để 2
+
+            hoaDonDTO.NgayLap = DateTime.Now;
+           
+            string tong_tien_str = format_tong_tien(lbl_tong_tien.Text);
+            hoaDonDTO.TongTien = float.Parse(tong_tien_str);
+         
+            HoaDonBUS hoaDonBUS = new HoaDonBUS();
+            int t = hoaDonBUS.themHoaDon(hoaDonDTO);
+            MessageBox.Show(t.ToString());
+
+            List<CT_HoaDonDTO> ct_HoaDonDTOs = new List<CT_HoaDonDTO>();
+            foreach (ListViewItem item in lv_cho_thanh_toan.Items)
+            {
+                CT_HoaDonDTO ct = new CT_HoaDonDTO();
+                ct.MaSP = Int32.Parse(item.SubItems[4].Text);
+                ct.SoLuong = Int32.Parse(item.SubItems[1].Text);
+                string gia_str = format_tong_tien(item.SubItems[2].Text);
+             
+                ct.DonGia = float.Parse(gia_str);
+                string thanh_tien_str = format_tong_tien(item.SubItems[3].Text);
+             
+                ct.ThanhTien = float.Parse(thanh_tien_str);
+                ct_HoaDonDTOs.Add(ct);
+            }
+
+            hoaDonBUS.themCT_HoaDon(ct_HoaDonDTOs);
+             MessageBox.Show("Thanh toán thành công");
+             lv_cho_thanh_toan.Items.Clear();
+             lbl_tong_tien.Text = "0đ";
         }
     }
 }
