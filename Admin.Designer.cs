@@ -211,19 +211,19 @@
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1740, 1035);
+            this.materialTabControl1.Size = new System.Drawing.Size(1794, 1035);
             this.materialTabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.tabPage1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.tabPage1.Controls.Add(this.groupBox6);
             this.tabPage1.Controls.Add(this.materialCard2);
             this.tabPage1.Controls.Add(this.materialCard1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(50);
-            this.tabPage1.Size = new System.Drawing.Size(1732, 1006);
+            this.tabPage1.Size = new System.Drawing.Size(1786, 1006);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Sản phẩm";
             // 
@@ -717,14 +717,14 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage2.Controls.Add(this.materialCard5);
             this.tabPage2.Controls.Add(this.materialCard3);
             this.tabPage2.ImageKey = "(none)";
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1714, 1006);
+            this.tabPage2.Size = new System.Drawing.Size(1786, 1006);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Loại Sản Phẩm";
             // 
@@ -920,7 +920,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage3.Controls.Add(this.groupBox4);
             this.tabPage3.Controls.Add(this.groupBox3);
             this.tabPage3.Controls.Add(this.groupBox2);
@@ -928,7 +928,7 @@
             this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1714, 1006);
+            this.tabPage3.Size = new System.Drawing.Size(1786, 1006);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Hóa đơn";
             // 
@@ -1514,13 +1514,13 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage4.Controls.Add(this.groupBox5);
             this.tabPage4.Controls.Add(this.materialCard6);
             this.tabPage4.Controls.Add(this.materialCard4);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1714, 1006);
+            this.tabPage4.Size = new System.Drawing.Size(1786, 1006);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Nhân Viên";
             // 
@@ -2063,7 +2063,7 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.BackColor = System.Drawing.Color.RoyalBlue;
+            this.tabPage5.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage5.Controls.Add(this.listView1);
             this.tabPage5.Controls.Add(this.groupBox7);
             this.tabPage5.Controls.Add(this.panel2);
@@ -2072,7 +2072,7 @@
             this.tabPage5.Controls.Add(this.materialCard7);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1714, 1006);
+            this.tabPage5.Size = new System.Drawing.Size(1786, 1006);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Doanh Thu";
             // 
@@ -2315,7 +2315,7 @@
             // Admin
             // 
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1743, 1102);
+            this.ClientSize = new System.Drawing.Size(1797, 1102);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerTabControl = this.materialTabControl1;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

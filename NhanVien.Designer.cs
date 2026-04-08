@@ -34,10 +34,18 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lv_san_pham = new System.Windows.Forms.ListView();
             this.image_list_sp = new System.Windows.Forms.ImageList(this.components);
+            this.lbl_ma_nv = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.lbl_ten_nhan_vien = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_tong_tien = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_xoa = new MaterialSkin.Controls.MaterialButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_them = new System.Windows.Forms.Button();
             this.btn_giam = new System.Windows.Forms.Button();
@@ -50,8 +58,6 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lbl_tong_tien = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_hop_mau = new MaterialSkin.Controls.MaterialButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -68,10 +74,11 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lbl_ma_nv = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialCard1.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -127,7 +134,6 @@
             this.lv_san_pham.Size = new System.Drawing.Size(613, 681);
             this.lv_san_pham.TabIndex = 9;
             this.lv_san_pham.UseCompatibleStateImageBehavior = false;
-            this.lv_san_pham.SelectedIndexChanged += new System.EventHandler(this.lv_san_pham_SelectedIndexChanged);
             this.lv_san_pham.Click += new System.EventHandler(this.lv_san_pham_Click);
             // 
             // image_list_sp
@@ -135,6 +141,18 @@
             this.image_list_sp.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("image_list_sp.ImageStream")));
             this.image_list_sp.TransparentColor = System.Drawing.Color.Transparent;
             this.image_list_sp.Images.SetKeyName(0, "Zoo-Logos-11.png");
+            // 
+            // lbl_ma_nv
+            // 
+            this.lbl_ma_nv.AutoSize = true;
+            this.lbl_ma_nv.Depth = 0;
+            this.lbl_ma_nv.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lbl_ma_nv.Location = new System.Drawing.Point(1432, 719);
+            this.lbl_ma_nv.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lbl_ma_nv.Name = "lbl_ma_nv";
+            this.lbl_ma_nv.Size = new System.Drawing.Size(28, 19);
+            this.lbl_ma_nv.TabIndex = 8;
+            this.lbl_ma_nv.Text = "Mã:";
             // 
             // materialLabel5
             // 
@@ -175,11 +193,11 @@
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.tableLayoutPanel5);
+            this.materialCard1.Controls.Add(this.tableLayoutPanel4);
             this.materialCard1.Controls.Add(this.tableLayoutPanel3);
             this.materialCard1.Controls.Add(this.tableLayoutPanel2);
             this.materialCard1.Controls.Add(this.lv_cho_thanh_toan);
-            this.materialCard1.Controls.Add(this.lbl_tong_tien);
-            this.materialCard1.Controls.Add(this.label1);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard1.Location = new System.Drawing.Point(885, 25);
@@ -189,6 +207,101 @@
             this.materialCard1.Padding = new System.Windows.Forms.Padding(13, 14, 13, 14);
             this.materialCard1.Size = new System.Drawing.Size(610, 681);
             this.materialCard1.TabIndex = 7;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.26109F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.73891F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 194F));
+            this.tableLayoutPanel5.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.lbl_tong_tien, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.comboBox1, 1, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 456);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.25F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.75F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(609, 80);
+            this.tableLayoutPanel5.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(294, 45);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Loại Thanh Toán:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(294, 35);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Tổng Tiền:";
+            // 
+            // lbl_tong_tien
+            // 
+            this.lbl_tong_tien.AutoSize = true;
+            this.lbl_tong_tien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_tong_tien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tong_tien.Location = new System.Drawing.Point(303, 45);
+            this.lbl_tong_tien.Name = "lbl_tong_tien";
+            this.lbl_tong_tien.Size = new System.Drawing.Size(303, 35);
+            this.lbl_tong_tien.TabIndex = 7;
+            this.lbl_tong_tien.Text = "0đ";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(303, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(303, 24);
+            this.comboBox1.TabIndex = 8;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.btn_xoa, 0, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 542);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(610, 47);
+            this.tableLayoutPanel4.TabIndex = 10;
+            // 
+            // btn_xoa
+            // 
+            this.btn_xoa.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_xoa.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_xoa.Depth = 0;
+            this.btn_xoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_xoa.HighEmphasis = true;
+            this.btn_xoa.Icon = null;
+            this.btn_xoa.Location = new System.Drawing.Point(4, 6);
+            this.btn_xoa.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_xoa.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_xoa.Name = "btn_xoa";
+            this.btn_xoa.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_xoa.Size = new System.Drawing.Size(602, 35);
+            this.btn_xoa.TabIndex = 9;
+            this.btn_xoa.Text = "Xóa";
+            this.btn_xoa.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_xoa.UseAccentColor = false;
+            this.btn_xoa.UseVisualStyleBackColor = true;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -303,7 +416,7 @@
             this.lv_cho_thanh_toan.MouseState = MaterialSkin.MouseState.OUT;
             this.lv_cho_thanh_toan.Name = "lv_cho_thanh_toan";
             this.lv_cho_thanh_toan.OwnerDraw = true;
-            this.lv_cho_thanh_toan.Size = new System.Drawing.Size(609, 546);
+            this.lv_cho_thanh_toan.Size = new System.Drawing.Size(609, 451);
             this.lv_cho_thanh_toan.TabIndex = 4;
             this.lv_cho_thanh_toan.UseCompatibleStateImageBehavior = false;
             this.lv_cho_thanh_toan.View = System.Windows.Forms.View.Details;
@@ -332,26 +445,6 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "Mã";
-            // 
-            // lbl_tong_tien
-            // 
-            this.lbl_tong_tien.AutoSize = true;
-            this.lbl_tong_tien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tong_tien.Location = new System.Drawing.Point(469, 548);
-            this.lbl_tong_tien.Name = "lbl_tong_tien";
-            this.lbl_tong_tien.Size = new System.Drawing.Size(49, 29);
-            this.lbl_tong_tien.TabIndex = 3;
-            this.lbl_tong_tien.Text = "0đ:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 550);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 29);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Tổng Tiền:";
             // 
             // tableLayoutPanel1
             // 
@@ -634,18 +727,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(537, 592);
             this.dataGridView1.TabIndex = 0;
             // 
-            // lbl_ma_nv
-            // 
-            this.lbl_ma_nv.AutoSize = true;
-            this.lbl_ma_nv.Depth = 0;
-            this.lbl_ma_nv.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lbl_ma_nv.Location = new System.Drawing.Point(1432, 719);
-            this.lbl_ma_nv.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lbl_ma_nv.Name = "lbl_ma_nv";
-            this.lbl_ma_nv.Size = new System.Drawing.Size(28, 19);
-            this.lbl_ma_nv.TabIndex = 8;
-            this.lbl_ma_nv.Text = "Mã:";
-            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -662,7 +743,10 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.materialCard1.ResumeLayout(false);
-            this.materialCard1.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -697,7 +781,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.Label lbl_tong_tien;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -721,5 +804,11 @@
         private MaterialSkin.Controls.MaterialButton btn_hop_mau;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private MaterialSkin.Controls.MaterialLabel lbl_ma_nv;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private MaterialSkin.Controls.MaterialButton btn_xoa;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_tong_tien;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

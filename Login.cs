@@ -30,21 +30,36 @@ namespace WindowsFormsApp1
             NhanVienDTO nhanVien = new NhanVienDTO();
             nhanVien.TenDangNhap = txt_ten_dang_nhap.Text;
             nhanVien.MatKhau = txt_mat_khau.Text;
-            
+            int kq= 0;
             NhanVienBUS nhanVienBUS = new NhanVienBUS();
-            int kq = nhanVienBUS.dangNhap(nhanVien);
+             kq = nhanVienBUS.dangNhap(nhanVien);
 
             if (kq == 1)
             {
                 MessageBox.Show("Đăng nhập thành công");
                 this.Hide();
                 NhanVien nv = new NhanVien(nhanVien.TenDangNhap,nhanVien.MatKhau);
-          
                 nv.Show();
             }
             else
             {
-                MessageBox.Show("Đăng nhập thất bại");
+                AdminDTO admin = new AdminDTO();
+                admin.TaiKhoan = txt_ten_dang_nhap.Text;
+                admin.MatKhau = txt_mat_khau.Text;
+
+                AdminBUS adminBUS = new AdminBUS();
+                 kq = adminBUS.dangNhap(admin);
+                if (kq == 1) {
+
+                    this.Hide();
+                    Admin ad = new Admin();
+                    ad.Show();
+                }
+            }
+
+            if (kq != 1 )
+            {
+                MessageBox.Show("Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

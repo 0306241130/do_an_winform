@@ -34,11 +34,11 @@ namespace WindowsFormsApp1
 
         }
         string path=Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath)), "Images");
-
+        List<SanPhamDTO>SanPhamList = null;
         public void loadSanPham(int loai=1) {
             SanPhamBUS sanPhamBUS = new SanPhamBUS();
 
-            var SanPhamList = sanPhamBUS.load_sanPham_NhanVien(loai);
+             SanPhamList = sanPhamBUS.load_sanPham_NhanVien(loai);
 
             foreach (var sanPham in SanPhamList)
             {
@@ -119,9 +119,19 @@ namespace WindowsFormsApp1
             loadSanPham(10);
         }
 
-        private void lv_san_pham_SelectedIndexChanged(object sender, EventArgs e)
+        public bool kiemTraSoLuongSanPham(int soLuongTrenManHinh,int maSP)
         {
-            
+            foreach(SanPhamDTO sp in SanPhamList)
+            {
+                if(sp.MaSP == maSP)
+                {
+                    if (soLuongTrenManHinh <= sp.SoLuong)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
         private void lv_san_pham_Click(object sender, EventArgs e)
@@ -132,19 +142,45 @@ namespace WindowsFormsApp1
                 foreach (ListViewItem item in lv_san_pham.SelectedItems)
                 {
                     itm = item;
+                    
                 }
+                if (!kiemTraSoLuongSanPham( 1, int.Parse(itm.SubItems[2].Text)))
+                {
+                    MessageBox.Show("Số lượng sản phẩm không đủ để thêm vào giỏ hàng", "Thông báo");
+                    return;
+                }
+
 
                 foreach (ListViewItem item in lv_cho_thanh_toan.Items)
                 {
-
-                    if (item.Text == itm.Text.Split('\n')[0])
+                    if (itm.SubItems[2].Text == item.SubItems[4].Text)
                     {
+                        if (!kiemTraSoLuongSanPham(Int32.Parse(item.SubItems[1].Text) + 1, int.Parse(itm.SubItems[2].Text)))
+                        {
+                            MessageBox.Show("Số lượng sản phẩm không đủ để thêm vào giỏ hàng", "Thông báo");
+                            return;
+                        }
+                    }
+                   
+                    if (item.SubItems[4].Text == itm.SubItems[2].Text)
+                    {
+                      
                         item.SubItems[1].Text = (int.Parse(item.SubItems[1].Text) + 1).ToString();
                         item.SubItems[3].Text = (int.Parse(item.SubItems[1].Text) * int.Parse(itm.SubItems[1].Text)).ToString("N0") + "đ";
                         tinh_tong_tien();
+                        if (lv_cho_thanh_toan.SelectedItems.Count > 0)
+                        {
+                            foreach (ListViewItem item1 in lv_cho_thanh_toan.SelectedItems)
+                            {
+                                txt_thanh_toan_so_luong.Text = item1.SubItems[1].Text;
+                            }
+                        }
                         return;
                     }
                 }
+
+             
+
 
 
                 foreach (ListViewItem item in lv_san_pham.SelectedItems)
@@ -166,24 +202,39 @@ namespace WindowsFormsApp1
             foreach(ListViewItem item in lv_cho_thanh_toan.SelectedItems)
             {
                txt_thanh_toan_so_luong.Text =item.SubItems[1].Text ;
+              
+            }
+            if(lv_cho_thanh_toan.SelectedItems.Count == 0)
+            {
+                txt_thanh_toan_so_luong.Text = "";
             }
         }
 
-       
+
         private void btn_them_Click(object sender, EventArgs e)
         {
             if (lv_cho_thanh_toan.SelectedItems.Count > 0)
             {
-                int so_luong = Int32.Parse(txt_thanh_toan_so_luong.Text) + 1;
-                txt_thanh_toan_so_luong.Text = so_luong.ToString();
                 foreach (ListViewItem item in lv_cho_thanh_toan.SelectedItems)
                 {
-                    item.SubItems[1].Text = txt_thanh_toan_so_luong.Text;
+                    if (!kiemTraSoLuongSanPham(Int32.Parse(item.SubItems[1].Text) + 1, int.Parse(item.SubItems[4].Text)))
+                    {
+                        MessageBox.Show("Số lượng sản phẩm không đủ để thêm vào giỏ hàng", "Thông báo");
+                        txt_thanh_toan_so_luong.Text = item.SubItems[1].Text;
+                        return;
+                    }
+
+                    item.SubItems[1].Text = (Int32.Parse(txt_thanh_toan_so_luong.Text) + 1).ToString();
                 }
+                int so_luong = Int32.Parse(txt_thanh_toan_so_luong.Text) + 1;
+                txt_thanh_toan_so_luong.Text = so_luong.ToString();
+
                 tinh_lai_thanh_tien();
                 tinh_tong_tien();
             }
         }
+
+       
 
         public void tinh_lai_thanh_tien()
         {
@@ -247,7 +298,7 @@ namespace WindowsFormsApp1
          
             HoaDonBUS hoaDonBUS = new HoaDonBUS();
             int t = hoaDonBUS.themHoaDon(hoaDonDTO);
-            MessageBox.Show(t.ToString());
+            MessageBox.Show($"Thêm {t} hóa đơn thành công ");
 
             List<CT_HoaDonDTO> ct_HoaDonDTOs = new List<CT_HoaDonDTO>();
             foreach (ListViewItem item in lv_cho_thanh_toan.Items)
@@ -268,6 +319,17 @@ namespace WindowsFormsApp1
              MessageBox.Show("Thanh toán thành công");
              lv_cho_thanh_toan.Items.Clear();
              lbl_tong_tien.Text = "0đ";
+        }
+
+
+        private void btn_xoa_Click(object sender, EventArgs e)
+        {
+            foreach(ListViewItem item in lv_cho_thanh_toan.SelectedItems)
+            {
+                lv_cho_thanh_toan.Items.Remove(item);
+                txt_thanh_toan_so_luong.Text = "";
+                tinh_tong_tien();
+            }
         }
     }
 }
