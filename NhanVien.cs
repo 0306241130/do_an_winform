@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
     {
         public NhanVien(string taiKhoan,string matKhau)
         {
-
+            
 
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -31,7 +31,18 @@ namespace WindowsFormsApp1
             NhanVienDTO nv = nhanVienBUS.thong_tin_nhan_vien(taiKhoan,matKhau);
             lbl_ten_nhan_vien.Text = nv.TenNV;
             lbl_ma_nv.Text=nv.MaNV.ToString();
+            loadLoaiThanhToan();
+            load();
 
+        }
+        public void load()
+        {
+            tableLayoutPanel8.BackColor = Color.DarkSeaGreen;
+            tableLayoutPanel7.BackColor = Color.Chartreuse;
+            tableLayoutPanel9.BackColor = Color.SpringGreen;
+            tableLayoutPanel16.BackColor=Color.AliceBlue;
+             tableLayoutPanel17.BackColor = Color.AliceBlue;
+             tableLayoutPanel18.BackColor = Color.AliceBlue;
         }
         string path=Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath)), "Images");
         List<SanPhamDTO>SanPhamList = null;
@@ -64,9 +75,14 @@ namespace WindowsFormsApp1
                 }
 
             }
-           
+        }
 
-
+        public void loadLoaiThanhToan()
+        {
+            LoaiThanhToanBUS loaiThanhToanBUS = new LoaiThanhToanBUS();
+            cbx_loai_thanh_toan.DataSource = loaiThanhToanBUS.getLoaiThanhToan();
+            cbx_loai_thanh_toan.DisplayMember = "TenPhuongThucThanhToan";
+            cbx_loai_thanh_toan.ValueMember = "MaLoaiThanhToan";
         }
 
 
@@ -282,14 +298,14 @@ namespace WindowsFormsApp1
             tien = tien.Replace(",", "").Trim();
             return tien;
         }
-        private void btn_than_toan_Click(object sender, EventArgs e)
+        private void btn_thanh_toan_Click(object sender, EventArgs e)
         {
             HoaDonDTO hoaDonDTO = new HoaDonDTO();
             CT_HoaDonDTO ct_HoaDonDTO = new CT_HoaDonDTO();
 
             hoaDonDTO.MaNV = Int32.Parse(lbl_ma_nv.Text);
-            hoaDonDTO.MaLoaiThanhToan = 2;//chưa có loại thanh toán nên tạm thời để 2
-            hoaDonDTO.TrangThai = 2;//chưa có trạng thái nên tạm thời để 2
+            hoaDonDTO.MaLoaiThanhToan = (int)cbx_loai_thanh_toan.SelectedValue;
+            hoaDonDTO.TrangThai = 2;
 
             hoaDonDTO.NgayLap = DateTime.Now;
            
@@ -298,7 +314,7 @@ namespace WindowsFormsApp1
          
             HoaDonBUS hoaDonBUS = new HoaDonBUS();
             int t = hoaDonBUS.themHoaDon(hoaDonDTO);
-            MessageBox.Show($"Thêm {t} hóa đơn thành công ");
+           // MessageBox.Show($"Thêm {t} hóa đơn thành công ");
 
             List<CT_HoaDonDTO> ct_HoaDonDTOs = new List<CT_HoaDonDTO>();
             foreach (ListViewItem item in lv_cho_thanh_toan.Items)
@@ -316,9 +332,10 @@ namespace WindowsFormsApp1
             }
 
             hoaDonBUS.themCT_HoaDon(ct_HoaDonDTOs);
-             MessageBox.Show("Thanh toán thành công");
+            MessageBox.Show("Thanh toán thành công");
              lv_cho_thanh_toan.Items.Clear();
              lbl_tong_tien.Text = "0đ";
+            txt_thanh_toan_so_luong.Text = "";
         }
 
 
@@ -331,5 +348,7 @@ namespace WindowsFormsApp1
                 tinh_tong_tien();
             }
         }
+
+       
     }
 }

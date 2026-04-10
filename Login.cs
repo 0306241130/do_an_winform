@@ -22,8 +22,8 @@ namespace WindowsFormsApp1
             //materialSkinManager.AddFormToManage(this);
             //materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             //materialSkinManager.ColorScheme = new ColorScheme(Primary.Green500, Primary.Green400, Primary.Green800, Accent.Green700, TextShade.BLACK);
-
             
+
         }
         public void dang_nhap()
         {
