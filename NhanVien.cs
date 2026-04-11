@@ -41,8 +41,19 @@ namespace WindowsFormsApp1
             tableLayoutPanel7.BackColor = Color.Chartreuse;
             tableLayoutPanel9.BackColor = Color.SpringGreen;
             tableLayoutPanel16.BackColor=Color.AliceBlue;
-             tableLayoutPanel17.BackColor = Color.AliceBlue;
-             tableLayoutPanel18.BackColor = Color.AliceBlue;
+            tableLayoutPanel17.BackColor = Color.AliceBlue;
+            tableLayoutPanel18.BackColor = Color.AliceBlue;
+            lbl_doanh_thu.Font = new Font(SystemFonts.DefaultFont.FontFamily,(float)22.2, FontStyle.Bold^FontStyle.Italic);
+            lbl_so_loi.Font = new Font(SystemFonts.DefaultFont.FontFamily, (float)22.2, FontStyle.Bold ^ FontStyle.Italic);
+            lbl_nhap_hang.Font = new Font(SystemFonts.DefaultFont.FontFamily, (float)22.2, FontStyle.Bold ^ FontStyle.Italic);
+            lbl_doanh_thu1.Font = new Font(SystemFonts.DefaultFont.FontFamily, (float)13.8, FontStyle.Bold);
+            lbl_so_loi_1.Font = new Font(SystemFonts.DefaultFont.FontFamily, (float)13.8, FontStyle.Bold);
+            lbl_nhap_hang1.Font = new Font(SystemFonts.DefaultFont.FontFamily, (float)13.8, FontStyle.Bold);
+            label9.Font = new Font(SystemFonts.DefaultFont.FontFamily, 12, FontStyle.Bold);
+            label11.Font = new Font(SystemFonts.DefaultFont.FontFamily,12, FontStyle.Bold);
+            label13.Font = new Font(SystemFonts.DefaultFont.FontFamily, 12, FontStyle.Bold);
+
+
         }
         string path=Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath)), "Images");
         List<SanPhamDTO>SanPhamList = null;
@@ -85,11 +96,29 @@ namespace WindowsFormsApp1
             cbx_loai_thanh_toan.ValueMember = "MaLoaiThanhToan";
         }
 
+        public void loadDoanhThu()
+        {
+            DoanhThuBUS doanhThuBUS = new DoanhThuBUS();
+            
+            float doanh_thu = doanhThuBUS.doanhThuTheoNgay(0, dt_doanh_thu.Value.Date);
+            float so_loi = doanhThuBUS.doanhThuTheoNgay(1, dt_doanh_thu.Value.Date);
+            float nhap_hang = doanhThuBUS.doanhThuTheoNgay(2, dt_doanh_thu.Value.Date);
+            float doanh_thu_hom_qua = doanhThuBUS.doanhThuTheoNgay(3, dt_doanh_thu.Value.Date);
+            float nhap_hang_hom_qua = doanhThuBUS.doanhThuTheoNgay(4, dt_doanh_thu.Value.Date);
+            float so_loi_hom_qua = doanhThuBUS.doanhThuTheoNgay(5, dt_doanh_thu.Value.Date);
+            lbl_doanh_thu1.Text = doanh_thu.ToString("N0") + "đ";
+            lbl_so_loi_1.Text = so_loi.ToString("N0") + "đ";
+            lbl_nhap_hang1.Text = nhap_hang.ToString("N0") + "đ";
+            lbl_doanh_thu_hom_qua.Text=doanh_thu_hom_qua.ToString("N0") + "đ";
+            lbl_nhap_hang_hom_qua.Text = nhap_hang_hom_qua.ToString("N0") + "đ";
+            lbl_lai_hom_qua.Text = so_loi_hom_qua.ToString("N0") + "đ";
+        }
 
         private void NhanVien_Load(object sender, EventArgs e)
         {
             
             loadSanPham();
+            loadDoanhThu();
         }
 
         private void btn_but_muc_Click(object sender, EventArgs e)
@@ -349,6 +378,16 @@ namespace WindowsFormsApp1
             }
         }
 
-       
+        private void dt_doanh_thu_ValueChanged(object sender, EventArgs e)
+        {
+            loadDoanhThu();
+        }
+
+        private void materialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (materialTabControl1.SelectedIndex == 1) {
+                loadDoanhThu();
+            }
+        }
     }
 }
