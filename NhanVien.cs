@@ -114,11 +114,42 @@ namespace WindowsFormsApp1
             lbl_lai_hom_qua.Text = so_loi_hom_qua.ToString("N0") + "đ";
         }
 
+        public void loadPhieuNhap()
+        {
+            PhieuNhapBUS phieuNhapBUS = new PhieuNhapBUS();
+            DataTable dataTable = phieuNhapBUS.getPhieuNhap();
+            dgv_phieu_nhap.DataSource = dataTable;
+            dgv_phieu_nhap.Columns["MaCT_HD"].Visible = false;
+            dgv_phieu_nhap.Columns["MaPN"].Visible = false;
+            dgv_phieu_nhap.Columns["MaSP"].Visible = false;
+
+            SanPhamBUS sanPhamBUS = new SanPhamBUS();
+            DataTable sanPhamTable = sanPhamBUS.getDanhSachSanPham();
+            var columnSanPham = new DataGridViewComboBoxColumn{
+                Name = "TenSP",
+                HeaderText = "Tên sản phẩm",
+                DataSource = sanPhamTable,
+                DisplayMember = "TenSp",
+                ValueMember = "MaSP",
+                DataPropertyName = "MaSP"
+            };
+            dgv_phieu_nhap.Columns.Insert(0, columnSanPham);
+            dgv_phieu_nhap.AllowUserToResizeColumns = true;
+            dgv_phieu_nhap.Columns["ThanhTien"].ReadOnly = true;
+
+            dgv_phieu_nhap.Columns["Gia_nhap"].HeaderText = "Giá Nhập";
+            dgv_phieu_nhap.Columns["SoLuongNhap"].HeaderText = "Số Lượng Nhập";
+            dgv_phieu_nhap.Columns["ThanhTien"].HeaderText = "Thành Tiền";
+
+           
+
+        }
         private void NhanVien_Load(object sender, EventArgs e)
         {
             
             loadSanPham();
             loadDoanhThu();
+            loadPhieuNhap();
         }
 
         private void btn_but_muc_Click(object sender, EventArgs e)
@@ -388,6 +419,26 @@ namespace WindowsFormsApp1
             if (materialTabControl1.SelectedIndex == 1) {
                 loadDoanhThu();
             }
+        }
+
+        private void dgv_phieu_nhap_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            TextBox txt = ((TextBox)e.Control);
+
+            txt.KeyPress += (s, ev) =>
+            {
+                if (char.IsControl(ev.KeyChar) || char.IsDigit(ev.KeyChar)) return;
+                if (dgv_phieu_nhap.CurrentCell.ColumnIndex == 3)
+                {
+                    if (ev.KeyChar == '.' && !txt.Text.Contains('.') && txt.Text.Length > 0) return;
+                }
+                ev.Handled = true;
+            };
+        }
+
+        private void btn_tao_phieu_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

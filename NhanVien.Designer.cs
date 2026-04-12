@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lv_san_pham = new System.Windows.Forms.ListView();
@@ -101,6 +104,9 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.dt_doanh_thu = new System.Windows.Forms.DateTimePicker();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btn_tao_phieu = new MaterialSkin.Controls.MaterialButton();
+            this.dgv_phieu_nhap = new System.Windows.Forms.DataGridView();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialCard1.SuspendLayout();
@@ -130,12 +136,15 @@
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_phieu_nhap)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
             // 
             this.materialTabControl1.Controls.Add(this.tabPage1);
             this.materialTabControl1.Controls.Add(this.tabPage2);
+            this.materialTabControl1.Controls.Add(this.tabPage3);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.Location = new System.Drawing.Point(3, 64);
@@ -144,7 +153,7 @@
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1595, 929);
+            this.materialTabControl1.Size = new System.Drawing.Size(1631, 1023);
             this.materialTabControl1.TabIndex = 0;
             this.materialTabControl1.SelectedIndexChanged += new System.EventHandler(this.materialTabControl1_SelectedIndexChanged);
             // 
@@ -162,7 +171,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1587, 900);
+            this.tabPage1.Size = new System.Drawing.Size(1623, 994);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Trang Chủ";
             // 
@@ -202,7 +211,7 @@
             this.materialLabel5.AutoSize = true;
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel5.Location = new System.Drawing.Point(1312, 719);
+            this.materialLabel5.Location = new System.Drawing.Point(1270, 719);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(105, 19);
@@ -695,7 +704,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1587, 900);
+            this.tabPage2.Size = new System.Drawing.Size(1623, 994);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Doanh Thu";
             // 
@@ -1150,11 +1159,80 @@
             this.materialCard2.Size = new System.Drawing.Size(430, 29);
             this.materialCard2.TabIndex = 0;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.btn_tao_phieu);
+            this.tabPage3.Controls.Add(this.dgv_phieu_nhap);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1623, 994);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Nhập hàng";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btn_tao_phieu
+            // 
+            this.btn_tao_phieu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_tao_phieu.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_tao_phieu.Depth = 0;
+            this.btn_tao_phieu.HighEmphasis = true;
+            this.btn_tao_phieu.Icon = null;
+            this.btn_tao_phieu.Location = new System.Drawing.Point(1068, 540);
+            this.btn_tao_phieu.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_tao_phieu.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_tao_phieu.Name = "btn_tao_phieu";
+            this.btn_tao_phieu.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_tao_phieu.Size = new System.Drawing.Size(96, 36);
+            this.btn_tao_phieu.TabIndex = 1;
+            this.btn_tao_phieu.Text = "Tạo Phiếu";
+            this.btn_tao_phieu.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_tao_phieu.UseAccentColor = false;
+            this.btn_tao_phieu.UseVisualStyleBackColor = true;
+            this.btn_tao_phieu.Click += new System.EventHandler(this.btn_tao_phieu_Click);
+            // 
+            // dgv_phieu_nhap
+            // 
+            this.dgv_phieu_nhap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_phieu_nhap.BackgroundColor = System.Drawing.Color.LightGreen;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SpringGreen;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.InfoText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_phieu_nhap.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_phieu_nhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_phieu_nhap.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgv_phieu_nhap.EnableHeadersVisualStyles = false;
+            this.dgv_phieu_nhap.Location = new System.Drawing.Point(40, 44);
+            this.dgv_phieu_nhap.Name = "dgv_phieu_nhap";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_phieu_nhap.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgv_phieu_nhap.RowHeadersWidth = 51;
+            this.dgv_phieu_nhap.RowTemplate.Height = 24;
+            this.dgv_phieu_nhap.Size = new System.Drawing.Size(923, 532);
+            this.dgv_phieu_nhap.TabIndex = 0;
+            this.dgv_phieu_nhap.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_phieu_nhap_EditingControlShowing);
+            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1601, 995);
+            this.ClientSize = new System.Drawing.Size(1637, 1089);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerTabControl = this.materialTabControl1;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -1209,6 +1287,9 @@
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel10.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_phieu_nhap)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1286,5 +1367,8 @@
         private System.Windows.Forms.Label lbl_doanh_thu_hom_qua;
         private System.Windows.Forms.Label lbl_nhap_hang_hom_qua;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TabPage tabPage3;
+        private MaterialSkin.Controls.MaterialButton btn_tao_phieu;
+        private System.Windows.Forms.DataGridView dgv_phieu_nhap;
     }
 }
