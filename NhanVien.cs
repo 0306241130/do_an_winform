@@ -116,8 +116,10 @@ namespace WindowsFormsApp1
 
         public void loadPhieuNhap()
         {
-            PhieuNhapBUS phieuNhapBUS = new PhieuNhapBUS();
-            DataTable dataTable = phieuNhapBUS.getPhieuNhap();
+           
+            CT_PhieuNhapBUS phieuNhapBUS = new CT_PhieuNhapBUS();
+            DataTable dataTable = phieuNhapBUS.getCTPhieuNhap();
+            dataTable.Clear();
             dgv_phieu_nhap.DataSource = dataTable;
             dgv_phieu_nhap.Columns["MaCT_HD"].Visible = false;
             dgv_phieu_nhap.Columns["MaPN"].Visible = false;
@@ -125,6 +127,7 @@ namespace WindowsFormsApp1
 
             SanPhamBUS sanPhamBUS = new SanPhamBUS();
             DataTable sanPhamTable = sanPhamBUS.getDanhSachSanPham();
+            
             var columnSanPham = new DataGridViewComboBoxColumn{
                 Name = "TenSP",
                 HeaderText = "Tên sản phẩm",
@@ -140,8 +143,6 @@ namespace WindowsFormsApp1
             dgv_phieu_nhap.Columns["Gia_nhap"].HeaderText = "Giá Nhập";
             dgv_phieu_nhap.Columns["SoLuongNhap"].HeaderText = "Số Lượng Nhập";
             dgv_phieu_nhap.Columns["ThanhTien"].HeaderText = "Thành Tiền";
-
-           
 
         }
         private void NhanVien_Load(object sender, EventArgs e)
@@ -423,22 +424,93 @@ namespace WindowsFormsApp1
 
         private void dgv_phieu_nhap_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            TextBox txt = ((TextBox)e.Control);
-
-            txt.KeyPress += (s, ev) =>
+            if (dgv_phieu_nhap.CurrentCell.ColumnIndex != 2)
             {
-                if (char.IsControl(ev.KeyChar) || char.IsDigit(ev.KeyChar)) return;
-                if (dgv_phieu_nhap.CurrentCell.ColumnIndex == 3)
+                TextBox txt = ((TextBox)e.Control);
+
+                txt.KeyPress += (s, ev) =>
                 {
-                    if (ev.KeyChar == '.' && !txt.Text.Contains('.') && txt.Text.Length > 0) return;
+                    if (char.IsControl(ev.KeyChar) || char.IsDigit(ev.KeyChar)) {
+                        return;
+                    }
+
+                    if (dgv_phieu_nhap.CurrentCell.ColumnIndex == 3)
+                    {
+                        if (ev.KeyChar == '.' && !txt.Text.Contains('.') && txt.Text.Length > 0) {   
+                            return;
+                        } ;
+                    }
+                    ev.Handled = true;
+                };
+                
+            }
+        }
+
+        public void tinh_thanh_tien_phieu_nhap()
+        {
+            foreach (DataGridViewRow row in dgv_phieu_nhap.Rows)
+            {
+                if (row.IsNewRow) break;
+                if (row.Cells["Gia_nhap"].Value != null && !string.IsNullOrWhiteSpace(row.Cells["Gia_nhap"].Value.ToString())&&
+                    row.Cells["SoLuongNhap"].Value != null && !string.IsNullOrWhiteSpace(row.Cells["SoLuongNhap"].Value.ToString()))
+                {
+                    float gia = float.Parse(row.Cells["Gia_nhap"].Value.ToString());
+                    int so_luong = int.Parse(row.Cells["SoLuongNhap"].Value.ToString());
+                    float thanh_tien = gia * so_luong;
+                    row.Cells["ThanhTien"].Value = thanh_tien;
                 }
-                ev.Handled = true;
-            };
+            }
         }
 
         private void btn_tao_phieu_Click(object sender, EventArgs e)
         {
+            PhieuNhapDTO phieuNhapDTO  = new PhieuNhapDTO();
             
+            float tong_tien = 0;
+            foreach (DataGridViewRow row in dgv_phieu_nhap.Rows)
+            {
+                if (row.IsNewRow) break;
+                if (row.Cells["ThanhTien"].Value != null && !string.IsNullOrWhiteSpace(row.Cells["ThanhTien"].Value.ToString()))
+                {
+                    tong_tien += float.Parse(row.Cells["ThanhTien"].Value.ToString());
+                }
+            }
+            phieuNhapDTO.TongTien = tong_tien;
+            phieuNhapDTO.MaNV = Int32.Parse(lbl_ma_nv.Text);
+            phieuNhapDTO.NgayNhap = DateTime.Now;
+
+            PhieuNhapBUS phieuNhapBUS = new PhieuNhapBUS();
+            
+            int maPN = phieuNhapBUS.themPhieuNhap(phieuNhapDTO);
+            
+            foreach(DataGridViewRow row in dgv_phieu_nhap.Rows)
+            {
+                CT_PhieuNhapDTO ct_PhieuNhapDTO = new CT_PhieuNhapDTO();
+                if (row.IsNewRow) break;
+                if (row.Cells["MaSP"].Value != null && !string.IsNullOrWhiteSpace(row.Cells["MaSP"].Value.ToString()) &&
+                    row.Cells["Gia_nhap"].Value != null && !string.IsNullOrWhiteSpace(row.Cells["Gia_nhap"].Value.ToString()) &&
+                    row.Cells["SoLuongNhap"].Value != null && !string.IsNullOrWhiteSpace(row.Cells["SoLuongNhap"].Value.ToString()))
+                {
+                    ct_PhieuNhapDTO.MaPN = phieuNhapBUS.getMaPN();
+                    ct_PhieuNhapDTO.MaSP = int.Parse(row.Cells["MaSP"].Value.ToString());
+                    ct_PhieuNhapDTO.GiaNhap = float.Parse(row.Cells["Gia_nhap"].Value.ToString());
+                    ct_PhieuNhapDTO.SoLuong = int.Parse(row.Cells["SoLuongNhap"].Value.ToString());
+                    ct_PhieuNhapDTO.ThanhTien = ct_PhieuNhapDTO.GiaNhap * ct_PhieuNhapDTO.SoLuong;
+                    CT_PhieuNhapBUS ct_PhieuNhapBUS = new CT_PhieuNhapBUS();
+                    ct_PhieuNhapBUS.themCT(ct_PhieuNhapDTO);   
+                }
+            }
+            ((DataTable)dgv_phieu_nhap.DataSource).Rows.Clear();
+            if (maPN > 0)
+            {
+                MessageBox.Show("Tạo phiếu nhập thành công");
+            }
+
+        }
+
+        private void dgv_phieu_nhap_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tinh_thanh_tien_phieu_nhap();
         }
     }
 }
