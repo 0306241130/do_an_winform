@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.materialCheckbox6 = new MaterialSkin.Controls.MaterialCheckbox();
-            this.materialTextBox8 = new MaterialSkin.Controls.MaterialTextBox();
+            this.btn_tim_kiem = new System.Windows.Forms.Button();
+            this.ck_tk_loai = new MaterialSkin.Controls.MaterialCheckbox();
+            this.txt_loc_san_pham_ten = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel26 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialComboBox4 = new MaterialSkin.Controls.MaterialComboBox();
+            this.cbx_loai_sanPham_tim_tk = new MaterialSkin.Controls.MaterialComboBox();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -44,10 +46,8 @@
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.name_trang_thai = new MaterialSkin.Controls.MaterialSwitch();
-            this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
             this.cbx_loai = new MaterialSkin.Controls.MaterialComboBox();
             this.txt_gia_tien = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.txt_so_luong = new MaterialSkin.Controls.MaterialMaskedTextBox();
@@ -57,7 +57,7 @@
             this.btn_them = new MaterialSkin.Controls.MaterialButton();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_ds_san_pham = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
             this.bnt_xoa_loai = new System.Windows.Forms.Button();
@@ -144,7 +144,6 @@
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.materialCheckbox7 = new MaterialSkin.Controls.MaterialCheckbox();
             this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
@@ -163,13 +162,25 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.materialLabel27 = new MaterialSkin.Controls.MaterialLabel();
             this.label7 = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dataGridView7 = new System.Windows.Forms.DataGridView();
+            this.materialCard10 = new MaterialSkin.Controls.MaterialCard();
+            this.label10 = new System.Windows.Forms.Label();
+            this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.dataGridView8 = new System.Windows.Forms.DataGridView();
+            this.materialCard11 = new MaterialSkin.Controls.MaterialCard();
+            this.label11 = new System.Windows.Forms.Label();
+            this.materialCheckbox11 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.materialCard2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.materialCard1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ds_san_pham)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.materialCard5.SuspendLayout();
             this.materialCard3.SuspendLayout();
@@ -195,6 +206,13 @@
             this.panel3.SuspendLayout();
             this.materialCard7.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            this.materialCard10.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
+            this.materialCard11.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -204,6 +222,7 @@
             this.materialTabControl1.Controls.Add(this.tabPage3);
             this.materialTabControl1.Controls.Add(this.tabPage4);
             this.materialTabControl1.Controls.Add(this.tabPage5);
+            this.materialTabControl1.Controls.Add(this.tabPage6);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.Location = new System.Drawing.Point(0, 64);
@@ -211,7 +230,7 @@
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1794, 1035);
+            this.materialTabControl1.Size = new System.Drawing.Size(1812, 1035);
             this.materialTabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -223,18 +242,18 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(50);
-            this.tabPage1.Size = new System.Drawing.Size(1786, 1006);
+            this.tabPage1.Size = new System.Drawing.Size(1804, 1006);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Sản phẩm";
             // 
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.White;
-            this.groupBox6.Controls.Add(this.button7);
-            this.groupBox6.Controls.Add(this.materialCheckbox6);
-            this.groupBox6.Controls.Add(this.materialTextBox8);
+            this.groupBox6.Controls.Add(this.btn_tim_kiem);
+            this.groupBox6.Controls.Add(this.ck_tk_loai);
+            this.groupBox6.Controls.Add(this.txt_loc_san_pham_ten);
             this.groupBox6.Controls.Add(this.materialLabel26);
-            this.groupBox6.Controls.Add(this.materialComboBox4);
+            this.groupBox6.Controls.Add(this.cbx_loai_sanPham_tim_tk);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox6.Location = new System.Drawing.Point(41, 14);
@@ -244,81 +263,82 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Tìm Sản Phẩm";
             // 
-            // button7
+            // btn_tim_kiem
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button7.Location = new System.Drawing.Point(559, 29);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(115, 48);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "Tìm kiếm";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btn_tim_kiem.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_tim_kiem.Location = new System.Drawing.Point(559, 29);
+            this.btn_tim_kiem.Name = "btn_tim_kiem";
+            this.btn_tim_kiem.Size = new System.Drawing.Size(115, 48);
+            this.btn_tim_kiem.TabIndex = 8;
+            this.btn_tim_kiem.Text = "Tìm kiếm";
+            this.btn_tim_kiem.UseVisualStyleBackColor = false;
+            this.btn_tim_kiem.Click += new System.EventHandler(this.btn_tim_kiem_Click);
             // 
-            // materialCheckbox6
+            // ck_tk_loai
             // 
-            this.materialCheckbox6.AutoSize = true;
-            this.materialCheckbox6.Depth = 0;
-            this.materialCheckbox6.Location = new System.Drawing.Point(327, 40);
-            this.materialCheckbox6.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckbox6.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckbox6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckbox6.Name = "materialCheckbox6";
-            this.materialCheckbox6.ReadOnly = false;
-            this.materialCheckbox6.Ripple = true;
-            this.materialCheckbox6.Size = new System.Drawing.Size(35, 37);
-            this.materialCheckbox6.TabIndex = 7;
-            this.materialCheckbox6.UseVisualStyleBackColor = true;
+            this.ck_tk_loai.AutoSize = true;
+            this.ck_tk_loai.Depth = 0;
+            this.ck_tk_loai.Location = new System.Drawing.Point(327, 40);
+            this.ck_tk_loai.Margin = new System.Windows.Forms.Padding(0);
+            this.ck_tk_loai.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.ck_tk_loai.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ck_tk_loai.Name = "ck_tk_loai";
+            this.ck_tk_loai.ReadOnly = false;
+            this.ck_tk_loai.Ripple = true;
+            this.ck_tk_loai.Size = new System.Drawing.Size(35, 37);
+            this.ck_tk_loai.TabIndex = 7;
+            this.ck_tk_loai.UseVisualStyleBackColor = true;
             // 
-            // materialTextBox8
+            // txt_loc_san_pham_ten
             // 
-            this.materialTextBox8.AnimateReadOnly = false;
-            this.materialTextBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox8.Depth = 0;
-            this.materialTextBox8.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox8.LeadingIcon = null;
-            this.materialTextBox8.Location = new System.Drawing.Point(122, 29);
-            this.materialTextBox8.MaxLength = 50;
-            this.materialTextBox8.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox8.Multiline = false;
-            this.materialTextBox8.Name = "materialTextBox8";
-            this.materialTextBox8.Size = new System.Drawing.Size(169, 50);
-            this.materialTextBox8.TabIndex = 0;
-            this.materialTextBox8.Text = "";
-            this.materialTextBox8.TrailingIcon = null;
+            this.txt_loc_san_pham_ten.AnimateReadOnly = false;
+            this.txt_loc_san_pham_ten.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_loc_san_pham_ten.Depth = 0;
+            this.txt_loc_san_pham_ten.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_loc_san_pham_ten.LeadingIcon = null;
+            this.txt_loc_san_pham_ten.Location = new System.Drawing.Point(122, 29);
+            this.txt_loc_san_pham_ten.MaxLength = 50;
+            this.txt_loc_san_pham_ten.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_loc_san_pham_ten.Multiline = false;
+            this.txt_loc_san_pham_ten.Name = "txt_loc_san_pham_ten";
+            this.txt_loc_san_pham_ten.Size = new System.Drawing.Size(169, 50);
+            this.txt_loc_san_pham_ten.TabIndex = 0;
+            this.txt_loc_san_pham_ten.Text = "";
+            this.txt_loc_san_pham_ten.TrailingIcon = null;
             // 
             // materialLabel26
             // 
             this.materialLabel26.AutoSize = true;
             this.materialLabel26.Depth = 0;
             this.materialLabel26.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel26.Location = new System.Drawing.Point(6, 49);
+            this.materialLabel26.Location = new System.Drawing.Point(6, 44);
             this.materialLabel26.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel26.Name = "materialLabel26";
             this.materialLabel26.Size = new System.Drawing.Size(110, 19);
             this.materialLabel26.TabIndex = 6;
-            this.materialLabel26.Text = "Tên Sẩn Phẩm:";
+            this.materialLabel26.Text = "Tên Sản Phẩm:";
             // 
-            // materialComboBox4
+            // cbx_loai_sanPham_tim_tk
             // 
-            this.materialComboBox4.AutoResize = false;
-            this.materialComboBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialComboBox4.Depth = 0;
-            this.materialComboBox4.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBox4.DropDownHeight = 174;
-            this.materialComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materialComboBox4.DropDownWidth = 121;
-            this.materialComboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialComboBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialComboBox4.FormattingEnabled = true;
-            this.materialComboBox4.IntegralHeight = false;
-            this.materialComboBox4.ItemHeight = 43;
-            this.materialComboBox4.Location = new System.Drawing.Point(386, 30);
-            this.materialComboBox4.MaxDropDownItems = 4;
-            this.materialComboBox4.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialComboBox4.Name = "materialComboBox4";
-            this.materialComboBox4.Size = new System.Drawing.Size(139, 49);
-            this.materialComboBox4.StartIndex = 0;
-            this.materialComboBox4.TabIndex = 4;
+            this.cbx_loai_sanPham_tim_tk.AutoResize = false;
+            this.cbx_loai_sanPham_tim_tk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbx_loai_sanPham_tim_tk.Depth = 0;
+            this.cbx_loai_sanPham_tim_tk.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbx_loai_sanPham_tim_tk.DropDownHeight = 174;
+            this.cbx_loai_sanPham_tim_tk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_loai_sanPham_tim_tk.DropDownWidth = 121;
+            this.cbx_loai_sanPham_tim_tk.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbx_loai_sanPham_tim_tk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbx_loai_sanPham_tim_tk.FormattingEnabled = true;
+            this.cbx_loai_sanPham_tim_tk.IntegralHeight = false;
+            this.cbx_loai_sanPham_tim_tk.ItemHeight = 43;
+            this.cbx_loai_sanPham_tim_tk.Location = new System.Drawing.Point(386, 30);
+            this.cbx_loai_sanPham_tim_tk.MaxDropDownItems = 4;
+            this.cbx_loai_sanPham_tim_tk.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbx_loai_sanPham_tim_tk.Name = "cbx_loai_sanPham_tim_tk";
+            this.cbx_loai_sanPham_tim_tk.Size = new System.Drawing.Size(139, 49);
+            this.cbx_loai_sanPham_tim_tk.StartIndex = 0;
+            this.cbx_loai_sanPham_tim_tk.TabIndex = 4;
             // 
             // materialCard2
             // 
@@ -330,10 +350,8 @@
             this.materialCard2.Controls.Add(this.materialLabel5);
             this.materialCard2.Controls.Add(this.materialLabel3);
             this.materialCard2.Controls.Add(this.materialLabel2);
-            this.materialCard2.Controls.Add(this.materialLabel6);
             this.materialCard2.Controls.Add(this.materialLabel1);
             this.materialCard2.Controls.Add(this.name_trang_thai);
-            this.materialCard2.Controls.Add(this.materialComboBox1);
             this.materialCard2.Controls.Add(this.cbx_loai);
             this.materialCard2.Controls.Add(this.txt_gia_tien);
             this.materialCard2.Controls.Add(this.txt_so_luong);
@@ -362,6 +380,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(442, 84);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(144, 215);
@@ -385,7 +404,7 @@
             this.materialLabel4.AutoSize = true;
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel4.Location = new System.Drawing.Point(33, 497);
+            this.materialLabel4.Location = new System.Drawing.Point(33, 411);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(79, 19);
@@ -397,7 +416,7 @@
             this.materialLabel5.AutoSize = true;
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel5.Location = new System.Drawing.Point(52, 421);
+            this.materialLabel5.Location = new System.Drawing.Point(52, 335);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(60, 19);
@@ -409,7 +428,7 @@
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(6, 339);
+            this.materialLabel3.Location = new System.Drawing.Point(6, 253);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(110, 19);
@@ -421,24 +440,12 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(42, 265);
+            this.materialLabel2.Location = new System.Drawing.Point(42, 179);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(70, 19);
             this.materialLabel2.TabIndex = 6;
             this.materialLabel2.Text = "Số Lượng";
-            // 
-            // materialLabel6
-            // 
-            this.materialLabel6.AutoSize = true;
-            this.materialLabel6.Depth = 0;
-            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel6.Location = new System.Drawing.Point(33, 181);
-            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel6.Name = "materialLabel6";
-            this.materialLabel6.Size = new System.Drawing.Size(75, 19);
-            this.materialLabel6.TabIndex = 6;
-            this.materialLabel6.Text = "Sản Phẩm";
             // 
             // materialLabel1
             // 
@@ -458,7 +465,7 @@
             this.name_trang_thai.Checked = true;
             this.name_trang_thai.CheckState = System.Windows.Forms.CheckState.Checked;
             this.name_trang_thai.Depth = 0;
-            this.name_trang_thai.Location = new System.Drawing.Point(130, 488);
+            this.name_trang_thai.Location = new System.Drawing.Point(130, 402);
             this.name_trang_thai.Margin = new System.Windows.Forms.Padding(0);
             this.name_trang_thai.MouseLocation = new System.Drawing.Point(-1, -1);
             this.name_trang_thai.MouseState = MaterialSkin.MouseState.HOVER;
@@ -468,28 +475,6 @@
             this.name_trang_thai.TabIndex = 5;
             this.name_trang_thai.Text = "Còn";
             this.name_trang_thai.UseVisualStyleBackColor = true;
-            // 
-            // materialComboBox1
-            // 
-            this.materialComboBox1.AutoResize = false;
-            this.materialComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialComboBox1.Depth = 0;
-            this.materialComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBox1.DropDownHeight = 174;
-            this.materialComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materialComboBox1.DropDownWidth = 121;
-            this.materialComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialComboBox1.FormattingEnabled = true;
-            this.materialComboBox1.IntegralHeight = false;
-            this.materialComboBox1.ItemHeight = 43;
-            this.materialComboBox1.Location = new System.Drawing.Point(131, 164);
-            this.materialComboBox1.MaxDropDownItems = 4;
-            this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialComboBox1.Name = "materialComboBox1";
-            this.materialComboBox1.Size = new System.Drawing.Size(290, 49);
-            this.materialComboBox1.StartIndex = 0;
-            this.materialComboBox1.TabIndex = 4;
             // 
             // cbx_loai
             // 
@@ -505,7 +490,7 @@
             this.cbx_loai.FormattingEnabled = true;
             this.cbx_loai.IntegralHeight = false;
             this.cbx_loai.ItemHeight = 43;
-            this.cbx_loai.Location = new System.Drawing.Point(130, 325);
+            this.cbx_loai.Location = new System.Drawing.Point(130, 239);
             this.cbx_loai.MaxDropDownItems = 4;
             this.cbx_loai.MouseState = MaterialSkin.MouseState.OUT;
             this.cbx_loai.Name = "cbx_loai";
@@ -527,7 +512,7 @@
             this.txt_gia_tien.HideSelection = true;
             this.txt_gia_tien.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
             this.txt_gia_tien.LeadingIcon = null;
-            this.txt_gia_tien.Location = new System.Drawing.Point(130, 404);
+            this.txt_gia_tien.Location = new System.Drawing.Point(130, 318);
             this.txt_gia_tien.Mask = "";
             this.txt_gia_tien.MaxLength = 32767;
             this.txt_gia_tien.MouseState = MaterialSkin.MouseState.OUT;
@@ -568,7 +553,7 @@
             this.txt_so_luong.HideSelection = true;
             this.txt_so_luong.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
             this.txt_so_luong.LeadingIcon = null;
-            this.txt_so_luong.Location = new System.Drawing.Point(130, 251);
+            this.txt_so_luong.Location = new System.Drawing.Point(130, 165);
             this.txt_so_luong.Mask = "";
             this.txt_so_luong.MaxLength = 32767;
             this.txt_so_luong.MouseState = MaterialSkin.MouseState.OUT;
@@ -681,7 +666,7 @@
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard1.Controls.Add(this.label2);
-            this.materialCard1.Controls.Add(this.dataGridView1);
+            this.materialCard1.Controls.Add(this.dgv_ds_san_pham);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard1.Location = new System.Drawing.Point(14, 145);
@@ -694,26 +679,46 @@
             // 
             // label2
             // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.label2.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Blue;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(752, 41);
+            this.label2.Size = new System.Drawing.Size(752, 52);
             this.label2.TabIndex = 3;
             this.label2.Text = "Danh Sách Sản Phẩm";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridView1
+            // dgv_ds_san_pham
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 50);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(752, 600);
-            this.dataGridView1.TabIndex = 2;
+            this.dgv_ds_san_pham.AllowUserToAddRows = false;
+            this.dgv_ds_san_pham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_ds_san_pham.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ds_san_pham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_ds_san_pham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ds_san_pham.Location = new System.Drawing.Point(0, 48);
+            this.dgv_ds_san_pham.Name = "dgv_ds_san_pham";
+            this.dgv_ds_san_pham.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ds_san_pham.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_ds_san_pham.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgv_ds_san_pham.RowTemplate.Height = 24;
+            this.dgv_ds_san_pham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_ds_san_pham.Size = new System.Drawing.Size(752, 602);
+            this.dgv_ds_san_pham.TabIndex = 2;
             // 
             // tabPage2
             // 
@@ -724,7 +729,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1786, 1006);
+            this.tabPage2.Size = new System.Drawing.Size(1804, 1006);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Loại Sản Phẩm";
             // 
@@ -910,6 +915,7 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(-2, 48);
             this.dataGridView2.Name = "dataGridView2";
@@ -928,7 +934,7 @@
             this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1786, 1006);
+            this.tabPage3.Size = new System.Drawing.Size(1804, 1006);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Hóa đơn";
             // 
@@ -964,6 +970,7 @@
             // 
             // dataGridView5
             // 
+            this.dataGridView5.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Location = new System.Drawing.Point(9, 29);
             this.dataGridView5.Name = "dataGridView5";
@@ -1494,6 +1501,7 @@
             // 
             // dataGridView4
             // 
+            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Location = new System.Drawing.Point(6, 34);
             this.dataGridView4.Name = "dataGridView4";
@@ -1504,6 +1512,7 @@
             // 
             // dataGridView3
             // 
+            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(42, 95);
             this.dataGridView3.Name = "dataGridView3";
@@ -1520,7 +1529,7 @@
             this.tabPage4.Controls.Add(this.materialCard4);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1786, 1006);
+            this.tabPage4.Size = new System.Drawing.Size(1804, 1006);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Nhân Viên";
             // 
@@ -2040,6 +2049,7 @@
             // 
             // dataGridView6
             // 
+            this.dataGridView6.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView6.Location = new System.Drawing.Point(0, 45);
             this.dataGridView6.Name = "dataGridView6";
@@ -2064,7 +2074,7 @@
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage5.Controls.Add(this.listView1);
+            this.tabPage5.Controls.Add(this.materialListView1);
             this.tabPage5.Controls.Add(this.groupBox7);
             this.tabPage5.Controls.Add(this.panel2);
             this.tabPage5.Controls.Add(this.materialCard9);
@@ -2072,18 +2082,9 @@
             this.tabPage5.Controls.Add(this.materialCard7);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1786, 1006);
+            this.tabPage5.Size = new System.Drawing.Size(1804, 1006);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Doanh Thu";
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(47, 344);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1505, 405);
-            this.listView1.TabIndex = 15;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // groupBox7
             // 
@@ -2312,10 +2313,176 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Doanh Thu Hôm Nay";
             // 
+            // tabPage6
+            // 
+            this.tabPage6.BackColor = System.Drawing.Color.White;
+            this.tabPage6.Controls.Add(this.materialCheckbox11);
+            this.tabPage6.Controls.Add(this.dateTimePicker5);
+            this.tabPage6.Controls.Add(this.tableLayoutPanel2);
+            this.tabPage6.Controls.Add(this.tableLayoutPanel1);
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(1804, 1006);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Phiếu Nhập";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.dataGridView7, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.materialCard10, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(761, 114);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.03602F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.96398F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(669, 658);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // dataGridView7
+            // 
+            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView7.Location = new System.Drawing.Point(3, 88);
+            this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.RowHeadersWidth = 51;
+            this.dataGridView7.RowTemplate.Height = 24;
+            this.dataGridView7.Size = new System.Drawing.Size(663, 567);
+            this.dataGridView7.TabIndex = 0;
+            // 
+            // materialCard10
+            // 
+            this.materialCard10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard10.Controls.Add(this.label10);
+            this.materialCard10.Depth = 0;
+            this.materialCard10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialCard10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard10.Location = new System.Drawing.Point(14, 14);
+            this.materialCard10.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard10.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard10.Name = "materialCard10";
+            this.materialCard10.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard10.Size = new System.Drawing.Size(641, 57);
+            this.materialCard10.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(14, 14);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(613, 29);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Chi tiết phiếu Nhập";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // materialListView1
+            // 
+            this.materialListView1.AutoSizeTable = false;
+            this.materialListView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialListView1.Depth = 0;
+            this.materialListView1.FullRowSelect = true;
+            this.materialListView1.HideSelection = false;
+            this.materialListView1.Location = new System.Drawing.Point(47, 332);
+            this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
+            this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView1.Name = "materialListView1";
+            this.materialListView1.OwnerDraw = true;
+            this.materialListView1.Size = new System.Drawing.Size(1414, 398);
+            this.materialListView1.TabIndex = 15;
+            this.materialListView1.UseCompatibleStateImageBehavior = false;
+            this.materialListView1.View = System.Windows.Forms.View.Details;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.dataGridView8, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.materialCard11, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(33, 114);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.03602F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.96398F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(669, 658);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // dataGridView8
+            // 
+            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView8.Location = new System.Drawing.Point(3, 88);
+            this.dataGridView8.Name = "dataGridView8";
+            this.dataGridView8.RowHeadersWidth = 51;
+            this.dataGridView8.RowTemplate.Height = 24;
+            this.dataGridView8.Size = new System.Drawing.Size(663, 567);
+            this.dataGridView8.TabIndex = 0;
+            // 
+            // materialCard11
+            // 
+            this.materialCard11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard11.Controls.Add(this.label11);
+            this.materialCard11.Depth = 0;
+            this.materialCard11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialCard11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard11.Location = new System.Drawing.Point(14, 14);
+            this.materialCard11.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard11.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard11.Name = "materialCard11";
+            this.materialCard11.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard11.Size = new System.Drawing.Size(641, 57);
+            this.materialCard11.TabIndex = 1;
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(14, 14);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(613, 29);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Phiếu Nhập Hàng";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // materialCheckbox11
+            // 
+            this.materialCheckbox11.Depth = 0;
+            this.materialCheckbox11.Location = new System.Drawing.Point(261, 16);
+            this.materialCheckbox11.Margin = new System.Windows.Forms.Padding(0);
+            this.materialCheckbox11.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialCheckbox11.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCheckbox11.Name = "materialCheckbox11";
+            this.materialCheckbox11.ReadOnly = false;
+            this.materialCheckbox11.Ripple = true;
+            this.materialCheckbox11.Size = new System.Drawing.Size(126, 30);
+            this.materialCheckbox11.TabIndex = 2;
+            this.materialCheckbox11.Text = "Lọc";
+            this.materialCheckbox11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.materialCheckbox11.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker5
+            // 
+            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker5.Location = new System.Drawing.Point(39, 24);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker5.TabIndex = 3;
+            // 
             // Admin
             // 
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1797, 1102);
+            this.ClientSize = new System.Drawing.Size(1815, 1102);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerTabControl = this.materialTabControl1;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -2323,6 +2490,7 @@
             this.Padding = new System.Windows.Forms.Padding(0, 64, 3, 3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DASHBOARD";
+            this.Load += new System.EventHandler(this.Admin_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
@@ -2331,7 +2499,7 @@
             this.materialCard2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.materialCard1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ds_san_pham)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.materialCard5.ResumeLayout(false);
             this.materialCard5.PerformLayout();
@@ -2368,6 +2536,13 @@
             this.materialCard7.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            this.materialCard10.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
+            this.materialCard11.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2381,7 +2556,7 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private MaterialSkin.Controls.MaterialCard materialCard1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_ds_san_pham;
         private MaterialSkin.Controls.MaterialCard materialCard2;
         private MaterialSkin.Controls.MaterialButton btn_them;
         private System.Windows.Forms.Button btn_sua;
@@ -2396,9 +2571,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
-        private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private System.Windows.Forms.Label label1;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -2484,11 +2657,11 @@
         private MaterialSkin.Controls.MaterialCheckbox materialCheckbox5;
         private MaterialSkin.Controls.MaterialLabel materialLabel25;
         private System.Windows.Forms.GroupBox groupBox6;
-        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox6;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox8;
+        private MaterialSkin.Controls.MaterialCheckbox ck_tk_loai;
+        private MaterialSkin.Controls.MaterialTextBox txt_loc_san_pham_ten;
         private MaterialSkin.Controls.MaterialLabel materialLabel26;
         private MaterialSkin.Controls.MaterialButton materialButton3;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBox4;
+        private MaterialSkin.Controls.MaterialComboBox cbx_loai_sanPham_tim_tk;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Panel panel1;
         private MaterialSkin.Controls.MaterialCard materialCard9;
@@ -2508,8 +2681,19 @@
         private System.Windows.Forms.Label label9;
         private MaterialSkin.Controls.MaterialLabel materialLabel27;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button btn_tim_kiem;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.DataGridView dataGridView7;
+        private MaterialSkin.Controls.MaterialCard materialCard10;
+        private System.Windows.Forms.Label label10;
+        private MaterialSkin.Controls.MaterialListView materialListView1;
+        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox11;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.DataGridView dataGridView8;
+        private MaterialSkin.Controls.MaterialCard materialCard11;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker dateTimePicker5;
     }
 }
 

@@ -438,7 +438,7 @@ namespace WindowsFormsApp1
                     {
                         if (ev.KeyChar == '.' && !txt.Text.Contains('.') && txt.Text.Length > 0) {   
                             return;
-                        } ;
+                        }
                     }
                     ev.Handled = true;
                 };
@@ -511,6 +511,13 @@ namespace WindowsFormsApp1
         private void dgv_phieu_nhap_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             tinh_thanh_tien_phieu_nhap();
+        }
+
+        private void btn_dang_xuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.Show();
         }
     }
 }
