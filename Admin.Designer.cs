@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -40,14 +40,14 @@
             this.cbx_loai_sanPham_tim_tk = new MaterialSkin.Controls.MaterialComboBox();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ptb_san_pham = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.name_trang_thai = new MaterialSkin.Controls.MaterialSwitch();
+            this.swt_trang_thai = new MaterialSkin.Controls.MaterialSwitch();
             this.cbx_loai = new MaterialSkin.Controls.MaterialComboBox();
             this.txt_gia_tien = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.txt_so_luong = new MaterialSkin.Controls.MaterialMaskedTextBox();
@@ -144,6 +144,7 @@
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.materialCheckbox7 = new MaterialSkin.Controls.MaterialCheckbox();
             this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
@@ -163,22 +164,21 @@
             this.materialLabel27 = new MaterialSkin.Controls.MaterialLabel();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView7 = new System.Windows.Forms.DataGridView();
-            this.materialCard10 = new MaterialSkin.Controls.MaterialCard();
-            this.label10 = new System.Windows.Forms.Label();
-            this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
+            this.materialCheckbox11 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView8 = new System.Windows.Forms.DataGridView();
             this.materialCard11 = new MaterialSkin.Controls.MaterialCard();
             this.label11 = new System.Windows.Forms.Label();
-            this.materialCheckbox11 = new MaterialSkin.Controls.MaterialCheckbox();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dataGridView7 = new System.Windows.Forms.DataGridView();
+            this.materialCard10 = new MaterialSkin.Controls.MaterialCard();
+            this.label10 = new System.Windows.Forms.Label();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.materialCard2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptb_san_pham)).BeginInit();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ds_san_pham)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -207,12 +207,12 @@
             this.materialCard7.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage6.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
-            this.materialCard10.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
             this.materialCard11.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            this.materialCard10.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -230,7 +230,7 @@
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1812, 1035);
+            this.materialTabControl1.Size = new System.Drawing.Size(1830, 1035);
             this.materialTabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -242,7 +242,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(50);
-            this.tabPage1.Size = new System.Drawing.Size(1804, 1006);
+            this.tabPage1.Size = new System.Drawing.Size(1822, 1006);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Sản phẩm";
             // 
@@ -344,14 +344,14 @@
             // 
             this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard2.Controls.Add(this.button1);
-            this.materialCard2.Controls.Add(this.pictureBox1);
+            this.materialCard2.Controls.Add(this.ptb_san_pham);
             this.materialCard2.Controls.Add(this.label1);
             this.materialCard2.Controls.Add(this.materialLabel4);
             this.materialCard2.Controls.Add(this.materialLabel5);
             this.materialCard2.Controls.Add(this.materialLabel3);
             this.materialCard2.Controls.Add(this.materialLabel2);
             this.materialCard2.Controls.Add(this.materialLabel1);
-            this.materialCard2.Controls.Add(this.name_trang_thai);
+            this.materialCard2.Controls.Add(this.swt_trang_thai);
             this.materialCard2.Controls.Add(this.cbx_loai);
             this.materialCard2.Controls.Add(this.txt_gia_tien);
             this.materialCard2.Controls.Add(this.txt_so_luong);
@@ -377,15 +377,17 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Thêm Ảnh";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox1
+            // ptb_san_pham
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(442, 84);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(144, 215);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.ptb_san_pham.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptb_san_pham.Location = new System.Drawing.Point(442, 84);
+            this.ptb_san_pham.Name = "ptb_san_pham";
+            this.ptb_san_pham.Size = new System.Drawing.Size(144, 215);
+            this.ptb_san_pham.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptb_san_pham.TabIndex = 8;
+            this.ptb_san_pham.TabStop = false;
             // 
             // label1
             // 
@@ -459,22 +461,22 @@
             this.materialLabel1.TabIndex = 6;
             this.materialLabel1.Text = "Tên Sản Phẩm";
             // 
-            // name_trang_thai
+            // swt_trang_thai
             // 
-            this.name_trang_thai.AutoSize = true;
-            this.name_trang_thai.Checked = true;
-            this.name_trang_thai.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.name_trang_thai.Depth = 0;
-            this.name_trang_thai.Location = new System.Drawing.Point(130, 402);
-            this.name_trang_thai.Margin = new System.Windows.Forms.Padding(0);
-            this.name_trang_thai.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.name_trang_thai.MouseState = MaterialSkin.MouseState.HOVER;
-            this.name_trang_thai.Name = "name_trang_thai";
-            this.name_trang_thai.Ripple = true;
-            this.name_trang_thai.Size = new System.Drawing.Size(86, 37);
-            this.name_trang_thai.TabIndex = 5;
-            this.name_trang_thai.Text = "Còn";
-            this.name_trang_thai.UseVisualStyleBackColor = true;
+            this.swt_trang_thai.AutoSize = true;
+            this.swt_trang_thai.Checked = true;
+            this.swt_trang_thai.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.swt_trang_thai.Depth = 0;
+            this.swt_trang_thai.Location = new System.Drawing.Point(130, 402);
+            this.swt_trang_thai.Margin = new System.Windows.Forms.Padding(0);
+            this.swt_trang_thai.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.swt_trang_thai.MouseState = MaterialSkin.MouseState.HOVER;
+            this.swt_trang_thai.Name = "swt_trang_thai";
+            this.swt_trang_thai.Ripple = true;
+            this.swt_trang_thai.Size = new System.Drawing.Size(131, 37);
+            this.swt_trang_thai.TabIndex = 5;
+            this.swt_trang_thai.Text = "hoạt động";
+            this.swt_trang_thai.UseVisualStyleBackColor = true;
             // 
             // cbx_loai
             // 
@@ -538,6 +540,7 @@
             this.txt_gia_tien.TrailingIcon = null;
             this.txt_gia_tien.UseSystemPasswordChar = false;
             this.txt_gia_tien.ValidatingType = null;
+            this.txt_gia_tien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_gia_tien_KeyPress);
             // 
             // txt_so_luong
             // 
@@ -579,6 +582,7 @@
             this.txt_so_luong.TrailingIcon = null;
             this.txt_so_luong.UseSystemPasswordChar = false;
             this.txt_so_luong.ValidatingType = null;
+            this.txt_so_luong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_so_luong_KeyPress);
             // 
             // txt_ten_san_pham
             // 
@@ -661,6 +665,7 @@
             this.btn_them.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_them.UseAccentColor = false;
             this.btn_them.UseVisualStyleBackColor = false;
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // materialCard1
             // 
@@ -694,31 +699,33 @@
             this.dgv_ds_san_pham.AllowUserToAddRows = false;
             this.dgv_ds_san_pham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_ds_san_pham.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ds_san_pham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ds_san_pham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgv_ds_san_pham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ds_san_pham.Location = new System.Drawing.Point(0, 48);
             this.dgv_ds_san_pham.Name = "dgv_ds_san_pham";
             this.dgv_ds_san_pham.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ds_san_pham.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ds_san_pham.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_ds_san_pham.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgv_ds_san_pham.RowTemplate.Height = 24;
             this.dgv_ds_san_pham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ds_san_pham.Size = new System.Drawing.Size(752, 602);
             this.dgv_ds_san_pham.TabIndex = 2;
+            this.dgv_ds_san_pham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ds_san_pham_CellClick);
+            this.dgv_ds_san_pham.Sorted += new System.EventHandler(this.dgv_ds_san_pham_Sorted);
             // 
             // tabPage2
             // 
@@ -2086,6 +2093,25 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Doanh Thu";
             // 
+            // materialListView1
+            // 
+            this.materialListView1.AutoSizeTable = false;
+            this.materialListView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialListView1.Depth = 0;
+            this.materialListView1.FullRowSelect = true;
+            this.materialListView1.HideSelection = false;
+            this.materialListView1.Location = new System.Drawing.Point(47, 332);
+            this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
+            this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView1.Name = "materialListView1";
+            this.materialListView1.OwnerDraw = true;
+            this.materialListView1.Size = new System.Drawing.Size(1414, 398);
+            this.materialListView1.TabIndex = 15;
+            this.materialListView1.UseCompatibleStateImageBehavior = false;
+            this.materialListView1.View = System.Windows.Forms.View.Details;
+            // 
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.Color.White;
@@ -2326,79 +2352,29 @@
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Phiếu Nhập";
             // 
-            // tableLayoutPanel1
+            // materialCheckbox11
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView7, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.materialCard10, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(761, 114);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.03602F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.96398F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(669, 658);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.materialCheckbox11.Depth = 0;
+            this.materialCheckbox11.Location = new System.Drawing.Point(261, 16);
+            this.materialCheckbox11.Margin = new System.Windows.Forms.Padding(0);
+            this.materialCheckbox11.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialCheckbox11.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCheckbox11.Name = "materialCheckbox11";
+            this.materialCheckbox11.ReadOnly = false;
+            this.materialCheckbox11.Ripple = true;
+            this.materialCheckbox11.Size = new System.Drawing.Size(126, 30);
+            this.materialCheckbox11.TabIndex = 2;
+            this.materialCheckbox11.Text = "Lọc";
+            this.materialCheckbox11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.materialCheckbox11.UseVisualStyleBackColor = true;
             // 
-            // dataGridView7
+            // dateTimePicker5
             // 
-            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView7.Location = new System.Drawing.Point(3, 88);
-            this.dataGridView7.Name = "dataGridView7";
-            this.dataGridView7.RowHeadersWidth = 51;
-            this.dataGridView7.RowTemplate.Height = 24;
-            this.dataGridView7.Size = new System.Drawing.Size(663, 567);
-            this.dataGridView7.TabIndex = 0;
-            // 
-            // materialCard10
-            // 
-            this.materialCard10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard10.Controls.Add(this.label10);
-            this.materialCard10.Depth = 0;
-            this.materialCard10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialCard10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard10.Location = new System.Drawing.Point(14, 14);
-            this.materialCard10.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard10.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard10.Name = "materialCard10";
-            this.materialCard10.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard10.Size = new System.Drawing.Size(641, 57);
-            this.materialCard10.TabIndex = 1;
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(14, 14);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(613, 29);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Chi tiết phiếu Nhập";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // materialListView1
-            // 
-            this.materialListView1.AutoSizeTable = false;
-            this.materialListView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialListView1.Depth = 0;
-            this.materialListView1.FullRowSelect = true;
-            this.materialListView1.HideSelection = false;
-            this.materialListView1.Location = new System.Drawing.Point(47, 332);
-            this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
-            this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListView1.Name = "materialListView1";
-            this.materialListView1.OwnerDraw = true;
-            this.materialListView1.Size = new System.Drawing.Size(1414, 398);
-            this.materialListView1.TabIndex = 15;
-            this.materialListView1.UseCompatibleStateImageBehavior = false;
-            this.materialListView1.View = System.Windows.Forms.View.Details;
+            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker5.Location = new System.Drawing.Point(39, 24);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker5.TabIndex = 3;
             // 
             // tableLayoutPanel2
             // 
@@ -2455,34 +2431,65 @@
             this.label11.Text = "Phiếu Nhập Hàng";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // materialCheckbox11
+            // tableLayoutPanel1
             // 
-            this.materialCheckbox11.Depth = 0;
-            this.materialCheckbox11.Location = new System.Drawing.Point(261, 16);
-            this.materialCheckbox11.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckbox11.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckbox11.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckbox11.Name = "materialCheckbox11";
-            this.materialCheckbox11.ReadOnly = false;
-            this.materialCheckbox11.Ripple = true;
-            this.materialCheckbox11.Size = new System.Drawing.Size(126, 30);
-            this.materialCheckbox11.TabIndex = 2;
-            this.materialCheckbox11.Text = "Lọc";
-            this.materialCheckbox11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.materialCheckbox11.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.dataGridView7, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.materialCard10, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(761, 114);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.03602F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.96398F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(669, 658);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // dateTimePicker5
+            // dataGridView7
             // 
-            this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker5.Location = new System.Drawing.Point(39, 24);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker5.TabIndex = 3;
+            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView7.Location = new System.Drawing.Point(3, 88);
+            this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.RowHeadersWidth = 51;
+            this.dataGridView7.RowTemplate.Height = 24;
+            this.dataGridView7.Size = new System.Drawing.Size(663, 567);
+            this.dataGridView7.TabIndex = 0;
+            // 
+            // materialCard10
+            // 
+            this.materialCard10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard10.Controls.Add(this.label10);
+            this.materialCard10.Depth = 0;
+            this.materialCard10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.materialCard10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard10.Location = new System.Drawing.Point(14, 14);
+            this.materialCard10.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard10.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard10.Name = "materialCard10";
+            this.materialCard10.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard10.Size = new System.Drawing.Size(641, 57);
+            this.materialCard10.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(14, 14);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(613, 29);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Chi tiết phiếu Nhập";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Admin
             // 
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1815, 1102);
+            this.ClientSize = new System.Drawing.Size(1833, 1102);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerTabControl = this.materialTabControl1;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -2497,7 +2504,7 @@
             this.groupBox6.PerformLayout();
             this.materialCard2.ResumeLayout(false);
             this.materialCard2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptb_san_pham)).EndInit();
             this.materialCard1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ds_san_pham)).EndInit();
             this.tabPage2.ResumeLayout(false);
@@ -2537,12 +2544,12 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPage6.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
-            this.materialCard10.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
             this.materialCard11.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            this.materialCard10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2562,7 +2569,7 @@
         private System.Windows.Forms.Button btn_sua;
         private System.Windows.Forms.Button btn_xoa;
         private MaterialSkin.Controls.MaterialMaskedTextBox txt_ten_san_pham;
-        private MaterialSkin.Controls.MaterialSwitch name_trang_thai;
+        private MaterialSkin.Controls.MaterialSwitch swt_trang_thai;
         private MaterialSkin.Controls.MaterialComboBox cbx_loai;
         private MaterialSkin.Controls.MaterialMaskedTextBox txt_gia_tien;
         private MaterialSkin.Controls.MaterialMaskedTextBox txt_so_luong;
@@ -2574,7 +2581,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ptb_san_pham;
         private MaterialSkin.Controls.MaterialCard materialCard3;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label3;

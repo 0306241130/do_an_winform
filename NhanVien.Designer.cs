@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btn_dang_xuat = new MaterialSkin.Controls.MaterialButton();
             this.lv_san_pham = new System.Windows.Forms.ListView();
             this.image_list_sp = new System.Windows.Forms.ImageList(this.components);
             this.lbl_ma_nv = new MaterialSkin.Controls.MaterialLabel();
@@ -63,6 +64,7 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_hop_mau = new MaterialSkin.Controls.MaterialButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_but_muc = new MaterialSkin.Controls.MaterialButton();
             this.btn_but_chi = new MaterialSkin.Controls.MaterialButton();
             this.btn_tap_viet = new MaterialSkin.Controls.MaterialButton();
@@ -106,8 +108,6 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btn_tao_phieu = new MaterialSkin.Controls.MaterialButton();
             this.dgv_phieu_nhap = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_dang_xuat = new MaterialSkin.Controls.MaterialButton();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialCard1.SuspendLayout();
@@ -116,6 +116,7 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.materialCard8.SuspendLayout();
             this.tableLayoutPanel18.SuspendLayout();
@@ -138,7 +139,6 @@
             this.tableLayoutPanel6.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_phieu_nhap)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -154,7 +154,7 @@
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1739, 1036);
+            this.materialTabControl1.Size = new System.Drawing.Size(1757, 1036);
             this.materialTabControl1.TabIndex = 0;
             this.materialTabControl1.SelectedIndexChanged += new System.EventHandler(this.materialTabControl1_SelectedIndexChanged);
             // 
@@ -173,9 +173,29 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1731, 1007);
+            this.tabPage1.Size = new System.Drawing.Size(1749, 1007);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Trang Chủ";
+            // 
+            // btn_dang_xuat
+            // 
+            this.btn_dang_xuat.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_dang_xuat.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_dang_xuat.Depth = 0;
+            this.btn_dang_xuat.HighEmphasis = true;
+            this.btn_dang_xuat.Icon = null;
+            this.btn_dang_xuat.Location = new System.Drawing.Point(8, 744);
+            this.btn_dang_xuat.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_dang_xuat.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_dang_xuat.Name = "btn_dang_xuat";
+            this.btn_dang_xuat.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_dang_xuat.Size = new System.Drawing.Size(103, 36);
+            this.btn_dang_xuat.TabIndex = 10;
+            this.btn_dang_xuat.Text = "Đăng xuất";
+            this.btn_dang_xuat.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_dang_xuat.UseAccentColor = false;
+            this.btn_dang_xuat.UseVisualStyleBackColor = true;
+            this.btn_dang_xuat.Click += new System.EventHandler(this.btn_dang_xuat_Click);
             // 
             // lv_san_pham
             // 
@@ -552,6 +572,18 @@
             this.btn_hop_mau.UseAccentColor = false;
             this.btn_hop_mau.UseVisualStyleBackColor = true;
             this.btn_hop_mau.Click += new System.EventHandler(this.btn_hop_mau_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.Zoo_Logos_111;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 3);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(232, 253);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // btn_but_muc
             // 
@@ -1219,42 +1251,11 @@
             this.dgv_phieu_nhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_phieu_nhap_CellClick);
             this.dgv_phieu_nhap.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_phieu_nhap_EditingControlShowing);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.Zoo_Logos_111;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 3);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(232, 253);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btn_dang_xuat
-            // 
-            this.btn_dang_xuat.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btn_dang_xuat.Depth = 0;
-            this.btn_dang_xuat.HighEmphasis = true;
-            this.btn_dang_xuat.Icon = null;
-            this.btn_dang_xuat.Location = new System.Drawing.Point(8, 744);
-            this.btn_dang_xuat.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btn_dang_xuat.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btn_dang_xuat.Name = "btn_dang_xuat";
-            this.btn_dang_xuat.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_dang_xuat.Size = new System.Drawing.Size(114, 36);
-            this.btn_dang_xuat.TabIndex = 10;
-            this.btn_dang_xuat.Text = "Đăng xuất";
-            this.btn_dang_xuat.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btn_dang_xuat.UseAccentColor = false;
-            this.btn_dang_xuat.UseVisualStyleBackColor = true;
-            this.btn_dang_xuat.Click += new System.EventHandler(this.btn_dang_xuat_Click);
-            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1745, 1102);
+            this.ClientSize = new System.Drawing.Size(1763, 1102);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerTabControl = this.materialTabControl1;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -1279,6 +1280,7 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.materialCard8.ResumeLayout(false);
             this.tableLayoutPanel18.ResumeLayout(false);
@@ -1311,7 +1313,6 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_phieu_nhap)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -64,8 +64,6 @@ namespace WindowsFormsApp1
 
             foreach (var sanPham in SanPhamList)
             {
-
-
                 if (File.Exists(Path.Combine(path, sanPham.TenSp.ToString() + ".jpg")))
                 {
                     // Load ảnh từ file
