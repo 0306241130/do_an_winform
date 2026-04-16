@@ -154,7 +154,7 @@
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1757, 1036);
+            this.materialTabControl1.Size = new System.Drawing.Size(1775, 1036);
             this.materialTabControl1.TabIndex = 0;
             this.materialTabControl1.SelectedIndexChanged += new System.EventHandler(this.materialTabControl1_SelectedIndexChanged);
             // 
@@ -173,7 +173,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1749, 1007);
+            this.tabPage1.Size = new System.Drawing.Size(1767, 1007);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Trang Chủ";
             // 
@@ -726,7 +726,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1731, 1007);
+            this.tabPage2.Size = new System.Drawing.Size(1749, 1007);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Doanh Thu";
             // 
@@ -1187,7 +1187,7 @@
             this.tabPage3.Controls.Add(this.dgv_phieu_nhap);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1731, 1007);
+            this.tabPage3.Size = new System.Drawing.Size(1749, 1007);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nhập hàng";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1255,7 +1255,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1763, 1102);
+            this.ClientSize = new System.Drawing.Size(1781, 1102);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerTabControl = this.materialTabControl1;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
