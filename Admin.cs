@@ -71,8 +71,6 @@ namespace WindowsFormsApp1
 
         public void load_hinh_anh()
         {
-
-
             foreach (DataGridViewRow row in dgv_ds_san_pham.Rows)
             {
 
@@ -156,20 +154,21 @@ namespace WindowsFormsApp1
 
         //them san pham moi
 
-        public void kiemTraThongTin()
+        public bool kiemTraThongTin()
         {
             if (string.IsNullOrEmpty(txt_ten_san_pham.Text)
                || string.IsNullOrEmpty(txt_so_luong.Text)
                || string.IsNullOrEmpty(txt_gia_tien.Text))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return true;
             }
-        
+            return false;
+
         }
         private void btn_them_Click(object sender, EventArgs e)
         {
-            kiemTraThongTin();
+            if (!kiemTraThongTin()) return;
             if (ptb_san_pham.Image == null)
             {
                 MessageBox.Show("Vui lòng chọn hình ảnh cho sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -185,7 +184,7 @@ namespace WindowsFormsApp1
             if (result == DialogResult.Yes)
             {
                 SanPhamDTO sp = new SanPhamDTO();
-                sp.TenSp = txt_ten_san_pham.Text;
+                sp.TenSp = txt_ten_san_pham.Text.Trim();
                 sp.Gia = float.Parse(txt_gia_tien.Text);
                 sp.SoLuong = int.Parse(txt_so_luong.Text);
                 sp.MaLoai = (int)cbx_loai.SelectedValue;
@@ -196,20 +195,18 @@ namespace WindowsFormsApp1
                     ptb_san_pham.Image.Dispose();
                     ptb_san_pham.Image = null;
                 }
-                //doi ten file anh thanh ten san pham
-                File.Move(openFileDialog.FileName, Path.Combine(Path.GetDirectoryName(openFileDialog.FileName), txt_ten_san_pham.Text + ".jpg"));
-                //lay duong dan moi cua file anh
-                string ten_hinh_path = Path.Combine(Path.GetDirectoryName(openFileDialog.FileName), txt_ten_san_pham.Text + ".jpg");
 
-                if (!File.Exists(Path.Combine(path, txt_ten_san_pham.Text + ".jpg")))
+                if (!File.Exists(Path.Combine(path, Path.GetFileName(openFileDialog.FileName))))
                 {
-                    File.Copy(ten_hinh_path, Path.Combine(path, txt_ten_san_pham.Text + ".jpg"));
+                    File.Copy(openFileDialog.FileName, Path.Combine(path, Path.GetFileName(openFileDialog.FileName)));
+                    File.Move(Path.Combine(path, Path.GetFileName(openFileDialog.FileName)), Path.Combine(path, txt_ten_san_pham.Text + ".jpg"));
                 }
 
                 int res = sanPhamBUS.themSanPham(sp);
                 if (res > 0)
                 {
                     MessageBox.Show("Thêm sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     dvSanPham = sanPhamBUS.getDanhSachSanPham().DefaultView;
                     dgv_ds_san_pham.DataSource = dvSanPham;
                     load_hinh_anh();
@@ -230,22 +227,23 @@ namespace WindowsFormsApp1
             txt_gia_tien.Text = "";
             cbx_loai.SelectedIndex = 0;
             swt_trang_thai.Checked = true;
+            ptb_san_pham.Image = null;
+            openFileDialog = null;
         }
 
         public void thay_doi_anh(SanPhamBUS sanPhamBUS,string txt_ten_cu)
         {
-            if (ptb_san_pham.Image != null)
-            {
-                ptb_san_pham.Image.Dispose();
-                ptb_san_pham.Image = null;
-            }
+           
             if (!sanPhamBUS.kiemTraTenSanPham(txt_ten_san_pham.Text) && openFileDialog == null)
                 {
                     if (File.Exists(Path.Combine(path,txt_ten_cu + ".jpg")))
                     {
                        
                         File.Move(Path.Combine(path, txt_ten_cu + ".jpg"), Path.Combine(path, txt_ten_san_pham.Text + ".jpg"));
-                            imageCache.Clear();
+                        
+                        imageCache.Remove(Path.Combine(path, txt_ten_cu + ".jpg"));
+                        Image temp = new Bitmap(Path.Combine(path, txt_ten_san_pham.Text + ".jpg"));
+                        imageCache[Path.Combine(path, txt_ten_san_pham.Text + ".jpg")] = temp;
                     }
                 }
             if(openFileDialog != null)
@@ -270,36 +268,33 @@ namespace WindowsFormsApp1
             }
             if (File.Exists(Path.Combine(path,txt_ten_cu + ".jpg")))
             {
+                dgv_ds_san_pham.SelectedRows[0].Cells["HinhAnh"].Value = null;
                 File.Delete(Path.Combine(path, txt_ten_cu + ".jpg"));
             }
 
-            //doi ten file anh thanh ten san pham
-            File.Move(openFileDialog.FileName, Path.Combine(Path.GetDirectoryName(openFileDialog.FileName), txt_ten_san_pham.Text + ".jpg"));
-            //lay duong dan moi cua file anh
-            string ten_hinh_path = Path.Combine(Path.GetDirectoryName(openFileDialog.FileName), txt_ten_san_pham.Text + ".jpg");
-            if (!File.Exists(Path.Combine(path, txt_ten_san_pham.Text + ".jpg")))
+            if(!File.Exists(Path.Combine(path,Path.GetFileName(openFileDialog.FileName))))
             {
-                File.Copy(ten_hinh_path, Path.Combine(path, txt_ten_san_pham.Text + ".jpg"));
-                if(File.Exists(ten_hinh_path))
-                {
-                    File.Delete(ten_hinh_path);
-                }
+                File.Copy(openFileDialog.FileName, Path.Combine(path, Path.GetFileName(openFileDialog.FileName)));
+                File.Move(Path.Combine(path, Path.GetFileName(openFileDialog.FileName)), Path.Combine(path, txt_ten_san_pham.Text + ".jpg"));
+                imageCache.Remove(Path.Combine(path, txt_ten_cu + ".jpg"));
+                Image temp = new Bitmap(Path.Combine(path, txt_ten_san_pham.Text + ".jpg"));
+                imageCache[Path.Combine(path, txt_ten_san_pham.Text + ".jpg")] = temp;
             }
-            imageCache.Clear();
+            
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
             if (flag)
             {
-                kiemTraThongTin();
+                if(kiemTraThongTin()) return;
                 if (dgv_ds_san_pham.SelectedRows.Count == 0)
                 {
                     MessageBox.Show("Vui lòng chọn sản phẩm cần sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 SanPhamDTO sp = new SanPhamDTO();
-                sp.TenSp = txt_ten_san_pham.Text;
+                sp.TenSp = txt_ten_san_pham.Text.Trim();
                 sp.Gia = float.Parse(txt_gia_tien.Text);
                 sp.SoLuong = int.Parse(txt_so_luong.Text);
                 sp.MaLoai = (int)cbx_loai.SelectedValue;
