@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -113,18 +114,18 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.materialCheckbox5 = new MaterialSkin.Controls.MaterialCheckbox();
-            this.materialTextBox7 = new MaterialSkin.Controls.MaterialTextBox();
+            this.btn_tim_kiem_nv = new MaterialSkin.Controls.MaterialButton();
+            this.dtp_nv = new System.Windows.Forms.DateTimePicker();
+            this.tk_nv = new MaterialSkin.Controls.MaterialCheckbox();
+            this.txt_tim_kiem_nv = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel23 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard6 = new MaterialSkin.Controls.MaterialCard();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
+            this.dtp_ngay_sinh = new System.Windows.Forms.DateTimePicker();
+            this.rbt_nu = new MaterialSkin.Controls.MaterialRadioButton();
             this.materialLabel25 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.button4 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.rbt_nam = new MaterialSkin.Controls.MaterialRadioButton();
+            this.btn_nv = new System.Windows.Forms.Button();
+            this.ptb_nhan_vien = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.materialLabel24 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel18 = new MaterialSkin.Controls.MaterialLabel();
@@ -132,16 +133,16 @@
             this.materialLabel20 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel21 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel22 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialSwitch2 = new MaterialSkin.Controls.MaterialSwitch();
-            this.materialMaskedTextBox2 = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.materialMaskedTextBox5 = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.materialMaskedTextBox3 = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.materialMaskedTextBox4 = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.swt_trang_thai_nv = new MaterialSkin.Controls.MaterialSwitch();
+            this.txt_mat_khau = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.txt_tai_khoan = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.txt_dia_chi = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.txt_ho_ten = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            this.btn_them_nv = new MaterialSkin.Controls.MaterialButton();
             this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.dgv_ds_nhan_vien = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
@@ -196,9 +197,9 @@
             this.tabPage4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.materialCard6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptb_nhan_vien)).BeginInit();
             this.materialCard4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ds_nhan_vien)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -230,7 +231,7 @@
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1848, 1035);
+            this.materialTabControl1.Size = new System.Drawing.Size(1884, 1035);
             this.materialTabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -242,7 +243,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(50);
-            this.tabPage1.Size = new System.Drawing.Size(1840, 1006);
+            this.tabPage1.Size = new System.Drawing.Size(1876, 1006);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Sản phẩm";
             // 
@@ -648,6 +649,7 @@
             this.btn_xoa.TabIndex = 2;
             this.btn_xoa.Text = "XÓA";
             this.btn_xoa.UseVisualStyleBackColor = false;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // btn_them
             // 
@@ -703,34 +705,34 @@
             this.dgv_ds_san_pham.AllowUserToAddRows = false;
             this.dgv_ds_san_pham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_ds_san_pham.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ds_san_pham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ds_san_pham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_ds_san_pham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ds_san_pham.Location = new System.Drawing.Point(0, 48);
             this.dgv_ds_san_pham.MultiSelect = false;
             this.dgv_ds_san_pham.Name = "dgv_ds_san_pham";
             this.dgv_ds_san_pham.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ds_san_pham.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ds_san_pham.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_ds_san_pham.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgv_ds_san_pham.RowTemplate.Height = 24;
             this.dgv_ds_san_pham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ds_san_pham.Size = new System.Drawing.Size(752, 602);
             this.dgv_ds_san_pham.TabIndex = 2;
             this.dgv_ds_san_pham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ds_san_pham_CellClick);
-            this.dgv_ds_san_pham.Sorted += new System.EventHandler(this.dgv_ds_san_pham_Sorted);
+            this.dgv_ds_san_pham.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_ds_san_pham_DataBindingComplete_1);
             // 
             // tabPage2
             // 
@@ -741,7 +743,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1822, 1006);
+            this.tabPage2.Size = new System.Drawing.Size(1858, 1006);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Loại Sản Phẩm";
             // 
@@ -946,7 +948,7 @@
             this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1822, 1006);
+            this.tabPage3.Size = new System.Drawing.Size(1858, 1006);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Hóa đơn";
             // 
@@ -1541,17 +1543,17 @@
             this.tabPage4.Controls.Add(this.materialCard4);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1822, 1006);
+            this.tabPage4.Size = new System.Drawing.Size(1876, 1006);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Nhân Viên";
             // 
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.White;
-            this.groupBox5.Controls.Add(this.materialButton3);
-            this.groupBox5.Controls.Add(this.dateTimePicker4);
-            this.groupBox5.Controls.Add(this.materialCheckbox5);
-            this.groupBox5.Controls.Add(this.materialTextBox7);
+            this.groupBox5.Controls.Add(this.btn_tim_kiem_nv);
+            this.groupBox5.Controls.Add(this.dtp_nv);
+            this.groupBox5.Controls.Add(this.tk_nv);
+            this.groupBox5.Controls.Add(this.txt_tim_kiem_nv);
             this.groupBox5.Controls.Add(this.materialLabel23);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.SystemColors.HotTrack;
@@ -1562,66 +1564,67 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Tìm Nhân Viên";
             // 
-            // materialButton3
+            // btn_tim_kiem_nv
             // 
-            this.materialButton3.AutoSize = false;
-            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton3.Depth = 0;
-            this.materialButton3.HighEmphasis = true;
-            this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(580, 40);
-            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton3.Name = "materialButton3";
-            this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton3.Size = new System.Drawing.Size(82, 36);
-            this.materialButton3.TabIndex = 12;
-            this.materialButton3.Text = "Tìm kiếm";
-            this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton3.UseAccentColor = false;
-            this.materialButton3.UseVisualStyleBackColor = true;
+            this.btn_tim_kiem_nv.AutoSize = false;
+            this.btn_tim_kiem_nv.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_tim_kiem_nv.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_tim_kiem_nv.Depth = 0;
+            this.btn_tim_kiem_nv.HighEmphasis = true;
+            this.btn_tim_kiem_nv.Icon = null;
+            this.btn_tim_kiem_nv.Location = new System.Drawing.Point(580, 40);
+            this.btn_tim_kiem_nv.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_tim_kiem_nv.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_tim_kiem_nv.Name = "btn_tim_kiem_nv";
+            this.btn_tim_kiem_nv.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_tim_kiem_nv.Size = new System.Drawing.Size(82, 36);
+            this.btn_tim_kiem_nv.TabIndex = 12;
+            this.btn_tim_kiem_nv.Text = "Tìm kiếm";
+            this.btn_tim_kiem_nv.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_tim_kiem_nv.UseAccentColor = false;
+            this.btn_tim_kiem_nv.UseVisualStyleBackColor = true;
+            this.btn_tim_kiem_nv.Click += new System.EventHandler(this.btn_tim_kiem_nv_Click);
             // 
-            // dateTimePicker4
+            // dtp_nv
             // 
-            this.dateTimePicker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker4.Location = new System.Drawing.Point(444, 48);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(129, 22);
-            this.dateTimePicker4.TabIndex = 11;
+            this.dtp_nv.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_nv.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_nv.Location = new System.Drawing.Point(444, 48);
+            this.dtp_nv.Name = "dtp_nv";
+            this.dtp_nv.Size = new System.Drawing.Size(129, 22);
+            this.dtp_nv.TabIndex = 11;
             // 
-            // materialCheckbox5
+            // tk_nv
             // 
-            this.materialCheckbox5.AutoSize = true;
-            this.materialCheckbox5.Depth = 0;
-            this.materialCheckbox5.Location = new System.Drawing.Point(406, 41);
-            this.materialCheckbox5.Margin = new System.Windows.Forms.Padding(0);
-            this.materialCheckbox5.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialCheckbox5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckbox5.Name = "materialCheckbox5";
-            this.materialCheckbox5.ReadOnly = false;
-            this.materialCheckbox5.Ripple = true;
-            this.materialCheckbox5.Size = new System.Drawing.Size(35, 37);
-            this.materialCheckbox5.TabIndex = 7;
-            this.materialCheckbox5.UseVisualStyleBackColor = true;
+            this.tk_nv.AutoSize = true;
+            this.tk_nv.Depth = 0;
+            this.tk_nv.Location = new System.Drawing.Point(406, 41);
+            this.tk_nv.Margin = new System.Windows.Forms.Padding(0);
+            this.tk_nv.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.tk_nv.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tk_nv.Name = "tk_nv";
+            this.tk_nv.ReadOnly = false;
+            this.tk_nv.Ripple = true;
+            this.tk_nv.Size = new System.Drawing.Size(35, 37);
+            this.tk_nv.TabIndex = 7;
+            this.tk_nv.UseVisualStyleBackColor = true;
             // 
-            // materialTextBox7
+            // txt_tim_kiem_nv
             // 
-            this.materialTextBox7.AnimateReadOnly = false;
-            this.materialTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox7.Depth = 0;
-            this.materialTextBox7.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox7.LeadingIcon = null;
-            this.materialTextBox7.Location = new System.Drawing.Point(85, 32);
-            this.materialTextBox7.MaxLength = 50;
-            this.materialTextBox7.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox7.Multiline = false;
-            this.materialTextBox7.Name = "materialTextBox7";
-            this.materialTextBox7.Size = new System.Drawing.Size(308, 50);
-            this.materialTextBox7.TabIndex = 0;
-            this.materialTextBox7.Text = "";
-            this.materialTextBox7.TrailingIcon = null;
+            this.txt_tim_kiem_nv.AnimateReadOnly = false;
+            this.txt_tim_kiem_nv.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_tim_kiem_nv.Depth = 0;
+            this.txt_tim_kiem_nv.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_tim_kiem_nv.LeadingIcon = null;
+            this.txt_tim_kiem_nv.Location = new System.Drawing.Point(85, 32);
+            this.txt_tim_kiem_nv.MaxLength = 50;
+            this.txt_tim_kiem_nv.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_tim_kiem_nv.Multiline = false;
+            this.txt_tim_kiem_nv.Name = "txt_tim_kiem_nv";
+            this.txt_tim_kiem_nv.Size = new System.Drawing.Size(308, 50);
+            this.txt_tim_kiem_nv.TabIndex = 0;
+            this.txt_tim_kiem_nv.Text = "";
+            this.txt_tim_kiem_nv.TrailingIcon = null;
             // 
             // materialLabel23
             // 
@@ -1638,12 +1641,12 @@
             // materialCard6
             // 
             this.materialCard6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard6.Controls.Add(this.dateTimePicker3);
-            this.materialCard6.Controls.Add(this.materialRadioButton2);
+            this.materialCard6.Controls.Add(this.dtp_ngay_sinh);
+            this.materialCard6.Controls.Add(this.rbt_nu);
             this.materialCard6.Controls.Add(this.materialLabel25);
-            this.materialCard6.Controls.Add(this.materialRadioButton1);
-            this.materialCard6.Controls.Add(this.button4);
-            this.materialCard6.Controls.Add(this.pictureBox2);
+            this.materialCard6.Controls.Add(this.rbt_nam);
+            this.materialCard6.Controls.Add(this.btn_nv);
+            this.materialCard6.Controls.Add(this.ptb_nhan_vien);
             this.materialCard6.Controls.Add(this.label6);
             this.materialCard6.Controls.Add(this.materialLabel24);
             this.materialCard6.Controls.Add(this.materialLabel18);
@@ -1651,14 +1654,14 @@
             this.materialCard6.Controls.Add(this.materialLabel20);
             this.materialCard6.Controls.Add(this.materialLabel21);
             this.materialCard6.Controls.Add(this.materialLabel22);
-            this.materialCard6.Controls.Add(this.materialSwitch2);
-            this.materialCard6.Controls.Add(this.materialMaskedTextBox2);
-            this.materialCard6.Controls.Add(this.materialMaskedTextBox5);
-            this.materialCard6.Controls.Add(this.materialMaskedTextBox3);
-            this.materialCard6.Controls.Add(this.materialMaskedTextBox4);
+            this.materialCard6.Controls.Add(this.swt_trang_thai_nv);
+            this.materialCard6.Controls.Add(this.txt_mat_khau);
+            this.materialCard6.Controls.Add(this.txt_tai_khoan);
+            this.materialCard6.Controls.Add(this.txt_dia_chi);
+            this.materialCard6.Controls.Add(this.txt_ho_ten);
             this.materialCard6.Controls.Add(this.button5);
             this.materialCard6.Controls.Add(this.button6);
-            this.materialCard6.Controls.Add(this.materialButton2);
+            this.materialCard6.Controls.Add(this.btn_them_nv);
             this.materialCard6.Depth = 0;
             this.materialCard6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard6.Location = new System.Drawing.Point(803, 37);
@@ -1669,29 +1672,29 @@
             this.materialCard6.Size = new System.Drawing.Size(603, 740);
             this.materialCard6.TabIndex = 4;
             // 
-            // dateTimePicker3
+            // dtp_ngay_sinh
             // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(129, 183);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(292, 22);
-            this.dateTimePicker3.TabIndex = 11;
+            this.dtp_ngay_sinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_ngay_sinh.Location = new System.Drawing.Point(129, 183);
+            this.dtp_ngay_sinh.Name = "dtp_ngay_sinh";
+            this.dtp_ngay_sinh.Size = new System.Drawing.Size(292, 22);
+            this.dtp_ngay_sinh.TabIndex = 11;
             // 
-            // materialRadioButton2
+            // rbt_nu
             // 
-            this.materialRadioButton2.AutoSize = true;
-            this.materialRadioButton2.Depth = 0;
-            this.materialRadioButton2.Location = new System.Drawing.Point(254, 505);
-            this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton2.Name = "materialRadioButton2";
-            this.materialRadioButton2.Ripple = true;
-            this.materialRadioButton2.Size = new System.Drawing.Size(56, 37);
-            this.materialRadioButton2.TabIndex = 10;
-            this.materialRadioButton2.TabStop = true;
-            this.materialRadioButton2.Text = "Nữ";
-            this.materialRadioButton2.UseVisualStyleBackColor = true;
+            this.rbt_nu.AutoSize = true;
+            this.rbt_nu.Depth = 0;
+            this.rbt_nu.Location = new System.Drawing.Point(254, 505);
+            this.rbt_nu.Margin = new System.Windows.Forms.Padding(0);
+            this.rbt_nu.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbt_nu.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbt_nu.Name = "rbt_nu";
+            this.rbt_nu.Ripple = true;
+            this.rbt_nu.Size = new System.Drawing.Size(56, 37);
+            this.rbt_nu.TabIndex = 10;
+            this.rbt_nu.TabStop = true;
+            this.rbt_nu.Text = "Nữ";
+            this.rbt_nu.UseVisualStyleBackColor = true;
             // 
             // materialLabel25
             // 
@@ -1705,38 +1708,41 @@
             this.materialLabel25.TabIndex = 6;
             this.materialLabel25.Text = "Họ Tên:";
             // 
-            // materialRadioButton1
+            // rbt_nam
             // 
-            this.materialRadioButton1.AutoSize = true;
-            this.materialRadioButton1.Depth = 0;
-            this.materialRadioButton1.Location = new System.Drawing.Point(129, 505);
-            this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton1.Name = "materialRadioButton1";
-            this.materialRadioButton1.Ripple = true;
-            this.materialRadioButton1.Size = new System.Drawing.Size(80, 37);
-            this.materialRadioButton1.TabIndex = 10;
-            this.materialRadioButton1.TabStop = true;
-            this.materialRadioButton1.Text = "Nam\r\n";
-            this.materialRadioButton1.UseVisualStyleBackColor = true;
+            this.rbt_nam.AutoSize = true;
+            this.rbt_nam.Checked = true;
+            this.rbt_nam.Depth = 0;
+            this.rbt_nam.Location = new System.Drawing.Point(129, 505);
+            this.rbt_nam.Margin = new System.Windows.Forms.Padding(0);
+            this.rbt_nam.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbt_nam.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbt_nam.Name = "rbt_nam";
+            this.rbt_nam.Ripple = true;
+            this.rbt_nam.Size = new System.Drawing.Size(80, 37);
+            this.rbt_nam.TabIndex = 10;
+            this.rbt_nam.TabStop = true;
+            this.rbt_nam.Text = "Nam\r\n";
+            this.rbt_nam.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btn_nv
             // 
-            this.button4.Location = new System.Drawing.Point(442, 325);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(144, 49);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Thêm Ảnh";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_nv.Location = new System.Drawing.Point(442, 325);
+            this.btn_nv.Name = "btn_nv";
+            this.btn_nv.Size = new System.Drawing.Size(144, 49);
+            this.btn_nv.TabIndex = 9;
+            this.btn_nv.Text = "Thêm Ảnh";
+            this.btn_nv.UseVisualStyleBackColor = true;
+            this.btn_nv.Click += new System.EventHandler(this.btn_nv_Click);
             // 
-            // pictureBox2
+            // ptb_nhan_vien
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(442, 84);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(144, 215);
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
+            this.ptb_nhan_vien.Location = new System.Drawing.Point(442, 84);
+            this.ptb_nhan_vien.Name = "ptb_nhan_vien";
+            this.ptb_nhan_vien.Size = new System.Drawing.Size(144, 215);
+            this.ptb_nhan_vien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptb_nhan_vien.TabIndex = 8;
+            this.ptb_nhan_vien.TabStop = false;
             // 
             // label6
             // 
@@ -1822,186 +1828,186 @@
             this.materialLabel22.TabIndex = 6;
             this.materialLabel22.Text = "Ngày Sinh:";
             // 
-            // materialSwitch2
+            // swt_trang_thai_nv
             // 
-            this.materialSwitch2.AutoSize = true;
-            this.materialSwitch2.Checked = true;
-            this.materialSwitch2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.materialSwitch2.Depth = 0;
-            this.materialSwitch2.Location = new System.Drawing.Point(129, 582);
-            this.materialSwitch2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialSwitch2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialSwitch2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSwitch2.Name = "materialSwitch2";
-            this.materialSwitch2.Ripple = true;
-            this.materialSwitch2.Size = new System.Drawing.Size(86, 37);
-            this.materialSwitch2.TabIndex = 5;
-            this.materialSwitch2.Text = "Còn";
-            this.materialSwitch2.UseVisualStyleBackColor = true;
+            this.swt_trang_thai_nv.AutoSize = true;
+            this.swt_trang_thai_nv.Checked = true;
+            this.swt_trang_thai_nv.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.swt_trang_thai_nv.Depth = 0;
+            this.swt_trang_thai_nv.Location = new System.Drawing.Point(129, 582);
+            this.swt_trang_thai_nv.Margin = new System.Windows.Forms.Padding(0);
+            this.swt_trang_thai_nv.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.swt_trang_thai_nv.MouseState = MaterialSkin.MouseState.HOVER;
+            this.swt_trang_thai_nv.Name = "swt_trang_thai_nv";
+            this.swt_trang_thai_nv.Ripple = true;
+            this.swt_trang_thai_nv.Size = new System.Drawing.Size(86, 37);
+            this.swt_trang_thai_nv.TabIndex = 5;
+            this.swt_trang_thai_nv.Text = "Còn";
+            this.swt_trang_thai_nv.UseVisualStyleBackColor = true;
             // 
-            // materialMaskedTextBox2
+            // txt_mat_khau
             // 
-            this.materialMaskedTextBox2.AllowPromptAsInput = true;
-            this.materialMaskedTextBox2.AnimateReadOnly = false;
-            this.materialMaskedTextBox2.AsciiOnly = false;
-            this.materialMaskedTextBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialMaskedTextBox2.BeepOnError = false;
-            this.materialMaskedTextBox2.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.materialMaskedTextBox2.Depth = 0;
-            this.materialMaskedTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialMaskedTextBox2.HidePromptOnLeave = false;
-            this.materialMaskedTextBox2.HideSelection = true;
-            this.materialMaskedTextBox2.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.materialMaskedTextBox2.LeadingIcon = null;
-            this.materialMaskedTextBox2.Location = new System.Drawing.Point(130, 404);
-            this.materialMaskedTextBox2.Mask = "";
-            this.materialMaskedTextBox2.MaxLength = 32767;
-            this.materialMaskedTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialMaskedTextBox2.Name = "materialMaskedTextBox2";
-            this.materialMaskedTextBox2.PasswordChar = '\0';
-            this.materialMaskedTextBox2.PrefixSuffixText = null;
-            this.materialMaskedTextBox2.PromptChar = '_';
-            this.materialMaskedTextBox2.ReadOnly = false;
-            this.materialMaskedTextBox2.RejectInputOnFirstFailure = false;
-            this.materialMaskedTextBox2.ResetOnPrompt = true;
-            this.materialMaskedTextBox2.ResetOnSpace = true;
-            this.materialMaskedTextBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialMaskedTextBox2.SelectedText = "";
-            this.materialMaskedTextBox2.SelectionLength = 0;
-            this.materialMaskedTextBox2.SelectionStart = 0;
-            this.materialMaskedTextBox2.ShortcutsEnabled = true;
-            this.materialMaskedTextBox2.Size = new System.Drawing.Size(291, 48);
-            this.materialMaskedTextBox2.SkipLiterals = true;
-            this.materialMaskedTextBox2.TabIndex = 3;
-            this.materialMaskedTextBox2.TabStop = false;
-            this.materialMaskedTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialMaskedTextBox2.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.materialMaskedTextBox2.TrailingIcon = null;
-            this.materialMaskedTextBox2.UseSystemPasswordChar = false;
-            this.materialMaskedTextBox2.ValidatingType = null;
+            this.txt_mat_khau.AllowPromptAsInput = true;
+            this.txt_mat_khau.AnimateReadOnly = false;
+            this.txt_mat_khau.AsciiOnly = false;
+            this.txt_mat_khau.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txt_mat_khau.BeepOnError = false;
+            this.txt_mat_khau.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txt_mat_khau.Depth = 0;
+            this.txt_mat_khau.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_mat_khau.HidePromptOnLeave = false;
+            this.txt_mat_khau.HideSelection = true;
+            this.txt_mat_khau.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.txt_mat_khau.LeadingIcon = null;
+            this.txt_mat_khau.Location = new System.Drawing.Point(130, 404);
+            this.txt_mat_khau.Mask = "";
+            this.txt_mat_khau.MaxLength = 32767;
+            this.txt_mat_khau.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_mat_khau.Name = "txt_mat_khau";
+            this.txt_mat_khau.PasswordChar = '\0';
+            this.txt_mat_khau.PrefixSuffixText = null;
+            this.txt_mat_khau.PromptChar = '_';
+            this.txt_mat_khau.ReadOnly = false;
+            this.txt_mat_khau.RejectInputOnFirstFailure = false;
+            this.txt_mat_khau.ResetOnPrompt = true;
+            this.txt_mat_khau.ResetOnSpace = true;
+            this.txt_mat_khau.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_mat_khau.SelectedText = "";
+            this.txt_mat_khau.SelectionLength = 0;
+            this.txt_mat_khau.SelectionStart = 0;
+            this.txt_mat_khau.ShortcutsEnabled = true;
+            this.txt_mat_khau.Size = new System.Drawing.Size(291, 48);
+            this.txt_mat_khau.SkipLiterals = true;
+            this.txt_mat_khau.TabIndex = 3;
+            this.txt_mat_khau.TabStop = false;
+            this.txt_mat_khau.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_mat_khau.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txt_mat_khau.TrailingIcon = null;
+            this.txt_mat_khau.UseSystemPasswordChar = false;
+            this.txt_mat_khau.ValidatingType = null;
             // 
-            // materialMaskedTextBox5
+            // txt_tai_khoan
             // 
-            this.materialMaskedTextBox5.AllowPromptAsInput = true;
-            this.materialMaskedTextBox5.AnimateReadOnly = false;
-            this.materialMaskedTextBox5.AsciiOnly = false;
-            this.materialMaskedTextBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialMaskedTextBox5.BeepOnError = false;
-            this.materialMaskedTextBox5.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.materialMaskedTextBox5.Depth = 0;
-            this.materialMaskedTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialMaskedTextBox5.HidePromptOnLeave = false;
-            this.materialMaskedTextBox5.HideSelection = true;
-            this.materialMaskedTextBox5.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.materialMaskedTextBox5.LeadingIcon = null;
-            this.materialMaskedTextBox5.Location = new System.Drawing.Point(130, 325);
-            this.materialMaskedTextBox5.Mask = "";
-            this.materialMaskedTextBox5.MaxLength = 32767;
-            this.materialMaskedTextBox5.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialMaskedTextBox5.Name = "materialMaskedTextBox5";
-            this.materialMaskedTextBox5.PasswordChar = '\0';
-            this.materialMaskedTextBox5.PrefixSuffixText = null;
-            this.materialMaskedTextBox5.PromptChar = '_';
-            this.materialMaskedTextBox5.ReadOnly = false;
-            this.materialMaskedTextBox5.RejectInputOnFirstFailure = false;
-            this.materialMaskedTextBox5.ResetOnPrompt = true;
-            this.materialMaskedTextBox5.ResetOnSpace = true;
-            this.materialMaskedTextBox5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialMaskedTextBox5.SelectedText = "";
-            this.materialMaskedTextBox5.SelectionLength = 0;
-            this.materialMaskedTextBox5.SelectionStart = 0;
-            this.materialMaskedTextBox5.ShortcutsEnabled = true;
-            this.materialMaskedTextBox5.Size = new System.Drawing.Size(291, 48);
-            this.materialMaskedTextBox5.SkipLiterals = true;
-            this.materialMaskedTextBox5.TabIndex = 3;
-            this.materialMaskedTextBox5.TabStop = false;
-            this.materialMaskedTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialMaskedTextBox5.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.materialMaskedTextBox5.TrailingIcon = null;
-            this.materialMaskedTextBox5.UseSystemPasswordChar = false;
-            this.materialMaskedTextBox5.ValidatingType = null;
+            this.txt_tai_khoan.AllowPromptAsInput = true;
+            this.txt_tai_khoan.AnimateReadOnly = false;
+            this.txt_tai_khoan.AsciiOnly = false;
+            this.txt_tai_khoan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txt_tai_khoan.BeepOnError = false;
+            this.txt_tai_khoan.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txt_tai_khoan.Depth = 0;
+            this.txt_tai_khoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_tai_khoan.HidePromptOnLeave = false;
+            this.txt_tai_khoan.HideSelection = true;
+            this.txt_tai_khoan.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.txt_tai_khoan.LeadingIcon = null;
+            this.txt_tai_khoan.Location = new System.Drawing.Point(130, 325);
+            this.txt_tai_khoan.Mask = "";
+            this.txt_tai_khoan.MaxLength = 32767;
+            this.txt_tai_khoan.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_tai_khoan.Name = "txt_tai_khoan";
+            this.txt_tai_khoan.PasswordChar = '\0';
+            this.txt_tai_khoan.PrefixSuffixText = null;
+            this.txt_tai_khoan.PromptChar = '_';
+            this.txt_tai_khoan.ReadOnly = false;
+            this.txt_tai_khoan.RejectInputOnFirstFailure = false;
+            this.txt_tai_khoan.ResetOnPrompt = true;
+            this.txt_tai_khoan.ResetOnSpace = true;
+            this.txt_tai_khoan.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_tai_khoan.SelectedText = "";
+            this.txt_tai_khoan.SelectionLength = 0;
+            this.txt_tai_khoan.SelectionStart = 0;
+            this.txt_tai_khoan.ShortcutsEnabled = true;
+            this.txt_tai_khoan.Size = new System.Drawing.Size(291, 48);
+            this.txt_tai_khoan.SkipLiterals = true;
+            this.txt_tai_khoan.TabIndex = 3;
+            this.txt_tai_khoan.TabStop = false;
+            this.txt_tai_khoan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_tai_khoan.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txt_tai_khoan.TrailingIcon = null;
+            this.txt_tai_khoan.UseSystemPasswordChar = false;
+            this.txt_tai_khoan.ValidatingType = null;
             // 
-            // materialMaskedTextBox3
+            // txt_dia_chi
             // 
-            this.materialMaskedTextBox3.AllowPromptAsInput = true;
-            this.materialMaskedTextBox3.AnimateReadOnly = false;
-            this.materialMaskedTextBox3.AsciiOnly = false;
-            this.materialMaskedTextBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialMaskedTextBox3.BeepOnError = false;
-            this.materialMaskedTextBox3.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.materialMaskedTextBox3.Depth = 0;
-            this.materialMaskedTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialMaskedTextBox3.HidePromptOnLeave = false;
-            this.materialMaskedTextBox3.HideSelection = true;
-            this.materialMaskedTextBox3.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.materialMaskedTextBox3.LeadingIcon = null;
-            this.materialMaskedTextBox3.Location = new System.Drawing.Point(130, 251);
-            this.materialMaskedTextBox3.Mask = "";
-            this.materialMaskedTextBox3.MaxLength = 32767;
-            this.materialMaskedTextBox3.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialMaskedTextBox3.Name = "materialMaskedTextBox3";
-            this.materialMaskedTextBox3.PasswordChar = '\0';
-            this.materialMaskedTextBox3.PrefixSuffixText = null;
-            this.materialMaskedTextBox3.PromptChar = '_';
-            this.materialMaskedTextBox3.ReadOnly = false;
-            this.materialMaskedTextBox3.RejectInputOnFirstFailure = false;
-            this.materialMaskedTextBox3.ResetOnPrompt = true;
-            this.materialMaskedTextBox3.ResetOnSpace = true;
-            this.materialMaskedTextBox3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialMaskedTextBox3.SelectedText = "";
-            this.materialMaskedTextBox3.SelectionLength = 0;
-            this.materialMaskedTextBox3.SelectionStart = 0;
-            this.materialMaskedTextBox3.ShortcutsEnabled = true;
-            this.materialMaskedTextBox3.Size = new System.Drawing.Size(291, 48);
-            this.materialMaskedTextBox3.SkipLiterals = true;
-            this.materialMaskedTextBox3.TabIndex = 3;
-            this.materialMaskedTextBox3.TabStop = false;
-            this.materialMaskedTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialMaskedTextBox3.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.materialMaskedTextBox3.TrailingIcon = null;
-            this.materialMaskedTextBox3.UseSystemPasswordChar = false;
-            this.materialMaskedTextBox3.ValidatingType = null;
+            this.txt_dia_chi.AllowPromptAsInput = true;
+            this.txt_dia_chi.AnimateReadOnly = false;
+            this.txt_dia_chi.AsciiOnly = false;
+            this.txt_dia_chi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txt_dia_chi.BeepOnError = false;
+            this.txt_dia_chi.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txt_dia_chi.Depth = 0;
+            this.txt_dia_chi.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_dia_chi.HidePromptOnLeave = false;
+            this.txt_dia_chi.HideSelection = true;
+            this.txt_dia_chi.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.txt_dia_chi.LeadingIcon = null;
+            this.txt_dia_chi.Location = new System.Drawing.Point(130, 251);
+            this.txt_dia_chi.Mask = "";
+            this.txt_dia_chi.MaxLength = 32767;
+            this.txt_dia_chi.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_dia_chi.Name = "txt_dia_chi";
+            this.txt_dia_chi.PasswordChar = '\0';
+            this.txt_dia_chi.PrefixSuffixText = null;
+            this.txt_dia_chi.PromptChar = '_';
+            this.txt_dia_chi.ReadOnly = false;
+            this.txt_dia_chi.RejectInputOnFirstFailure = false;
+            this.txt_dia_chi.ResetOnPrompt = true;
+            this.txt_dia_chi.ResetOnSpace = true;
+            this.txt_dia_chi.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_dia_chi.SelectedText = "";
+            this.txt_dia_chi.SelectionLength = 0;
+            this.txt_dia_chi.SelectionStart = 0;
+            this.txt_dia_chi.ShortcutsEnabled = true;
+            this.txt_dia_chi.Size = new System.Drawing.Size(291, 48);
+            this.txt_dia_chi.SkipLiterals = true;
+            this.txt_dia_chi.TabIndex = 3;
+            this.txt_dia_chi.TabStop = false;
+            this.txt_dia_chi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_dia_chi.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txt_dia_chi.TrailingIcon = null;
+            this.txt_dia_chi.UseSystemPasswordChar = false;
+            this.txt_dia_chi.ValidatingType = null;
             // 
-            // materialMaskedTextBox4
+            // txt_ho_ten
             // 
-            this.materialMaskedTextBox4.AllowPromptAsInput = true;
-            this.materialMaskedTextBox4.AnimateReadOnly = false;
-            this.materialMaskedTextBox4.AsciiOnly = false;
-            this.materialMaskedTextBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialMaskedTextBox4.BeepOnError = false;
-            this.materialMaskedTextBox4.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.materialMaskedTextBox4.Depth = 0;
-            this.materialMaskedTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialMaskedTextBox4.HidePromptOnLeave = false;
-            this.materialMaskedTextBox4.HideSelection = true;
-            this.materialMaskedTextBox4.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.materialMaskedTextBox4.LeadingIcon = null;
-            this.materialMaskedTextBox4.Location = new System.Drawing.Point(130, 84);
-            this.materialMaskedTextBox4.Mask = "";
-            this.materialMaskedTextBox4.MaxLength = 32767;
-            this.materialMaskedTextBox4.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialMaskedTextBox4.Name = "materialMaskedTextBox4";
-            this.materialMaskedTextBox4.PasswordChar = '\0';
-            this.materialMaskedTextBox4.PrefixSuffixText = null;
-            this.materialMaskedTextBox4.PromptChar = '_';
-            this.materialMaskedTextBox4.ReadOnly = false;
-            this.materialMaskedTextBox4.RejectInputOnFirstFailure = false;
-            this.materialMaskedTextBox4.ResetOnPrompt = true;
-            this.materialMaskedTextBox4.ResetOnSpace = true;
-            this.materialMaskedTextBox4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialMaskedTextBox4.SelectedText = "";
-            this.materialMaskedTextBox4.SelectionLength = 0;
-            this.materialMaskedTextBox4.SelectionStart = 0;
-            this.materialMaskedTextBox4.ShortcutsEnabled = true;
-            this.materialMaskedTextBox4.Size = new System.Drawing.Size(291, 48);
-            this.materialMaskedTextBox4.SkipLiterals = true;
-            this.materialMaskedTextBox4.TabIndex = 3;
-            this.materialMaskedTextBox4.TabStop = false;
-            this.materialMaskedTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialMaskedTextBox4.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.materialMaskedTextBox4.TrailingIcon = null;
-            this.materialMaskedTextBox4.UseSystemPasswordChar = false;
-            this.materialMaskedTextBox4.ValidatingType = null;
+            this.txt_ho_ten.AllowPromptAsInput = true;
+            this.txt_ho_ten.AnimateReadOnly = false;
+            this.txt_ho_ten.AsciiOnly = false;
+            this.txt_ho_ten.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txt_ho_ten.BeepOnError = false;
+            this.txt_ho_ten.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txt_ho_ten.Depth = 0;
+            this.txt_ho_ten.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txt_ho_ten.HidePromptOnLeave = false;
+            this.txt_ho_ten.HideSelection = true;
+            this.txt_ho_ten.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.txt_ho_ten.LeadingIcon = null;
+            this.txt_ho_ten.Location = new System.Drawing.Point(130, 84);
+            this.txt_ho_ten.Mask = "";
+            this.txt_ho_ten.MaxLength = 32767;
+            this.txt_ho_ten.MouseState = MaterialSkin.MouseState.OUT;
+            this.txt_ho_ten.Name = "txt_ho_ten";
+            this.txt_ho_ten.PasswordChar = '\0';
+            this.txt_ho_ten.PrefixSuffixText = null;
+            this.txt_ho_ten.PromptChar = '_';
+            this.txt_ho_ten.ReadOnly = false;
+            this.txt_ho_ten.RejectInputOnFirstFailure = false;
+            this.txt_ho_ten.ResetOnPrompt = true;
+            this.txt_ho_ten.ResetOnSpace = true;
+            this.txt_ho_ten.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_ho_ten.SelectedText = "";
+            this.txt_ho_ten.SelectionLength = 0;
+            this.txt_ho_ten.SelectionStart = 0;
+            this.txt_ho_ten.ShortcutsEnabled = true;
+            this.txt_ho_ten.Size = new System.Drawing.Size(291, 48);
+            this.txt_ho_ten.SkipLiterals = true;
+            this.txt_ho_ten.TabIndex = 3;
+            this.txt_ho_ten.TabStop = false;
+            this.txt_ho_ten.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_ho_ten.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txt_ho_ten.TrailingIcon = null;
+            this.txt_ho_ten.UseSystemPasswordChar = false;
+            this.txt_ho_ten.ValidatingType = null;
             // 
             // button5
             // 
@@ -2023,31 +2029,32 @@
             this.button6.Text = "XÓA";
             this.button6.UseVisualStyleBackColor = false;
             // 
-            // materialButton2
+            // btn_them_nv
             // 
-            this.materialButton2.AutoSize = false;
-            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton2.Depth = 0;
-            this.materialButton2.HighEmphasis = true;
-            this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(0, 687);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton2.Name = "materialButton2";
-            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(603, 53);
-            this.materialButton2.TabIndex = 1;
-            this.materialButton2.Text = "Thêm";
-            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton2.UseAccentColor = false;
-            this.materialButton2.UseVisualStyleBackColor = false;
+            this.btn_them_nv.AutoSize = false;
+            this.btn_them_nv.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_them_nv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btn_them_nv.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_them_nv.Depth = 0;
+            this.btn_them_nv.HighEmphasis = true;
+            this.btn_them_nv.Icon = null;
+            this.btn_them_nv.Location = new System.Drawing.Point(0, 687);
+            this.btn_them_nv.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_them_nv.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_them_nv.Name = "btn_them_nv";
+            this.btn_them_nv.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_them_nv.Size = new System.Drawing.Size(603, 53);
+            this.btn_them_nv.TabIndex = 1;
+            this.btn_them_nv.Text = "Thêm";
+            this.btn_them_nv.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_them_nv.UseAccentColor = false;
+            this.btn_them_nv.UseVisualStyleBackColor = false;
+            this.btn_them_nv.Click += new System.EventHandler(this.btn_them_nv_Click);
             // 
             // materialCard4
             // 
             this.materialCard4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard4.Controls.Add(this.dataGridView6);
+            this.materialCard4.Controls.Add(this.dgv_ds_nhan_vien);
             this.materialCard4.Controls.Add(this.label5);
             this.materialCard4.Depth = 0;
             this.materialCard4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -2059,26 +2066,39 @@
             this.materialCard4.Size = new System.Drawing.Size(680, 649);
             this.materialCard4.TabIndex = 0;
             // 
-            // dataGridView6
+            // dgv_ds_nhan_vien
             // 
-            this.dataGridView6.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(0, 45);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.ReadOnly = true;
-            this.dataGridView6.RowHeadersWidth = 51;
-            this.dataGridView6.RowTemplate.Height = 24;
-            this.dataGridView6.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView6.Size = new System.Drawing.Size(680, 604);
-            this.dataGridView6.TabIndex = 5;
+            this.dgv_ds_nhan_vien.AllowUserToAddRows = false;
+            this.dgv_ds_nhan_vien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_ds_nhan_vien.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ds_nhan_vien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgv_ds_nhan_vien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ds_nhan_vien.Location = new System.Drawing.Point(0, 45);
+            this.dgv_ds_nhan_vien.MultiSelect = false;
+            this.dgv_ds_nhan_vien.Name = "dgv_ds_nhan_vien";
+            this.dgv_ds_nhan_vien.ReadOnly = true;
+            this.dgv_ds_nhan_vien.RowHeadersWidth = 51;
+            this.dgv_ds_nhan_vien.RowTemplate.Height = 24;
+            this.dgv_ds_nhan_vien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_ds_nhan_vien.Size = new System.Drawing.Size(680, 604);
+            this.dgv_ds_nhan_vien.TabIndex = 5;
+            this.dgv_ds_nhan_vien.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_ds_nhan_vien_DataBindingComplete);
             // 
             // label5
             // 
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.label5.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Blue;
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(680, 41);
+            this.label5.Size = new System.Drawing.Size(680, 48);
             this.label5.TabIndex = 4;
             this.label5.Text = "Danh Sách Nhân Viên";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -2094,7 +2114,7 @@
             this.tabPage5.Controls.Add(this.materialCard7);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1822, 1006);
+            this.tabPage5.Size = new System.Drawing.Size(1858, 1006);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Doanh Thu";
             // 
@@ -2353,7 +2373,7 @@
             this.tabPage6.Controls.Add(this.tableLayoutPanel1);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1822, 1006);
+            this.tabPage6.Size = new System.Drawing.Size(1858, 1006);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Phiếu Nhập";
             // 
@@ -2494,7 +2514,7 @@
             // Admin
             // 
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1851, 1102);
+            this.ClientSize = new System.Drawing.Size(1887, 1102);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerTabControl = this.materialTabControl1;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -2534,9 +2554,9 @@
             this.groupBox5.PerformLayout();
             this.materialCard6.ResumeLayout(false);
             this.materialCard6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptb_nhan_vien)).EndInit();
             this.materialCard4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ds_nhan_vien)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
@@ -2639,11 +2659,11 @@
         private System.Windows.Forms.Button btn_xoa_hd;
         private MaterialSkin.Controls.MaterialButton btn_them_hd;
         private MaterialSkin.Controls.MaterialCard materialCard4;
-        private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.DataGridView dgv_ds_nhan_vien;
         private System.Windows.Forms.Label label5;
         private MaterialSkin.Controls.MaterialCard materialCard6;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btn_nv;
+        private System.Windows.Forms.PictureBox ptb_nhan_vien;
         private System.Windows.Forms.Label label6;
         private MaterialSkin.Controls.MaterialLabel materialLabel18;
         private MaterialSkin.Controls.MaterialLabel materialLabel19;
@@ -2651,28 +2671,28 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel21;
         private MaterialSkin.Controls.MaterialLabel materialLabel22;
         private MaterialSkin.Controls.MaterialLabel materialLabel23;
-        private MaterialSkin.Controls.MaterialSwitch materialSwitch2;
-        private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox2;
-        private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox3;
-        private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox4;
+        private MaterialSkin.Controls.MaterialSwitch swt_trang_thai_nv;
+        private MaterialSkin.Controls.MaterialMaskedTextBox txt_mat_khau;
+        private MaterialSkin.Controls.MaterialMaskedTextBox txt_dia_chi;
+        private MaterialSkin.Controls.MaterialMaskedTextBox txt_ho_ten;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
-        private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox5;
+        private MaterialSkin.Controls.MaterialButton btn_them_nv;
+        private MaterialSkin.Controls.MaterialMaskedTextBox txt_tai_khoan;
         private MaterialSkin.Controls.MaterialLabel materialLabel24;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton2;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton1;
+        private MaterialSkin.Controls.MaterialRadioButton rbt_nu;
+        private MaterialSkin.Controls.MaterialRadioButton rbt_nam;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private MaterialSkin.Controls.MaterialCheckbox materialCheckbox5;
+        private System.Windows.Forms.DateTimePicker dtp_ngay_sinh;
+        private MaterialSkin.Controls.MaterialTextBox txt_tim_kiem_nv;
+        private System.Windows.Forms.DateTimePicker dtp_nv;
+        private MaterialSkin.Controls.MaterialCheckbox tk_nv;
         private MaterialSkin.Controls.MaterialLabel materialLabel25;
         private System.Windows.Forms.GroupBox groupBox6;
         private MaterialSkin.Controls.MaterialCheckbox ck_tk_loai;
         private MaterialSkin.Controls.MaterialTextBox txt_loc_san_pham_ten;
         private MaterialSkin.Controls.MaterialLabel materialLabel26;
-        private MaterialSkin.Controls.MaterialButton materialButton3;
+        private MaterialSkin.Controls.MaterialButton btn_tim_kiem_nv;
         private MaterialSkin.Controls.MaterialComboBox cbx_loai_sanPham_tim_tk;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Panel panel1;

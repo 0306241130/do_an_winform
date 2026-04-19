@@ -27,23 +27,19 @@ namespace WindowsFormsApp1
         string path = Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath)), "Images");
         private void Admin_Load(object sender, EventArgs e)
         {
+
+            loadSanPham();
+            loadNhanVien();
+
+        }
+        //------------------------------SAN PHAM-----------------------------
+        public void loadSanPham()
+        {
             SanPhamBUS sanPhamBUS = new SanPhamBUS();
             dvSanPham = sanPhamBUS.getDanhSachSanPham().DefaultView;
             dgv_ds_san_pham.DataSource = dvSanPham;
 
-            DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
-            imgCol.Name = "HinhAnh";
-            imgCol.HeaderText = "Hình";
-            imgCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
-
-            dgv_ds_san_pham.Columns.Insert(0, imgCol);
-
-            dgv_ds_san_pham.Columns["MaSP"].HeaderText = "Mã Sản Phẩm";
-            dgv_ds_san_pham.Columns["TenSP"].HeaderText = "Tên Sản Phẩm";
-            dgv_ds_san_pham.Columns["Gia"].HeaderText = "Giá";
-            dgv_ds_san_pham.Columns["TrangThai"].HeaderText = "Trạng Thái";
-            dgv_ds_san_pham.Columns["SoLuong"].HeaderText = "Số Lượng";
-            load_hinh_anh();
+            
 
             LoaiSanPhamBUS loaiSanPhamBUS = new LoaiSanPhamBUS();
             cbx_loai_sanPham_tim_tk.DataSource = loaiSanPhamBUS.load_loai_san_pham();
@@ -65,8 +61,8 @@ namespace WindowsFormsApp1
             cbx_loai.DataSource = loaiSanPhamBUS.load_loai_san_pham();
             cbx_loai.DisplayMember = "TenLoai";
             cbx_loai.ValueMember = "MaLoai";
-
         }
+
         Dictionary<string, Image> imageCache = new Dictionary<string, Image>();
 
         public void load_hinh_anh()
@@ -93,6 +89,20 @@ namespace WindowsFormsApp1
         }
 
 
+        private void dgv_ds_san_pham_DataBindingComplete_1(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (!dgv_ds_san_pham.Columns.Contains("HinhAnh"))
+            {
+                DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
+                imgCol.Name = "HinhAnh";
+                imgCol.HeaderText = "Hình Ảnh";
+                imgCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+                dgv_ds_san_pham.Columns.Insert(0, imgCol);
+            }
+           load_hinh_anh();
+        }
+
+
         private void btn_tim_kiem_Click(object sender, EventArgs e)
         {
             dvSanPham.RowFilter = $"TenSP LIKE '%{txt_loc_san_pham_ten.Text}%'";
@@ -100,12 +110,6 @@ namespace WindowsFormsApp1
             {
                 dvSanPham.RowFilter += $" AND MaLoai={cbx_loai_sanPham_tim_tk.SelectedValue}";
             }
-            load_hinh_anh();
-        }
-
-        private void dgv_ds_san_pham_Sorted(object sender, EventArgs e)
-        {
-            load_hinh_anh();
         }
 
         private void txt_gia_tien_KeyPress(object sender, KeyPressEventArgs e)
@@ -115,16 +119,16 @@ namespace WindowsFormsApp1
             e.Handled = true;
         }
 
-        bool flag=false;
+        bool flag = false;
         private void dgv_ds_san_pham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-                ptb_san_pham.Image = (Image)dgv_ds_san_pham.SelectedRows[0].Cells["HinhAnh"].Value ?? null;
-                txt_ten_san_pham.Text = dgv_ds_san_pham.SelectedRows[0].Cells["TenSP"].Value.ToString();
-                txt_so_luong.Text = dgv_ds_san_pham.SelectedRows[0].Cells["SoLuong"].Value.ToString();
-                cbx_loai.SelectedValue = dgv_ds_san_pham.SelectedRows[0].Cells["MaLoai"].Value;
-                txt_gia_tien.Text = dgv_ds_san_pham.SelectedRows[0].Cells["Gia"].Value.ToString();
+            ptb_san_pham.Image = (Image)dgv_ds_san_pham.SelectedRows[0].Cells["HinhAnh"].Value ?? null;
+            txt_ten_san_pham.Text = dgv_ds_san_pham.SelectedRows[0].Cells["TenSP"].Value.ToString();
+            txt_so_luong.Text = dgv_ds_san_pham.SelectedRows[0].Cells["SoLuong"].Value.ToString();
+            cbx_loai.SelectedValue = dgv_ds_san_pham.SelectedRows[0].Cells["MaLoai"].Value;
+            txt_gia_tien.Text = dgv_ds_san_pham.SelectedRows[0].Cells["Gia"].Value.ToString();
             swt_trang_thai.Checked = (bool)dgv_ds_san_pham.SelectedRows[0].Cells["TrangThai"].Value;
-                flag = true;
+            flag = true;
         }
 
         private void txt_so_luong_KeyPress(object sender, KeyPressEventArgs e)
@@ -134,7 +138,7 @@ namespace WindowsFormsApp1
         }
 
         OpenFileDialog openFileDialog = null;
-      
+
         private void button1_Click(object sender, EventArgs e)
         {
             openFileDialog = new OpenFileDialog();
@@ -168,7 +172,7 @@ namespace WindowsFormsApp1
         }
         private void btn_them_Click(object sender, EventArgs e)
         {
-            if (!kiemTraThongTin()) return;
+            if (kiemTraThongTin()) return;
             if (ptb_san_pham.Image == null)
             {
                 MessageBox.Show("Vui lòng chọn hình ảnh cho sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -209,7 +213,6 @@ namespace WindowsFormsApp1
 
                     dvSanPham = sanPhamBUS.getDanhSachSanPham().DefaultView;
                     dgv_ds_san_pham.DataSource = dvSanPham;
-                    load_hinh_anh();
                     reset_form();
                 }
                 else
@@ -231,22 +234,22 @@ namespace WindowsFormsApp1
             openFileDialog = null;
         }
 
-        public void thay_doi_anh(SanPhamBUS sanPhamBUS,string txt_ten_cu)
+        public void thay_doi_anh(SanPhamBUS sanPhamBUS, string txt_ten_cu)
         {
-           
+
             if (!sanPhamBUS.kiemTraTenSanPham(txt_ten_san_pham.Text) && openFileDialog == null)
+            {
+                if (File.Exists(Path.Combine(path, txt_ten_cu + ".jpg")))
                 {
-                    if (File.Exists(Path.Combine(path,txt_ten_cu + ".jpg")))
-                    {
-                       
-                        File.Move(Path.Combine(path, txt_ten_cu + ".jpg"), Path.Combine(path, txt_ten_san_pham.Text + ".jpg"));
-                        
-                        imageCache.Remove(Path.Combine(path, txt_ten_cu + ".jpg"));
-                        Image temp = new Bitmap(Path.Combine(path, txt_ten_san_pham.Text + ".jpg"));
-                        imageCache[Path.Combine(path, txt_ten_san_pham.Text + ".jpg")] = temp;
-                    }
+
+                    File.Move(Path.Combine(path, txt_ten_cu + ".jpg"), Path.Combine(path, txt_ten_san_pham.Text + ".jpg"));
+
+                    imageCache.Remove(Path.Combine(path, txt_ten_cu + ".jpg"));
+                    Image temp = new Bitmap(Path.Combine(path, txt_ten_san_pham.Text + ".jpg"));
+                    imageCache[Path.Combine(path, txt_ten_san_pham.Text + ".jpg")] = temp;
                 }
-            if(openFileDialog != null)
+            }
+            if (openFileDialog != null)
             {
                 if (!sanPhamBUS.kiemTraTenSanPham(txt_ten_san_pham.Text))
                 {
@@ -256,7 +259,7 @@ namespace WindowsFormsApp1
                 {
                     doiTenAnh(txt_ten_cu);
                 }
-            }           
+            }
         }
 
         public void doiTenAnh(string txt_ten_cu)
@@ -266,13 +269,13 @@ namespace WindowsFormsApp1
                 ptb_san_pham.Image.Dispose();
                 ptb_san_pham.Image = null;
             }
-            if (File.Exists(Path.Combine(path,txt_ten_cu + ".jpg")))
+            if (File.Exists(Path.Combine(path, txt_ten_cu + ".jpg")))
             {
                 dgv_ds_san_pham.SelectedRows[0].Cells["HinhAnh"].Value = null;
                 File.Delete(Path.Combine(path, txt_ten_cu + ".jpg"));
             }
 
-            if(!File.Exists(Path.Combine(path,Path.GetFileName(openFileDialog.FileName))))
+            if (!File.Exists(Path.Combine(path, Path.GetFileName(openFileDialog.FileName))))
             {
                 File.Copy(openFileDialog.FileName, Path.Combine(path, Path.GetFileName(openFileDialog.FileName)));
                 File.Move(Path.Combine(path, Path.GetFileName(openFileDialog.FileName)), Path.Combine(path, txt_ten_san_pham.Text + ".jpg"));
@@ -280,17 +283,18 @@ namespace WindowsFormsApp1
                 Image temp = new Bitmap(Path.Combine(path, txt_ten_san_pham.Text + ".jpg"));
                 imageCache[Path.Combine(path, txt_ten_san_pham.Text + ".jpg")] = temp;
             }
-            
+
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
             if (flag)
             {
-                if(kiemTraThongTin()) return;
-                if (dgv_ds_san_pham.SelectedRows.Count == 0)
+                if (kiemTraThongTin()) return;
+                string tenSP = txt_ten_san_pham.Text;
+                DialogResult result = MessageBox.Show($"Bạn có chắc cập nhật sản phẩm '{tenSP}'?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
                 {
-                    MessageBox.Show("Vui lòng chọn sản phẩm cần sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 SanPhamDTO sp = new SanPhamDTO();
@@ -303,24 +307,216 @@ namespace WindowsFormsApp1
                 string txt_ten_cu = dgv_ds_san_pham.SelectedRows[0].Cells["TenSP"].Value.ToString();
                 SanPhamBUS sanPhamBUS = new SanPhamBUS();
                 thay_doi_anh(sanPhamBUS, txt_ten_cu);
-               
+
                 int res = sanPhamBUS.capNhatSanPham(sp);
                 if (res > 0)
                 {
-                    MessageBox.Show($"Cập nhật sản phẩm thành công!{res}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Cập nhật sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     dvSanPham = sanPhamBUS.getDanhSachSanPham().DefaultView;
                     dgv_ds_san_pham.DataSource = dvSanPham;
-                    load_hinh_anh();
                     reset_form();
                 }
                 else
                 {
                     MessageBox.Show("Cập nhật sản phẩm thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                flag = false;
             }
             else
             {
                 MessageBox.Show("Vui lòng chọn sản phẩm cần sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        //xoa san pham
+        private void btn_xoa_Click(object sender, EventArgs e)
+        {
+            SanPhamBUS sanPhamBUS = new SanPhamBUS();
+            if (flag)
+            {
+                int maSP = (int)dgv_ds_san_pham.SelectedRows[0].Cells["MaSP"].Value;
+                string tenSP = txt_ten_san_pham.Text;
+                DialogResult result = MessageBox.Show($"Bạn có chắc muốn xóa sản phẩm '{tenSP}'?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    int res = sanPhamBUS.xoaSanPham(maSP);
+                    if (res > 0)
+                    {
+                        ptb_san_pham.Image.Dispose();
+                        ptb_san_pham.Image = null;
+                        reset_form();
+                        File.Delete(Path.Combine(path, tenSP + ".jpg"));
+                        MessageBox.Show("Xóa sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dvSanPham = sanPhamBUS.getDanhSachSanPham().DefaultView;
+                        dgv_ds_san_pham.DataSource = dvSanPham;
+                        imageCache.Remove(Path.Combine(path, tenSP + ".jpg"));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa sản phẩm thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    flag = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm cần xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        //------------------------------NHAN VIEN-----------------------------
+        string pathNhanVien = Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(Application.StartupPath)), "ImagesNhanVien");   
+        Dictionary<string, Image> imageCacheNhanVien = new Dictionary<string, Image>();
+        DataView dvNhanVien = null;
+        public void loadNhanVien()
+        {
+            NhanVienBUS nhanVienBUS = new NhanVienBUS();
+            dvNhanVien= nhanVienBUS.loadNhanVien().DefaultView;
+            dgv_ds_nhan_vien.DataSource = dvNhanVien;
+            dgv_ds_nhan_vien.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
+            dgv_ds_nhan_vien.Columns["HoTen"].HeaderText = "Họ Tên";
+            dgv_ds_nhan_vien.Columns["TaiKhoan"].HeaderText = "Tên Tài Khoản";
+            dgv_ds_nhan_vien.Columns["MatKhau"].HeaderText = "Mật Khẩu";
+            dgv_ds_nhan_vien.Columns["GioiTinh"].HeaderText = "Giới Tính";
+            dgv_ds_nhan_vien.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
+            dgv_ds_nhan_vien.Columns["DiaChi"].HeaderText = "Địa Chỉ";
+            dgv_ds_nhan_vien.Columns["TrangThai"].HeaderText = "Trạng Thái";
+        }
+
+
+        private void load_hinh_anh_nhan_vien()
+        {
+            foreach (DataGridViewRow row in dgv_ds_nhan_vien.Rows)
+            {
+                string tenNV = row.Cells["HoTen"].Value.ToString().Trim();
+                string imagePath = Path.Combine(pathNhanVien, tenNV + ".jpg");
+                if (!File.Exists(imagePath)) continue;
+                if (imageCacheNhanVien.ContainsKey(imagePath))
+                {
+                    row.Cells["HinhAnh"].Value = imageCacheNhanVien[imagePath];
+                    continue;
+                }
+                Image temp = new Bitmap(imagePath);
+                imageCacheNhanVien[imagePath] = temp;
+                row.Cells["HinhAnh"].Value =temp;
+            }
+        }
+
+        private void btn_tim_kiem_nv_Click(object sender, EventArgs e)
+        {
+            dvNhanVien.RowFilter = $"HoTen LIKE '%{txt_tim_kiem_nv.Text}%'";
+            if (tk_nv.Checked)
+            {
+                dvNhanVien.RowFilter += $" AND NgaySinh = '{dtp_nv.Value.ToShortDateString()}'";
+            }
+        }
+
+        private void dgv_ds_nhan_vien_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (!dgv_ds_nhan_vien.Columns.Contains("HinhAnh")) { 
+                DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
+                imgCol.Name = "HinhAnh";
+                imgCol.HeaderText = "Hình Ảnh";
+                imgCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+                dgv_ds_nhan_vien.Columns.Insert(0, imgCol);
+            }
+            load_hinh_anh_nhan_vien();
+        }
+
+        OpenFileDialog openFileDialogNV = null;
+
+        private void btn_nv_Click(object sender, EventArgs e)
+        {
+            openFileDialogNV = new OpenFileDialog();
+            openFileDialogNV.Title = "Chọn hình ảnh nhân viên";
+            openFileDialogNV.Filter = "Image Files (*.jpg;*.png;*.gif) | *.jpg;*.png;*.gif";
+
+            if (openFileDialogNV.ShowDialog() == DialogResult.OK)
+            {
+                if (ptb_nhan_vien.Image != null)
+                {
+                    ptb_nhan_vien.Image.Dispose();
+                }
+                ptb_nhan_vien.Image = new Bitmap(openFileDialogNV.FileName);
+            }
+        }
+
+        public int kiemTraThongTinNV()
+        {
+            if (string.IsNullOrEmpty(txt_tai_khoan.Text)
+               || string.IsNullOrEmpty(txt_mat_khau.Text)
+               || string.IsNullOrEmpty(txt_ho_ten.Text)
+               || string.IsNullOrEmpty(txt_dia_chi.Text))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return 1;
+            }
+            return -1;
+        } 
+
+        public void resetFormNhanVien()
+        {
+            txt_tai_khoan.Clear();
+            txt_mat_khau.Clear();
+            txt_ho_ten.Clear();
+            txt_dia_chi.Clear();
+            rbt_nam.Checked = true;
+            dtp_ngay_sinh.Value = DateTime.Now;
+            swt_trang_thai_nv.Checked = false;
+            ptb_nhan_vien.Image = null;
+            openFileDialog = null;
+        }
+
+        private void btn_them_nv_Click(object sender, EventArgs e)
+        {
+            NhanVienDTO nv = new NhanVienDTO();
+            nv.TenDangNhap=txt_tai_khoan.Text;
+            nv.MatKhau=txt_mat_khau.Text;
+            nv.TenNV=txt_ho_ten.Text;
+            nv.GioiTinh=rbt_nam.Checked ? "Nam" : "Nữ";
+            nv.NgaySinh=dtp_ngay_sinh.Value.ToShortDateString();
+            nv.DiaChi=txt_dia_chi.Text;
+            nv.TrangThai = swt_trang_thai_nv.Checked ? 1 : 0;
+
+            if(kiemTraThongTinNV() == 1) return;
+
+            if(DateTime.Now.Year - dtp_ngay_sinh.Value.Year < 18)
+            {
+                MessageBox.Show("Nhân viên phải từ 18 tuổi trở lên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (openFileDialogNV == null)
+            {
+                MessageBox.Show("Vui lòng chọn hình ảnh cho nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (ptb_san_pham.Image != null)
+            {
+                ptb_san_pham.Image.Dispose();
+                ptb_san_pham.Image = null;
+            }
+
+            if (!File.Exists(Path.Combine(pathNhanVien, Path.GetFileName(openFileDialogNV.FileName))))
+            {
+                File.Copy(openFileDialogNV.FileName, Path.Combine(pathNhanVien, Path.GetFileName(openFileDialogNV.FileName)));
+                File.Move(Path.Combine(pathNhanVien, Path.GetFileName(openFileDialogNV.FileName)), Path.Combine(pathNhanVien, txt_ho_ten.Text + ".jpg"));
+            }
+            
+            NhanVienBUS nhanVienBUS = new NhanVienBUS();
+            int res = nhanVienBUS.ThemNhanVien(nv);
+            if (res > 0)
+            {
+                MessageBox.Show("Thêm nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                dvNhanVien = nhanVienBUS.loadNhanVien().DefaultView;
+                dgv_ds_nhan_vien.DataSource = dvNhanVien  ;
+                resetFormNhanVien();
+            }
+            else
+            {
+                MessageBox.Show("Thêm nhân viên thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
