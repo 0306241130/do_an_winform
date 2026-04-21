@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.tab_admin = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.btn_tim_kiem = new System.Windows.Forms.Button();
@@ -112,7 +112,7 @@
             this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tab_nhan_vien = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btn_tim_kiem_nv = new MaterialSkin.Controls.MaterialButton();
             this.dtp_nv = new System.Windows.Forms.DateTimePicker();
@@ -138,8 +138,8 @@
             this.txt_tai_khoan = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.txt_dia_chi = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.txt_ho_ten = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btn_cap_nhat_nv = new System.Windows.Forms.Button();
+            this.btn_xoa_nv = new System.Windows.Forms.Button();
             this.btn_them_nv = new MaterialSkin.Controls.MaterialButton();
             this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
             this.dgv_ds_nhan_vien = new System.Windows.Forms.DataGridView();
@@ -175,7 +175,9 @@
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
             this.materialCard10 = new MaterialSkin.Controls.MaterialCard();
             this.label10 = new System.Windows.Forms.Label();
-            this.materialTabControl1.SuspendLayout();
+            this.btn_lam_moi = new MaterialSkin.Controls.MaterialButton();
+            this.btn_lam_moi_nv = new MaterialSkin.Controls.MaterialButton();
+            this.tab_admin.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.materialCard2.SuspendLayout();
@@ -194,7 +196,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.tabPage4.SuspendLayout();
+            this.tab_nhan_vien.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.materialCard6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_nhan_vien)).BeginInit();
@@ -216,23 +218,24 @@
             this.materialCard10.SuspendLayout();
             this.SuspendLayout();
             // 
-            // materialTabControl1
+            // tab_admin
             // 
-            this.materialTabControl1.Controls.Add(this.tabPage1);
-            this.materialTabControl1.Controls.Add(this.tabPage2);
-            this.materialTabControl1.Controls.Add(this.tabPage3);
-            this.materialTabControl1.Controls.Add(this.tabPage4);
-            this.materialTabControl1.Controls.Add(this.tabPage5);
-            this.materialTabControl1.Controls.Add(this.tabPage6);
-            this.materialTabControl1.Depth = 0;
-            this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialTabControl1.Location = new System.Drawing.Point(0, 64);
-            this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabControl1.Multiline = true;
-            this.materialTabControl1.Name = "materialTabControl1";
-            this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1884, 1035);
-            this.materialTabControl1.TabIndex = 0;
+            this.tab_admin.Controls.Add(this.tabPage1);
+            this.tab_admin.Controls.Add(this.tabPage2);
+            this.tab_admin.Controls.Add(this.tabPage3);
+            this.tab_admin.Controls.Add(this.tab_nhan_vien);
+            this.tab_admin.Controls.Add(this.tabPage5);
+            this.tab_admin.Controls.Add(this.tabPage6);
+            this.tab_admin.Depth = 0;
+            this.tab_admin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tab_admin.Location = new System.Drawing.Point(0, 64);
+            this.tab_admin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tab_admin.Multiline = true;
+            this.tab_admin.Name = "tab_admin";
+            this.tab_admin.SelectedIndex = 0;
+            this.tab_admin.Size = new System.Drawing.Size(1920, 1035);
+            this.tab_admin.TabIndex = 0;
+            this.tab_admin.SelectedIndexChanged += new System.EventHandler(this.tab_admin_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -243,7 +246,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(50);
-            this.tabPage1.Size = new System.Drawing.Size(1876, 1006);
+            this.tabPage1.Size = new System.Drawing.Size(1912, 1006);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Sản phẩm";
             // 
@@ -344,6 +347,7 @@
             // materialCard2
             // 
             this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard2.Controls.Add(this.btn_lam_moi);
             this.materialCard2.Controls.Add(this.button1);
             this.materialCard2.Controls.Add(this.ptb_san_pham);
             this.materialCard2.Controls.Add(this.label1);
@@ -705,27 +709,27 @@
             this.dgv_ds_san_pham.AllowUserToAddRows = false;
             this.dgv_ds_san_pham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_ds_san_pham.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ds_san_pham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ds_san_pham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_ds_san_pham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ds_san_pham.Location = new System.Drawing.Point(0, 48);
             this.dgv_ds_san_pham.MultiSelect = false;
             this.dgv_ds_san_pham.Name = "dgv_ds_san_pham";
             this.dgv_ds_san_pham.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ds_san_pham.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ds_san_pham.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_ds_san_pham.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgv_ds_san_pham.RowTemplate.Height = 24;
             this.dgv_ds_san_pham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -743,7 +747,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1858, 1006);
+            this.tabPage2.Size = new System.Drawing.Size(1912, 1006);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Loại Sản Phẩm";
             // 
@@ -948,7 +952,7 @@
             this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1858, 1006);
+            this.tabPage3.Size = new System.Drawing.Size(1912, 1006);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Hóa đơn";
             // 
@@ -1535,17 +1539,17 @@
             this.dataGridView3.Size = new System.Drawing.Size(679, 684);
             this.dataGridView3.TabIndex = 11;
             // 
-            // tabPage4
+            // tab_nhan_vien
             // 
-            this.tabPage4.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage4.Controls.Add(this.groupBox5);
-            this.tabPage4.Controls.Add(this.materialCard6);
-            this.tabPage4.Controls.Add(this.materialCard4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1876, 1006);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Nhân Viên";
+            this.tab_nhan_vien.BackColor = System.Drawing.SystemColors.Control;
+            this.tab_nhan_vien.Controls.Add(this.groupBox5);
+            this.tab_nhan_vien.Controls.Add(this.materialCard6);
+            this.tab_nhan_vien.Controls.Add(this.materialCard4);
+            this.tab_nhan_vien.Location = new System.Drawing.Point(4, 25);
+            this.tab_nhan_vien.Name = "tab_nhan_vien";
+            this.tab_nhan_vien.Size = new System.Drawing.Size(1912, 1006);
+            this.tab_nhan_vien.TabIndex = 3;
+            this.tab_nhan_vien.Text = "Nhân Viên";
             // 
             // groupBox5
             // 
@@ -1641,6 +1645,7 @@
             // materialCard6
             // 
             this.materialCard6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard6.Controls.Add(this.btn_lam_moi_nv);
             this.materialCard6.Controls.Add(this.dtp_ngay_sinh);
             this.materialCard6.Controls.Add(this.rbt_nu);
             this.materialCard6.Controls.Add(this.materialLabel25);
@@ -1659,8 +1664,8 @@
             this.materialCard6.Controls.Add(this.txt_tai_khoan);
             this.materialCard6.Controls.Add(this.txt_dia_chi);
             this.materialCard6.Controls.Add(this.txt_ho_ten);
-            this.materialCard6.Controls.Add(this.button5);
-            this.materialCard6.Controls.Add(this.button6);
+            this.materialCard6.Controls.Add(this.btn_cap_nhat_nv);
+            this.materialCard6.Controls.Add(this.btn_xoa_nv);
             this.materialCard6.Controls.Add(this.btn_them_nv);
             this.materialCard6.Depth = 0;
             this.materialCard6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -1684,7 +1689,7 @@
             // 
             this.rbt_nu.AutoSize = true;
             this.rbt_nu.Depth = 0;
-            this.rbt_nu.Location = new System.Drawing.Point(254, 505);
+            this.rbt_nu.Location = new System.Drawing.Point(248, 474);
             this.rbt_nu.Margin = new System.Windows.Forms.Padding(0);
             this.rbt_nu.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rbt_nu.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1713,7 +1718,7 @@
             this.rbt_nam.AutoSize = true;
             this.rbt_nam.Checked = true;
             this.rbt_nam.Depth = 0;
-            this.rbt_nam.Location = new System.Drawing.Point(129, 505);
+            this.rbt_nam.Location = new System.Drawing.Point(123, 474);
             this.rbt_nam.Margin = new System.Windows.Forms.Padding(0);
             this.rbt_nam.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rbt_nam.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1761,7 +1766,7 @@
             this.materialLabel24.AutoSize = true;
             this.materialLabel24.Depth = 0;
             this.materialLabel24.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel24.Location = new System.Drawing.Point(33, 515);
+            this.materialLabel24.Location = new System.Drawing.Point(27, 484);
             this.materialLabel24.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel24.Name = "materialLabel24";
             this.materialLabel24.Size = new System.Drawing.Size(69, 19);
@@ -1773,7 +1778,7 @@
             this.materialLabel18.AutoSize = true;
             this.materialLabel18.Depth = 0;
             this.materialLabel18.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel18.Location = new System.Drawing.Point(32, 591);
+            this.materialLabel18.Location = new System.Drawing.Point(33, 537);
             this.materialLabel18.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel18.Name = "materialLabel18";
             this.materialLabel18.Size = new System.Drawing.Size(79, 19);
@@ -1834,7 +1839,7 @@
             this.swt_trang_thai_nv.Checked = true;
             this.swt_trang_thai_nv.CheckState = System.Windows.Forms.CheckState.Checked;
             this.swt_trang_thai_nv.Depth = 0;
-            this.swt_trang_thai_nv.Location = new System.Drawing.Point(129, 582);
+            this.swt_trang_thai_nv.Location = new System.Drawing.Point(130, 528);
             this.swt_trang_thai_nv.Margin = new System.Windows.Forms.Padding(0);
             this.swt_trang_thai_nv.MouseLocation = new System.Drawing.Point(-1, -1);
             this.swt_trang_thai_nv.MouseState = MaterialSkin.MouseState.HOVER;
@@ -2009,25 +2014,27 @@
             this.txt_ho_ten.UseSystemPasswordChar = false;
             this.txt_ho_ten.ValidatingType = null;
             // 
-            // button5
+            // btn_cap_nhat_nv
             // 
-            this.button5.BackColor = System.Drawing.Color.Yellow;
-            this.button5.Location = new System.Drawing.Point(313, 652);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(290, 37);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "SỬA";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btn_cap_nhat_nv.BackColor = System.Drawing.Color.Yellow;
+            this.btn_cap_nhat_nv.Location = new System.Drawing.Point(313, 652);
+            this.btn_cap_nhat_nv.Name = "btn_cap_nhat_nv";
+            this.btn_cap_nhat_nv.Size = new System.Drawing.Size(290, 37);
+            this.btn_cap_nhat_nv.TabIndex = 2;
+            this.btn_cap_nhat_nv.Text = "SỬA";
+            this.btn_cap_nhat_nv.UseVisualStyleBackColor = false;
+            this.btn_cap_nhat_nv.Click += new System.EventHandler(this.btn_cap_nhat_nv_Click);
             // 
-            // button6
+            // btn_xoa_nv
             // 
-            this.button6.BackColor = System.Drawing.Color.Red;
-            this.button6.Location = new System.Drawing.Point(0, 652);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(315, 37);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "XÓA";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btn_xoa_nv.BackColor = System.Drawing.Color.Red;
+            this.btn_xoa_nv.Location = new System.Drawing.Point(0, 652);
+            this.btn_xoa_nv.Name = "btn_xoa_nv";
+            this.btn_xoa_nv.Size = new System.Drawing.Size(315, 37);
+            this.btn_xoa_nv.TabIndex = 2;
+            this.btn_xoa_nv.Text = "XÓA";
+            this.btn_xoa_nv.UseVisualStyleBackColor = false;
+            this.btn_xoa_nv.Click += new System.EventHandler(this.btn_xoa_nv_Click);
             // 
             // btn_them_nv
             // 
@@ -2071,14 +2078,14 @@
             this.dgv_ds_nhan_vien.AllowUserToAddRows = false;
             this.dgv_ds_nhan_vien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_ds_nhan_vien.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ds_nhan_vien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ds_nhan_vien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_ds_nhan_vien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ds_nhan_vien.Location = new System.Drawing.Point(0, 45);
             this.dgv_ds_nhan_vien.MultiSelect = false;
@@ -2089,6 +2096,8 @@
             this.dgv_ds_nhan_vien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ds_nhan_vien.Size = new System.Drawing.Size(680, 604);
             this.dgv_ds_nhan_vien.TabIndex = 5;
+            this.dgv_ds_nhan_vien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ds_nhan_vien_CellClick);
+            this.dgv_ds_nhan_vien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ds_nhan_vien_CellContentClick);
             this.dgv_ds_nhan_vien.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv_ds_nhan_vien_DataBindingComplete);
             // 
             // label5
@@ -2114,7 +2123,7 @@
             this.tabPage5.Controls.Add(this.materialCard7);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1858, 1006);
+            this.tabPage5.Size = new System.Drawing.Size(1912, 1006);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Doanh Thu";
             // 
@@ -2373,7 +2382,7 @@
             this.tabPage6.Controls.Add(this.tableLayoutPanel1);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1858, 1006);
+            this.tabPage6.Size = new System.Drawing.Size(1912, 1006);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Phiếu Nhập";
             // 
@@ -2511,19 +2520,60 @@
             this.label10.Text = "Chi tiết phiếu Nhập";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btn_lam_moi
+            // 
+            this.btn_lam_moi.AutoSize = false;
+            this.btn_lam_moi.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_lam_moi.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_lam_moi.Depth = 0;
+            this.btn_lam_moi.HighEmphasis = true;
+            this.btn_lam_moi.Icon = null;
+            this.btn_lam_moi.Location = new System.Drawing.Point(0, 532);
+            this.btn_lam_moi.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_lam_moi.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_lam_moi.Name = "btn_lam_moi";
+            this.btn_lam_moi.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_lam_moi.Size = new System.Drawing.Size(603, 36);
+            this.btn_lam_moi.TabIndex = 10;
+            this.btn_lam_moi.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_lam_moi.UseAccentColor = false;
+            this.btn_lam_moi.UseVisualStyleBackColor = true;
+            this.btn_lam_moi.Click += new System.EventHandler(this.btn_lam_moi_Click);
+            // 
+            // btn_lam_moi_nv
+            // 
+            this.btn_lam_moi_nv.AutoSize = false;
+            this.btn_lam_moi_nv.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_lam_moi_nv.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_lam_moi_nv.Depth = 0;
+            this.btn_lam_moi_nv.HighEmphasis = true;
+            this.btn_lam_moi_nv.Icon = null;
+            this.btn_lam_moi_nv.Location = new System.Drawing.Point(0, 618);
+            this.btn_lam_moi_nv.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_lam_moi_nv.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_lam_moi_nv.Name = "btn_lam_moi_nv";
+            this.btn_lam_moi_nv.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_lam_moi_nv.Size = new System.Drawing.Size(603, 36);
+            this.btn_lam_moi_nv.TabIndex = 12;
+            this.btn_lam_moi_nv.Text = "materialButton2";
+            this.btn_lam_moi_nv.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_lam_moi_nv.UseAccentColor = false;
+            this.btn_lam_moi_nv.UseVisualStyleBackColor = true;
+            this.btn_lam_moi_nv.Click += new System.EventHandler(this.btn_lam_moi_nv_Click);
+            // 
             // Admin
             // 
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1887, 1102);
-            this.Controls.Add(this.materialTabControl1);
-            this.DrawerTabControl = this.materialTabControl1;
+            this.ClientSize = new System.Drawing.Size(1923, 1102);
+            this.Controls.Add(this.tab_admin);
+            this.DrawerTabControl = this.tab_admin;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Admin";
             this.Padding = new System.Windows.Forms.Padding(0, 64, 3, 3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DASHBOARD";
             this.Load += new System.EventHandler(this.Admin_Load);
-            this.materialTabControl1.ResumeLayout(false);
+            this.tab_admin.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
@@ -2549,7 +2599,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.tabPage4.ResumeLayout(false);
+            this.tab_nhan_vien.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.materialCard6.ResumeLayout(false);
@@ -2582,11 +2632,11 @@
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
+        private MaterialSkin.Controls.MaterialTabControl tab_admin;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tab_nhan_vien;
         private MaterialSkin.Controls.MaterialCard materialCard1;
         private System.Windows.Forms.DataGridView dgv_ds_san_pham;
         private MaterialSkin.Controls.MaterialCard materialCard2;
@@ -2675,8 +2725,8 @@
         private MaterialSkin.Controls.MaterialMaskedTextBox txt_mat_khau;
         private MaterialSkin.Controls.MaterialMaskedTextBox txt_dia_chi;
         private MaterialSkin.Controls.MaterialMaskedTextBox txt_ho_ten;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btn_cap_nhat_nv;
+        private System.Windows.Forms.Button btn_xoa_nv;
         private MaterialSkin.Controls.MaterialButton btn_them_nv;
         private MaterialSkin.Controls.MaterialMaskedTextBox txt_tai_khoan;
         private MaterialSkin.Controls.MaterialLabel materialLabel24;
@@ -2726,6 +2776,8 @@
         private MaterialSkin.Controls.MaterialCard materialCard11;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dateTimePicker5;
+        private MaterialSkin.Controls.MaterialButton btn_lam_moi;
+        private MaterialSkin.Controls.MaterialButton btn_lam_moi_nv;
     }
 }
 
