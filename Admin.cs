@@ -41,11 +41,13 @@ namespace WindowsFormsApp1
         //------------------------------SAN PHAM-----------------------------
         public void loadSanPham()
         {
+            dgv_ds_san_pham.RowTemplate.Height = 60;
+
             SanPhamBUS sanPhamBUS = new SanPhamBUS();
             dvSanPham = new DataView(sanPhamBUS.getDanhSachSanPham());
             dgv_ds_san_pham.DataSource = dvSanPham;
-
             
+
 
             LoaiSanPhamBUS loaiSanPhamBUS = new LoaiSanPhamBUS();
             cbx_loai_sanPham_tim_tk.DataSource = loaiSanPhamBUS.load_loai_san_pham();
@@ -115,12 +117,16 @@ namespace WindowsFormsApp1
                 DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
                 imgCol.Name = "HinhAnh";
                 imgCol.HeaderText = "Hình Ảnh";
-                imgCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+                imgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
                 dgv_ds_san_pham.Columns.Insert(0, imgCol);
+                stt(dgv_ds_san_pham);
             }
-            //stt(dgv_ds_san_pham);
+            stt(dgv_ds_san_pham);
             load_hinh_anh();
+            dgv_ds_san_pham.ClearSelection();
         }
+
+
 
 
         private void btn_tim_kiem_Click(object sender, EventArgs e)
@@ -148,6 +154,7 @@ namespace WindowsFormsApp1
             cbx_loai.SelectedValue = dgv_ds_san_pham.SelectedRows[0].Cells["MaLoai"].Value;
             txt_gia_tien.Text = dgv_ds_san_pham.SelectedRows[0].Cells["Gia"].Value.ToString();
             swt_trang_thai.Checked = (bool)dgv_ds_san_pham.SelectedRows[0].Cells["TrangThai"].Value;
+            txt_masp.Text = dgv_ds_san_pham.SelectedRows[0].Cells["MaSP"].Value.ToString(); 
             flag = true;
         }
 
@@ -176,7 +183,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        //them san pham moi
+
 
         public bool kiemTraThongTin()
         {
@@ -254,6 +261,7 @@ namespace WindowsFormsApp1
         //rest thong tin tren form
         public void reset_form()
         {
+            txt_masp.Text = "";
             txt_ten_san_pham.Text = "";
             txt_so_luong.Text = "";
             txt_gia_tien.Text = "";
@@ -320,7 +328,7 @@ namespace WindowsFormsApp1
             }
 
         }
-
+        // cap nhat san pham
         private void btn_sua_Click(object sender, EventArgs e)
         {
             if (flag)
@@ -347,11 +355,16 @@ namespace WindowsFormsApp1
                 if (res > 0)
                 {
                     MessageBox.Show($"Cập nhật sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    reset_form();
-                   // dgv_ds_san_pham.DataSource = null;
+
+                    dvSanPham.Table.Clear();
                     dvSanPham = sanPhamBUS.getDanhSachSanPham().DefaultView;
                     dgv_ds_san_pham.DataSource = dvSanPham;
-                    
+                    dgv_ds_san_pham.Refresh();
+
+
+
+
+                    reset_form();
 
                 }
                 else
